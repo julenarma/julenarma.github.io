@@ -1,0 +1,202 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+
+nav {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    background-color: transparent;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+    display: flex;
+    max-height: 65px;
+
+}
+
+.log-box {
+    padding: 1.5em;
+    width: 20%;
+}
+
+.nav1-principal {
+    list-style: none;
+    display: flex;
+    padding: 1.7em;
+    margin-left: 370px;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.nav1-principal li {
+    margin: 0 20px;
+}
+
+.nav1-principal li a {
+    color: white;
+    text-decoration: none;
+    padding-bottom: 0.3em;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.nav1-principal a:hover {
+    border-bottom: 3px solid white;
+}
+
+
+nav.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    color: black;
+}
+
+nav.sticky a {
+    color: black;
+    padding-bottom: 0.3em;
+}
+
+nav.sticky a:hover {
+    color: black;
+    border-bottom: 3px solid black;
+
+
+}
+
+
+/*Boton de gestion de pagos*/
+
+#boton {
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    /* Cambia "top" a "bottom" para colocar en la parte inferior */
+    border-radius: 50%;
+    z-index: 999;
+    /* Asegura que el botón esté en la parte superior */
+}
+
+#modal {
+
+    margin-left: 68%;
+    width: 30%;
+    height: 80%;
+    margin-top: 50px;
+    overflow-y: auto;
+    background-color: #ffffff;
+    border: 1px solid #3498db;
+    border-radius: 10px;
+    padding: 1em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-close {
+
+    top: 10px;
+    right: 10px;
+    font-size: 40px;
+    cursor: pointer;
+    color: #3498db;
+}
+
+.cerrarModal {
+    font-size: 30px;
+    color: black;
+    margin-left: 175px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+}
+
+.cerrarModal:hover {
+    color: red;
+    text-decoration: none;
+}
+
+.modal-contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#opciones {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#opciones div {
+    font-size: 30px;
+}
+
+.opcion {
+    cursor: pointer;
+    border-radius: 50%;
+    color: #2563eb;
+    background-color: white;
+    /* Fondo blanco */
+    border: 1px solid #2563eb;
+    /* Borde de 1px color azul */
+    padding: 2px;
+    width: 40px;
+    /* Ajusta el ancho según tu necesidad */
+    height: 40px;
+    /* Ajusta la altura según tu necesidad */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.opcion:hover {
+    background-color: black;
+    color: white;
+}
+
+/* Agrega estilos para el efecto hover en la clase "active" */
+
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+#total {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+
+}
+
+#pagar {
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+
+}

@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Body*/
+
+body {
+    background: white;
+    font-family: 'Raleway', sans-serif;
+    overflow-x: hidden;
+}
+
+
+/*imagen header*/
+
+.img-header {
+    background: url(../img/index/programando_index.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-blend-mode: soft-light;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    
+  }
+
+.img-header .header-info{
+    position: absolute;
+    /*Quiero que sea flex, y que la dirección del texto, sea en columna */
+    display: flex;
+    /*Position Y*/
+    justify-content: center;
+    /*En columna*/
+    flex-direction: column;
+    /*Margin-top por arriba de 0*/
+    top: -70px;
+    /*  Anchura que ocupe el 100% de la ventana*/
+    width: 100%;
+    /* Altura que ocupe el 100% de la ventana*/
+    height: 100%;
+    left: 0%;
+    /*Position X*/
+    align-items: center;
+    z-index: 100;
+}
+
+.img-header .header-info h2 {
+
+    color: white;
+    font-size: 70px;
+    font-weight: normal;
+
+}
+
+.img-header .header-info hr {
+    height: 2px;
+    background: white;
+    width: 600px;
+    margin: 15px 0;
+}
+
+.img-header .header-info p {
+
+    color: white;
+    font-size: 20px;
+    width: 80%;
+    margin: 0 auto;
+
+}
+

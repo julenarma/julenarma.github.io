@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!--Logo y titulo en la pestaña-->
+  <link rel="icon" href="view/img/index/logo2.jpg" type="image/png">
+  <title>ArmaDev</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Enlace a Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <!-- Enlace a la biblioteca flag-icon-css para iconos de banderas -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
+  <!-- Mi CSS -->
+  <link rel="stylesheet" href="view/css/index.css" class="css">
+  <link rel="stylesheet" href="view/css/main.css" class="css">
+
+
+  <!-- EmojiButton CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/emoji-button@5.0.0/dist/emoji-button.css">
+  <script src="https://cdn.jsdelivr.net/npm/emoji-button@5.0.0/dist/emoji-button.js"></script>
+
+</head>
+
+
+<body id="pageBody">
+  <header>
+    <!--   <div class="nav-sticky">
+      <div class="list-container">
+
+        <div class="lists" id="list">
+          
+          <div class="log-box">
+            <img src="" alt="" width="150px">
+          </div>
+          <div class="nav1-principal">
+            <li><a href="index.html" class="active">HOME</a></li>
+            <li> <a href="" id="noticia">ABOUT ME</a></li>
+            <li> <a href="">TECH STACK</a></li>
+            <li> <a href="" id="videos">PROJECTS</a></li>
+            <li> <a href="">CONTACT</a></li>
+          </div>
+
+        </div>
+      </div> 
+      </div>-->
+    <!--Botón para abrir el menú lateral-->
+    <!--<div id="mainbox" onclick="openMenuIndex()">&#9776; &nbsp; MENÚ</div>-->
+
+
+    <nav id="navbar">
+      <!-- Logotipo en la parte superior izquierda -->
+      <div class="log-box">
+       <img id="scrollImage" src="view/img/index/armadev_blanco.png" height="30px"  alt="">
+      </div>
+      
+      <!-- Menú de navegación principal -->
+      <ul class="nav1-principal">
+        <li><a href="index.html" class="active">INICIO</a></li>
+        <li><a href="" id="noticia">SOBRE MÍ</a></li>
+        <li><a href="">TECNOLOGÍAS</a></li>
+        <li><a href="" id="videos">PROYECTOS</a></li>
+        <li><a href="">CONTACTO</a></li>
+      </ul>
+    </nav>
+    <div class="img-header">
+      <!--Inside the image, the text-->
+      <div class="header-info">
+        <h2>Hola, ¡soy Julen!</h2>
+        <hr>
+        <p>Analista SOC y desarrollador web apasionado por la seguridad de los entornos digitales y la creación de aplicaciones web innovadoras. ¡Bienvenido a mi espacio digital!</p>
+      </div>
+    </div>
+   
+  </header>
+
+  <button id="boton" onclick="mostrarModal()">☕</button>
+
+  <div class="modal fade" id="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Buy an Armadev coffee</h5>
+          <a href="#" class="cerrarModal" onclick="cerrarModal()">&times;</a>
+
+        </div>
+        <div class="modal-body">
+          <div id="opciones" style="display: flex; flex-wrap: wrap; gap: 10px;">
+            <div style="font-size: 40px;" class="opcion1" onclick="seleccionarCantidad(1)">☕</div> <br>X<br>
+            <div class="opcion" onclick="seleccionarCantidad(1)">1</div>
+            <div class="opcion" onclick="seleccionarCantidad(3)">3</div>
+            <div class="opcion" onclick="seleccionarCantidad(5)">5</div>
+            <!-- Input más pequeño para la cantidad personalizada -->
+            <input type="text" class="form-control" id="cantidadPersonalizada" aria-label="cantidadPersonalizada"
+              style="width: 50px;">
+          </div>
+          <input type="text" class="form-control" placeholder="Tu nombre" aria-label="Username">
+          <textarea class="form-control" id="mensaje" aria-label="With textarea"
+            placeholder="Mensaje(Opcional)"></textarea>
+          <button type="button" class="btn btn-primary" onclick="realizarSupport()">Support <span
+              id="totalSoporte">0</span>€</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="jumbotron">
+    <h1 class="display-4">Hello, world!</h1>
+    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+    <hr class="my-4">
+    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+    <p class="lead">
+      <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    </p>
+  </div>
+
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <!-- Enlace a Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <!-- Enlace a Font Awesome JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/js/all.min.js"></script>
+  <!--Mi Javascript-->
+  <script src="view/js/index.js"></script>
+
+</body>
+
+</html>
