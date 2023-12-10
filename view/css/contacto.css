@@ -1,4 +1,3 @@
-
 .img-header {
     background: url(../img/index/programando2_index);
 
@@ -47,11 +46,7 @@
 
 }
 
-
-
-
-
-/*Botón contáctame index*/
+/*Botón contáctame contacto*/
 .button-contactame {
 
     background: none;
@@ -71,9 +66,64 @@
 
 }
 
-
-
 .button-contactame:hover {
     background: white;
     color: black;
+}
+
+/*White section contacto*/
+
+.white-section {
+    background-color: #ffffff;
+    /* Color de fondo blanco */
+    height: 150vh;
+    display: flex;
+    flex-wrap: wrap;
+    /* Espaciado entre los elementos */
+}
+
+.text,
+.form {
+    flex: 1;
+    line-height: 23px;
+    /* Ocupa el 50% del ancho */
+    letter-spacing: 0.02em;
+    padding: 50px;
+    font-size: 13px !important;
+
+}
+
+.map {
+    flex: 1 100%;
+
+    /* Ocupa el 100% del ancho en la fila siguiente, pero no intenta expandirse más allá de eso */
+}
+
+
+/*Formulario*/
+
+.button-form {
+
+    background-color: black;
+    /* Color del botón */
+    /* Color del texto del botón */
+    text-decoration: none;
+    border: 2px solid #000;
+    
+    color: white;
+    border-radius: 2px;
+    font-size: 11px;
+    margin-top: 5% !important;
+    padding: 0px 20px !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase;
+    font-weight: 600;
+
+}
+
+.button-form:hover {
+    background-color: black;
+    color: black;
+    transition: 0.3s;
+    /* Color del botón al hacer hover */
 }
