@@ -109,12 +109,10 @@
     /* Color del texto del botón */
     text-decoration: none;
     border: 2px solid #000;
-    
     color: white;
-    border-radius: 2px;
     font-size: 11px;
     margin-top: 5% !important;
-    padding: 0px 20px !important;
+    padding: 2px 20px !important;
     letter-spacing: 1px !important;
     text-transform: uppercase;
     font-weight: 600;
