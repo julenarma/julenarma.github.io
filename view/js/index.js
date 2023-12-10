@@ -82,9 +82,6 @@ document.addEventListener("DOMContentLoaded", function () {
     animateCounters();
   });
   
-}); //--------------Dom Content End ----------------
-
-
 
 //--------------Función para mostrar el texto gradualmente-------------------
 function mostrarTextoGradualmente(elementId) {
@@ -111,3 +108,11 @@ function mostrarTextoGradualmente(elementId) {
 mostrarTextoGradualmente('parrafo');
 
 //--------------Función para mostrar el texto gradualmente end-------------------
+
+
+
+
+
+}); //--------------Dom Content End ----------------
+
+

@@ -100,3 +100,14 @@ function mostrarModal() {
     actualizarTotalSoporte(this.value);
   });
   //------------Donacion cafe end-------
+
+
+
+
+
+
+
+
+
+
+
