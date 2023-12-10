@@ -1,27 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  window.onscroll = function () {
-    stickyMenu()
-
-  };
-
-  var image = document.getElementById('scrollImage');
-  var navbar = document.getElementById('navbar');
-  var navText = document.querySelector('.nav1-principal');
-  var sticky = navbar.offsetTop;
-
-  function stickyMenu() {
-    if (window.pageYOffset > sticky) {
-      navbar.classList.add('sticky'); // Agregar la clase sticky
-      navText.style.color = 'black'; // Cambiar el color de los textos a negro
-      image.src = 'view/img/index/armadev_azul.png'; //imagen armadev azul
-    } else {
-      navbar.classList.remove('sticky'); // Eliminar la clase sticky
-      navText.style.color = 'white'; // Mantener el color blanco de los textos
-      image.src = 'view/img/index/armadev_blanco.png'; //Imagen armadev blanco
-    }
-  }
-
   //Botón index hacia sección 1
 
   $('.mini-button').on('click', function () {

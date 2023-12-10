@@ -1,9 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 /*imagen header*/
 
 .img-header {
@@ -180,9 +174,10 @@
 
 .grid-container {
     display: grid;
-    grid-template-columns: 1.4fr 1fr; /* Dos columnas de tamaño igual */
+    grid-template-columns: 1.4fr 1fr;
+    /* Dos columnas de tamaño igual */
     font-size: 15px;
-  
+
 
 }
 
@@ -195,7 +190,9 @@
 .item3 {
     /* Ambos items ocupan la mitad del ancho en la misma línea */
     grid-column: span 1;
+
 }
+
 
 .item4,
 .item5 {
@@ -214,6 +211,7 @@
     font-weight: 600 !important;
     letter-spacing: 2px !important;
     text-transform: uppercase;
+    margin-bottom: -8px !important;
 }
 
 
@@ -229,6 +227,100 @@
     padding: 20px;
 }
 
+
+.progress-value {
+    box-shadow: 0 10px 40px -10px #fff;
+    border-radius: 100px;
+    background: linear-gradient(90deg, #087ec4 0%, #087ec4 68%, #ccc 68%, #ccc 100%);
+    height: 10px;
+
+
+}
+
+/* Ajusta las animaciones para reflejar los nuevos porcentajes */
+.progress1 .progress-value {
+    animation: load1 3s normal forwards;
+    margin-bottom: 20px;
+    width: 30%; 
+}
+
+.progress2 .progress-value {
+    animation: load2 3s normal forwards;
+    margin-bottom: 20px;
+}
+
+.progress3 .progress-value {
+    animation: load3 3s normal forwards;
+    margin-bottom: 20px;
+}
+
+.progress4 .progress-value {
+    animation: load4 3s normal forwards;
+    margin-bottom: 20px;
+}
+
+.progress5 .progress-value {
+    animation: load5 3s normal forwards;
+    margin-bottom: 20px;
+    width: 50%; /
+}
+
+@keyframes load1 {
+    0% {
+        width: 50%;
+    }
+
+    100% {
+        width: 40%;
+    }
+}
+
+
+@keyframes load2 {
+    0% {
+        width: 50%;
+    }
+
+    100% {
+        width: 70%;
+    }
+}
+
+@keyframes load3 {
+    0% {
+        width: 50%;
+    }
+
+    100% {
+        width: 90%;
+    }
+}
+
+@keyframes load4 {
+    0% {
+        width: 50%;
+    }
+
+    100% {
+        width: 35%;
+    }
+}
+
+@keyframes load5 {
+    0% {
+        width: 50%;
+    }
+
+    100% {
+        width: 60%;
+    }
+}
+
+
+
+
+
+
 /*My stats section*/
 
 .my-stats {
@@ -237,7 +329,7 @@
 }
 
 .my-stats-image {
-    background: url(../img/index/programando_index.jpg);
+    background: url(../img/index/julen_foto2.PNG);
     background-attachment: fixed;
     background-size: cover;
     background-blend-mode: soft-light;
@@ -245,6 +337,7 @@
     position: relative;
     width: 100%;
     height: 65vh;
+    background-position:  center ; /* Ajusta esto según tus necesidades */
 
 }
 

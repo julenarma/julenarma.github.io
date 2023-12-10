@@ -9,7 +9,7 @@ body {
     padding: 0;
     font-style: 'Open Sans', sans-serif;
     color: #626262;
-    
+
 }
 
 
@@ -60,6 +60,10 @@ nav {
 
 }
 
+.nav1-principal li a.active {
+    border-bottom: 2px solid white;
+}
+
 
 nav.sticky {
     position: fixed;
@@ -76,6 +80,11 @@ nav.sticky a {
     padding-bottom: 1em;
 
 }
+
+nav.sticky a.active {
+    border-bottom: 2px solid black;
+}
+
 
 nav.sticky a:hover {
 

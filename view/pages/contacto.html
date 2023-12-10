@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!--Logo y titulo en la pestaña-->
+    <link rel="icon" href="../../view/img/index/ja_final.png" type="image/png" sizes="32x32">
+    <title>ArmaDev by Julen Armaolea</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Enlace a Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Enlace a la biblioteca flag-icon-css para iconos de banderas -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
+    <!-- Mi CSS -->
+    <link rel="stylesheet" href="../css/main.css" class="css">
+    <link rel="stylesheet" href="../css/contacto.css" class="css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/dist/typed.min.css">
+
+    <!-- Typed CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/dist/typed.min.css">
+
+    <!--Data AOS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+
+</head>
+
+
+</head>
+
+<body id="pageBody">
+    <header>
+
+        <nav id="navbar">
+            <!-- Logotipo en la parte superior izquierda -->
+            <div class="log-box">
+                <img id="scrollImage" src="../../view/img/index/armadev_blanco.png" height="30px" alt="">
+            </div>
+
+            <!-- Menú de navegación principal -->
+            <ul class="nav1-principal">
+                <li><a href="../../index.html" >INICIO</a></li>
+                <li><a href="" id="noticia">SOBRE MÍ</a></li>
+                <li><a href="">TECNOLOGÍAS</a></li>
+                <li><a href="" id="videos">PROYECTOS</a></li>
+                <li><a href="" class="active">CONTACTO</a></li>
+            </ul>
+        </nav>
+        <div class="img-header">
+            <!--Inside the image, the text-->
+            <div class="header-info">
+
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!--Maps-->
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2907.0158999799096!2d-2.855696749086401!3d43.23012628760047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4e494c114ba84d%3A0x6a2e62c27b265fa0!2sCalle+Txomin+Egileor%2C+52%2C+48960+Gald%C3%A1cano%2C+Vizcaya!5e0!3m2!1ses!2ses!4v1556615433616!5m2!1ses!2ses"
+        width="100%" height="450" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+    <!-- Fin Maps-->
+
+
+
+    <!--Boton de modal donaciones café-->
+    <button id="boton" onclick="mostrarModal()">☕</button>
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Buy an Armadev coffee</h5>
+                    <a href="#" class="cerrarModal" onclick="cerrarModal()">&times;</a>
+                </div>
+                <div class="modal-body">
+                    <div id="opciones" style="display: flex; flex-wrap: wrap; gap: 10px;">
+                        <div style="font-size: 40px;" class="opcion1" onclick="seleccionarCantidad(1)">☕</div> <br>X<br>
+                        <div class="opcion" onclick="seleccionarCantidad(1)">1</div>
+                        <div class="opcion" onclick="seleccionarCantidad(3)">3</div>
+                        <div class="opcion" onclick="seleccionarCantidad(5)">5</div>
+                        <!-- Input más pequeño para la cantidad personalizada -->
+                        <input type="text" class="form-control" id="cantidadPersonalizada"
+                            aria-label="cantidadPersonalizada" style="width: 50px;">
+                    </div>
+                    <input type="text" class="form-control" placeholder="Tu nombre" aria-label="Username">
+                    <textarea class="form-control" id="mensaje" aria-label="With textarea"
+                        placeholder="Mensaje(Opcional)"></textarea>
+                    <button type="button" class="btn btn-primary" onclick="realizarSupport()">Support <span
+                            id="totalSoporte">0</span>€</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- Enlace a Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- Enlace a Font Awesome JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/js/all.min.js"></script>
+    <!-- Typed JS -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <!--Mi Javascript-->
+    <script src="../../view/js/main.js"></script>
+    <script src="../../view/js/contacto.js"></script>
+
+    <!--Data AOS JS-->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+
+</body>
+
+</html>
