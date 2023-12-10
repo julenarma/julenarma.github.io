@@ -175,7 +175,67 @@
     color: white;
 }
 
+/*Sección sobre mi index comienzo*/
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr; /* Dos columnas de tamaño igual */
+    font-size: 15px;
+  
+
+}
+
+.item1 {
+    grid-column: span 2;
+    /* Este item ocupa las dos columnas */
+}
+
+.item2,
+.item3 {
+    /* Ambos items ocupan la mitad del ancho en la misma línea */
+    grid-column: span 1;
+}
+
+.item4,
+.item5 {
+    /* Ambos items ocupan la mitad del ancho en la misma línea */
+    grid-column: span 1;
+}
+
+.blue-box1 {
+    background-color: #087ec4;
+    color: white;
+    padding-top: 3% !important;
+    padding-bottom: 3% !important;
+    font-size: 11px;
+    text-align: center;
+    line-height: 15px;
+    font-weight: 600 !important;
+    letter-spacing: 2px !important;
+    text-transform: uppercase;
+}
+
+
+.photo1-about-me,
+.photo2-about-me {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.title-about-me,
+.text1-about-me {
+    padding: 20px;
+}
+
 /*My stats section*/
+
+.my-stats {
+    margin-top: 5% !important;
+
+}
+
 .my-stats-image {
     background: url(../img/index/programando_index.jpg);
     background-attachment: fixed;
@@ -198,15 +258,15 @@
     transition: transform 0.5s ease;
     display: flex;
     flex-direction: row;
-    justify-content: space-between; /* Cambia a 'column' si prefieres la disposición vertical */
+    justify-content: space-between;
+    /* Cambia a 'column' si prefieres la disposición vertical */
     color: white;
 }
 
-  .number-container span {
+.number-container span {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 30px; /* Ajusta el espaciado entre cada número e icono según tus necesidades */
-  }
-
-
+    margin: 0 30px;
+    /* Ajusta el espaciado entre cada número e icono según tus necesidades */
+}

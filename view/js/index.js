@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
   //------Data aos animacion start----
 
   AOS.init({
-    offset: 0,
+    offset: 200,
     duration: 1000,
     easing: 'ease-in-out',
     once: true,
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
         var targetValue;
 
         if (index === 0) {
-          targetValue = 100;
+          targetValue = 20;
         } else if (index === 1) {
           targetValue = 400;
         } else if (index === 2) {
