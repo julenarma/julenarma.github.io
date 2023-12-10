@@ -1,27 +1,96 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  window.onscroll = function() { stickyMenu() };
+  window.onscroll = function () {
+    stickyMenu()
+  };
 
   var image = document.getElementById('scrollImage');
   var navbar = document.getElementById('navbar');
   var navText = document.querySelector('.nav1-principal');
   var sticky = navbar.offsetTop;
-  
+
   function stickyMenu() {
     if (window.pageYOffset > sticky) {
-      navbar.classList.add('sticky');  // Agregar la clase sticky
-      navText.style.color = 'black';  // Cambiar el color de los textos a negro
-      image.src = 'view/img/index/armadev_azul.png';  //imagen armadev azul
+      navbar.classList.add('sticky'); // Agregar la clase sticky
+      navText.style.color = 'black'; // Cambiar el color de los textos a negro
+      image.src = 'view/img/index/armadev_azul.png'; //imagen armadev azul
     } else {
-      navbar.classList.remove('sticky');  // Eliminar la clase sticky
-      navText.style.color = 'white';  // Mantener el color blanco de los textos
+      navbar.classList.remove('sticky'); // Eliminar la clase sticky
+      navText.style.color = 'white'; // Mantener el color blanco de los textos
       image.src = 'view/img/index/armadev_blanco.png'; //Imagen armadev blanco
     }
   }
-  
-  
+
+  //Botón index hacia sección 1
+
+  $('.mini-button').on('click', function () {
+    $('html, body').animate({
+      scrollTop: $(".white-section").offset().top
+    }, 1000);
+  });
+
+
+
+  //------Data aos animacion start----
+
+  AOS.init({
+    offset: 50,
+    duration: 1000,
+    easing: 'ease-in-out',
+    once: true,
+  });
+
+ 
+var animationCompleted = [false, false];
+
+function animateCounters() {
+    $(".my-stats span").each(function (index) {
+        var $this = $(this);
+        var targetValue;
+
+        if (index === 0) {
+            targetValue = 100;
+        } else if (index === 1) {
+            targetValue = 400;
+        } else if (index === 2) {
+            targetValue = 7090;
+        }
+
+        if (!animationCompleted[index]) {
+            $({ value: 0 }).animate(
+                {
+                    value: targetValue
+                },
+                {
+                    duration: 2000,
+                    easing: "swing",
+                    step: function () {
+                        $this.find("div").text(Math.ceil(this.value));
+                    },
+                    complete: function () {
+                        animationCompleted[index] = true;
+                    },
+                }
+            );
+        }
+    });
+}
+
+// Verifica al desplazarse y anima los contadores
+$(window).on("scroll resize", function () {
+    animateCounters();
+});
+
+// También verifica cuando se inicia la animación de entrada de AOS y anima los contadores
+$(document).on('aos:in:my-stats', function (event) {
+    animateCounters();
+});
+
+
 }); //--------------Dom Content End ----------------
 
+
+//------mostrar cerrar modal---
 function mostrarModal() {
   $('#modal').modal('show');
 }
@@ -29,7 +98,10 @@ function mostrarModal() {
 function cerrarModal() {
   $('#modal').modal('hide');
 }
+//---mostrar cerrar modal fin ---
 
+
+//------------Donacion cafe start-------
 function realizarSupport() {
   // Lógica de pago
   var cantidadSeleccionada = getCantidadSeleccionada();
@@ -82,3 +154,30 @@ document.getElementById('cantidadPersonalizada').addEventListener('input', funct
 
   actualizarTotalSoporte(this.value);
 });
+//------------Donacion cafe end-------
+
+//--------------Función para mostrar el texto gradualmente-------------------
+function mostrarTextoGradualmente(elementId) {
+  const elemento = document.getElementById(elementId);
+  const palabras = elemento.innerText.split(' ');
+
+  // Se reinicia el contenido del elemento
+  elemento.innerHTML = '';
+
+  palabras.forEach((palabra, index) => {
+    // Se añade cada palabra con un pequeño retraso
+    setTimeout(() => {
+      elemento.innerHTML += palabra + ' ';
+    }, index * 300); // Puedes ajustar la velocidad modificando el valor de '500'
+  });
+
+  // Se muestra el texto con la animación de opacidad
+  elemento.classList.add('hidden-text');
+
+}
+
+// Llamada a la función para cada elemento
+
+mostrarTextoGradualmente('parrafo');
+
+//--------------Función para mostrar el texto gradualmente end-------------------

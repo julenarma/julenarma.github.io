@@ -1,15 +1,17 @@
-body {
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    box-sizing: border-box;
 }
 
 body {
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
+    font-style: 'Open Sans', sans-serif;
+    color: #626262;
+    
 }
+
 
 
 nav {
@@ -18,7 +20,7 @@ nav {
     top: 0;
     background-color: transparent;
     z-index: 1000;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.5s ease;
     display: flex;
     max-height: 65px;
 
@@ -45,14 +47,17 @@ nav {
 .nav1-principal li a {
     color: white;
     text-decoration: none;
-    padding-bottom: 0.3em;
+    padding-bottom: 1em;
     font-weight: 600;
     font-size: 11px;
     letter-spacing: 1px;
+
+
 }
 
 .nav1-principal a:hover {
-    border-bottom: 3px solid white;
+    border-bottom: 2px solid white;
+
 }
 
 
@@ -63,20 +68,20 @@ nav.sticky {
     background-color: white;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     color: black;
+
 }
 
 nav.sticky a {
     color: black;
-    padding-bottom: 0.3em;
+    padding-bottom: 1em;
+
 }
 
 nav.sticky a:hover {
-    color: black;
-    border-bottom: 3px solid black;
 
+    border-bottom: 2px solid black;
 
 }
-
 
 /*Boton de gestion de pagos*/
 

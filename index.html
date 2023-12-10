@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <!--Logo y titulo en la pestaña-->
-  <link rel="icon" href="view/img/index/logo2.jpg" type="image/png">
-  <title>ArmaDev</title>
+  <link rel="icon" href="view/img/index/ja_final.png" type="image/png" sizes="32x32">
+  <title>ArmaDev by Julen Armaolea</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Enlace a Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -14,46 +14,29 @@
   <!-- Mi CSS -->
   <link rel="stylesheet" href="view/css/index.css" class="css">
   <link rel="stylesheet" href="view/css/main.css" class="css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/dist/typed.min.css">
 
 
-  <!-- EmojiButton CDN -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/emoji-button@5.0.0/dist/emoji-button.css">
-  <script src="https://cdn.jsdelivr.net/npm/emoji-button@5.0.0/dist/emoji-button.js"></script>
+  <!-- Typed CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/dist/typed.min.css">
+
+  <!--Data AOS-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
 
 </head>
 
 
+</head>
+
 <body id="pageBody">
   <header>
-    <!--   <div class="nav-sticky">
-      <div class="list-container">
-
-        <div class="lists" id="list">
-          
-          <div class="log-box">
-            <img src="" alt="" width="150px">
-          </div>
-          <div class="nav1-principal">
-            <li><a href="index.html" class="active">HOME</a></li>
-            <li> <a href="" id="noticia">ABOUT ME</a></li>
-            <li> <a href="">TECH STACK</a></li>
-            <li> <a href="" id="videos">PROJECTS</a></li>
-            <li> <a href="">CONTACT</a></li>
-          </div>
-
-        </div>
-      </div> 
-      </div>-->
-    <!--Botón para abrir el menú lateral-->
-    <!--<div id="mainbox" onclick="openMenuIndex()">&#9776; &nbsp; MENÚ</div>-->
-
 
     <nav id="navbar">
       <!-- Logotipo en la parte superior izquierda -->
       <div class="log-box">
-       <img id="scrollImage" src="view/img/index/armadev_blanco.png" height="30px"  alt="">
+        <img id="scrollImage" src="view/img/index/armadev_blanco.png" height="30px" alt="">
       </div>
-      
+
       <!-- Menú de navegación principal -->
       <ul class="nav1-principal">
         <li><a href="index.html" class="active">INICIO</a></li>
@@ -66,23 +49,65 @@
     <div class="img-header">
       <!--Inside the image, the text-->
       <div class="header-info">
-        <h2>Hola, ¡soy Julen!</h2>
-        <hr>
-        <p>Analista SOC y desarrollador web apasionado por la seguridad de los entornos digitales y la creación de aplicaciones web innovadoras. ¡Bienvenido a mi espacio digital!</p>
+        <h2 id="titulo" class="hidden-text">
+          <div class="blue-box">Hola,</div>
+        </h2>
+        <p id="parrafo" class="hidden-text">Mi nombre es Julen Armaolea. Soy Analista SOC y desarrollador
+          web apasionado por la seguridad de los entornos digitales y la creación de aplicaciones web innovadoras.
+          ¡Bienvenido a mi espacio digital!</p>
+
+      </div>
+      <div class="header-button">
+        <a class="mini-button" id="button1" href="#seccion1">
+          <i class="fas fa-chevron-down"></i>
+        </a>
       </div>
     </div>
-   
+
   </header>
 
-  <button id="boton" onclick="mostrarModal()">☕</button>
 
+  <!-- Sección en blanco con título y texto -->
+  <section class="white-section">
+    <p style="letter-spacing: 2px;">DESARROLLO DE APLICACIONES IOS, ANDROID Y
+      WEB</p>
+    <h2>Mi nombre es Julen Armaolea, full-stack developer.</h2>
+    <p>Como analista de Seguridad Operativa (SOC) y desarrollador web y multiplataforma, encuentro en cada proyecto
+      una oportunidad para crecer y aprender. Mi enfoque se centra en proporcionar soluciones innovadoras y seguras en
+      el mundo del desarrollo de software.</p>
+    <img src="view/img/index/ja_final.png" height="150px" alt="">
+    <span class="interested">¿Te interesa lo que hago?</span>
+    <button class="button-contactame">Contáctame</button>
+  </section>
+
+
+  <section class="my-stats">
+    <div class="my-stats-image">
+      <!-- Números que se mueven al hacer scroll -->
+      <div class="number-container">
+        <span data-aos="fade-up">
+          <i class="fas fa-trophy" style="color: #ababab;"></i>
+          <div id="projects">0</div>
+          <span class="interested" style="color: #ababab;">PROYECTOS FINALIZADOS</span>
+        </span>
+        <span data-aos="fade-up">
+          <i class="fas fa-coffee" style="color: #ababab;"></i>
+          <div id="coffee">0</div>
+          <span class="interested" style="color: #ababab;">TAZAS DE CAFÉ</span>
+        </span>
+        <!-- Eliminé el span adicional que estaba mal cerrado -->
+      </div>
+    </div>
+  </section>
+
+  <!--Boton de modal donaciones café-->
+  <button id="boton" onclick="mostrarModal()">☕</button>
   <div class="modal fade" id="modal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">Buy an Armadev coffee</h5>
           <a href="#" class="cerrarModal" onclick="cerrarModal()">&times;</a>
-
         </div>
         <div class="modal-body">
           <div id="opciones" style="display: flex; flex-wrap: wrap; gap: 10px;">
@@ -104,27 +129,28 @@
     </div>
   </div>
 
-
-  <div class="jumbotron">
-    <h1 class="display-4">Hello, world!</h1>
-    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-    <hr class="my-4">
-    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-    <p class="lead">
-      <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-    </p>
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1>Bootstrap Tutorial</h1>
+      <p>Bootstrap is the most popular HTML, CSS...</p>
+    </div>
   </div>
-
 
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <!-- Enlace a Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <!-- Enlace a Font Awesome JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/js/all.min.js"></script>
+  <!-- Typed JS -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <!--Mi Javascript-->
   <script src="view/js/index.js"></script>
+
+  <!--Data AOS JS-->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
 
 </body>
 

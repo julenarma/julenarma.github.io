@@ -4,15 +4,6 @@
     box-sizing: border-box;
 }
 
-/*Body*/
-
-body {
-    background: white;
-    font-family: 'Raleway', sans-serif;
-    overflow-x: hidden;
-}
-
-
 /*imagen header*/
 
 .img-header {
@@ -24,10 +15,11 @@ body {
     position: relative;
     width: 100%;
     height: 100vh;
-    
-  }
 
-.img-header .header-info{
+}
+
+.img-header .header-info,
+.header-button {
     position: absolute;
     /*Quiero que sea flex, y que la dirección del texto, sea en columna */
     display: flex;
@@ -36,7 +28,7 @@ body {
     /*En columna*/
     flex-direction: column;
     /*Margin-top por arriba de 0*/
-    top: -70px;
+    top: 0px;
     /*  Anchura que ocupe el 100% de la ventana*/
     width: 100%;
     /* Altura que ocupe el 100% de la ventana*/
@@ -50,9 +42,19 @@ body {
 .img-header .header-info h2 {
 
     color: white;
-    font-size: 70px;
-    font-weight: normal;
+    font-size: 45px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 35px;
 
+}
+
+.blue-box {
+    background-color: #087ec4 !important;
+    display: inline-block;
+    /* Asegura que el fondo solo ocupe el ancho del contenido */
+    padding: 30px;
+    /* Ajusta el relleno según sea necesario */
 }
 
 .img-header .header-info hr {
@@ -60,14 +62,151 @@ body {
     background: white;
     width: 600px;
     margin: 15px 0;
+
 }
 
 .img-header .header-info p {
 
     color: white;
-    font-size: 20px;
-    width: 80%;
+    font-size: 15px;
+    width: 70%;
     margin: 0 auto;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 
 }
+
+/* Estilos del botón */
+.mini-button {
+    background-color: white;
+    /* Color del botón */
+    /* Color del texto del botón */
+    text-decoration: none;
+    border-radius: 5px;
+    /* Bordes redondeados */
+    color: black;
+    border-radius: 2px;
+    font-size: 17px;
+    padding: 0px 8px;
+    margin-top: 475px;
+
+}
+
+.mini-button:hover {
+    background-color: black;
+    color: wheat;
+    /* Color del botón al hacer hover */
+}
+
+
+/* Estilo para la sección en blanco */
+.white-section {
+    background-color: #ffffff;
+    /* Color de fondo blanco */
+    position: relative;
+    width: 100%;
+    height: 130vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+}
+
+/* Estilo para el título */
+.white-section h2 {
+    font-weight: 700;
+    line-height: 45px;
+    font-size: 36px;
+    letter-spacing: normal;
+    text-transform: uppercase;
+    width: 50% !important;
+    margin-bottom: 0 !important;
+    margin-top: 4% !important;
+    float: none !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center;
+    color: black;
+
+}
+
+/* Estilo para el texto */
+.white-section p {
+    line-height: 26px;
+    font-size: 14px;
+    width: 50% !important;
+    margin-bottom: 0 !important;
+    margin-top: 4% !important;
+    float: none !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    clear: both;
+    text-align: center;
+
+
+}
+
+/*Botón contáctame index*/
+.button-contactame {
+    background: none;
+    border: solid 2px black;
+    color: black;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1em;
+    outline: none;
+    padding: 2px 14px !important;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    letter-spacing: 1px;
+    line-height: 55px !important;
+    font-weight: 600;
+}
+
+/*Texto interested index*/
+.interested {
+    margin-bottom: 2% !important;
+    font-size: 14px;
+}
+
+.button-contactame:hover {
+    background: black;
+    color: white;
+}
+
+/*My stats section*/
+.my-stats-image {
+    background: url(../img/index/programando_index.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-blend-mode: soft-light;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: relative;
+    width: 100%;
+    height: 65vh;
+
+}
+
+
+.number-container {
+    font-size: 48px !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.5s ease;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Cambia a 'column' si prefieres la disposición vertical */
+    color: white;
+}
+
+  .number-container span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 30px; /* Ajusta el espaciado entre cada número e icono según tus necesidades */
+  }
+
 
