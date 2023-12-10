@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.onscroll = function () {
     stickyMenu()
+
   };
 
   var image = document.getElementById('scrollImage');
@@ -34,59 +35,75 @@ document.addEventListener("DOMContentLoaded", function () {
   //------Data aos animacion start----
 
   AOS.init({
-    offset: 50,
+    offset: 0,
     duration: 1000,
     easing: 'ease-in-out',
     once: true,
   });
 
- 
-var animationCompleted = [false, false];
+  var animationCompleted = [false, false, false];
+  var animated = false;
 
-function animateCounters() {
-    $(".my-stats span").each(function (index) {
+  function isElementInViewport(el, offset) {
+    var rect = el.getBoundingClientRect();
+    return (
+      rect.top >= -offset &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  function animateCounters() {
+    if (!animated && isElementInViewport($(".my-stats")[0], 0)) {
+      $(".my-stats span").each(function (index) {
         var $this = $(this);
         var targetValue;
 
         if (index === 0) {
-            targetValue = 100;
+          targetValue = 100;
         } else if (index === 1) {
-            targetValue = 400;
+          targetValue = 400;
         } else if (index === 2) {
-            targetValue = 7090;
+          targetValue = 7090;
         }
 
         if (!animationCompleted[index]) {
-            $({ value: 0 }).animate(
-                {
-                    value: targetValue
-                },
-                {
-                    duration: 2000,
-                    easing: "swing",
-                    step: function () {
-                        $this.find("div").text(Math.ceil(this.value));
-                    },
-                    complete: function () {
-                        animationCompleted[index] = true;
-                    },
-                }
-            );
+          $({
+            value: 0
+          }).animate({
+            value: targetValue
+          }, {
+            duration: 2000,
+            easing: "swing",
+            step: function () {
+              $this.find("div").text(Math.ceil(this.value));
+            },
+            complete: function () {
+              animationCompleted[index] = true;
+              animated = true;
+            },
+          });
         }
-    });
-}
+      });
+    }
+  }
 
-// Verifica al desplazarse y anima los contadores
-$(window).on("scroll resize", function () {
+  // Verifica al desplazarse y anima los contadores
+  $(window).on("scroll resize", function () {
     animateCounters();
-});
-
-// También verifica cuando se inicia la animación de entrada de AOS y anima los contadores
-$(document).on('aos:in:my-stats', function (event) {
+  });
+  // Asegura que la animación de los contadores se ejecute después de la carga inicial
+  $(window).on('load', function () {
+    animated = false;
     animateCounters();
-});
+  });
 
-
+  // Utiliza el evento 'aos:in' para iniciar la animación de cada contador específico
+  $('[data-aos]').on('aos:in', function (event) {
+    animateCounters();
+  });
+  
 }); //--------------Dom Content End ----------------
 
 
