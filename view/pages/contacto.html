@@ -15,11 +15,7 @@
     <link rel="stylesheet" href="../css/main.css" class="css">
     <link rel="stylesheet" href="../css/contacto.css" class="css">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/dist/typed.min.css">
-
-    <!-- Typed CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/dist/typed.min.css">
-
+   
     <!--Data AOS-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
 
@@ -53,9 +49,7 @@
                 <p>Estoy emocionado/a de escucharte. Si tienes alguna pregunta, comentario o simplemente quieres
                     saludar, no dudes en ponerte en contacto conmigo. ¡Responderé lo más pronto posible!</p>
                 <a class="button-contactame" href="#seccion1">CONTACTA CONMIGO</a>
-                
             </div>
-
         </div>
 
     </header>
@@ -69,23 +63,23 @@
         </div>
         <div class="form">
             <div class="mb-3">
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="TU NOMBRE">
+                <input type="email" class="form-control"  id="nombreContacto" placeholder="TU NOMBRE">
             </div>
             <div class="mb-3">
-                <input type="email" class="form-control" id="exampleFormControlInput2" placeholder="TU EMAIL">
+                <input type="email" class="form-control" id="emailContacto" placeholder="TU EMAIL">
             </div>
             <div class="mb-3">
-                <input type="email" class="form-control" id="exampleFormControlInput3" placeholder="ASUNTO">
+                <input type="email" class="form-control"  id="asuntoContacto" placeholder="ASUNTO">
             </div>
             <div class="mb-3">
-                <textarea class="form-control" id="exampleFormControlTextarea4" rows="3" placeholder="MENSAJE"></textarea>
+                <textarea class="form-control" rows="3" id="mensajeContacto" placeholder="MENSAJE"></textarea>
             </div>
-            <button type="submit" class="button-form">Enviar mensaje</button>
+            <button type="submit" class="button-form" onclick="enviarContacto()" id="botonContactoEnviar">Enviar mensaje</button>
         </div>
         <div class="map">
             <!--Maps-->
             <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2907.0158999799096!2d-2.855696749086401!3d43.23012628760047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4e494c114ba84d%3A0x6a2e62c27b265fa0!2sCalle+Txomin+Egileor%2C+52%2C+48960+Gald%C3%A1cano%2C+Vizcaya!5e0!3m2!1ses!2ses!4v1556615433616!5m2!1ses!2ses"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46451.08014436758!2d-2.728127478552371!3d43.310229356479866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4e3a1bb97a1587%3A0x404f58273cba070!2sGernika-Lumo%2C%20Bizkaia!5e0!3m2!1seu!2ses!4v1702251013794!5m2!1seu!2ses"
                 width="100%" height="450" frameborder="0" style="border:0" allowfullscreen=""></iframe>
             <!-- Fin Maps-->
 
@@ -132,8 +126,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <!-- Enlace a Font Awesome JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/js/all.min.js"></script>
-    <!-- Typed JS -->
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <!--Mi Javascript-->
     <script src="../../view/js/main.js"></script>
     <script src="../../view/js/contacto.js"></script>

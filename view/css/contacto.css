@@ -100,7 +100,6 @@
 
 .map {
     flex: 1 100%;
-
     /* Ocupa el 100% del ancho en la fila siguiente, pero no intenta expandirse más allá de eso */
 }
 
