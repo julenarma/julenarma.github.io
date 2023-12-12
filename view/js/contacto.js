@@ -11,34 +11,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-
-/*Función para enviar el comentario*/
+/* Insertar Contacto */
 function enviarContacto() {
-
     var nombre = $("#nombreContacto").val();
     var email = $("#emailContacto").val();
     var asunto = $("#asuntoContacto").val();
     var mensaje = $("#mensajeContacto").val();
 
     if (nombre !== "" && email !== "" && asunto !== "" && mensaje !== "") {
+        var url = "../../controller/cInsertContact.php";
+        var data = {
+            'nombre': nombre,
+            'email': email,
+            'asunto': asunto,
+            'mensaje': mensaje,
+        };
 
-        $.ajax({
+        // Llamada fetch
+        fetch(url, {
             method: 'POST',
-            data: {
-                "nombre": nombre,
-                "email": email,
-                "asunto": asunto,
-                "mensaje": mensaje
-            },
-            url: "../../controller/cInsertContact.php",
-            success: function () {
-                console.log(nombre, email, asunto,mensaje);
-            
-             alert("ya esta")
-            },
-            error: function (xhr) {
-                alert("An error occurred: " + xhr.status + " " + xhr.statusText);
+            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json'
             }
-        });
+        })
+        .then(res => res.json())
+        .then(result => {
+            if (result.error) {
+                alert("Error: " + result.error);
+            } else {
+                alert("Mensaje enviado correctamente");
+            }
+        })
+        .catch(error => console.error('Error status:', error));
+    } else {
+        alert("Por favor, complete todos los campos.");
     }
 }

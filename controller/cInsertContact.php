@@ -2,25 +2,27 @@
 
 include_once("../model/contactModel.php");
 
-// Verifica si al menos uno de los campos no está vacío
-if (!empty($_POST['nombre']) && !empty($_POST['email']) && !empty($_POST['asunto']) && !empty($_POST['mensaje'])) {
-    $modeloContacto = new contactModel();
-    $response = array();
+$data = json_decode(file_get_contents("php://input"), true);
+$response = array();
+$nuevoContacto = new contactModel();
 
-    $modeloContacto->setNombre($_POST['nombre']);
-    $modeloContacto->setEmail($_POST['email']);
-    $modeloContacto->setAsunto($_POST['asunto']);
-    $modeloContacto->setMensaje($_POST['mensaje']);
+if ($data && isset($data['nombre'], $data['email'], $data['asunto'], $data['mensaje'])) {
+    $nombre = $data['nombre'];
+    $email = $data['email'];
+    $asunto = $data['asunto'];
+    $mensaje = $data['mensaje'];
 
-    try {
-        $response['answer'] = $modeloContacto->insertContact();
-        echo json_encode($response);
-    } catch (Exception $e) {
-        $response['error'] = $e->getMessage();
-        echo json_encode($response);
-    }
+    $nuevoContacto->setNombre($nombre);
+    $nuevoContacto->setEmail($email);
+    $nuevoContacto->setAsunto($asunto);
+    $nuevoContacto->setMensaje($mensaje);
 
-    unset($modeloContacto);
+    $response = $nuevoContacto->insertContact();
 } else {
-    echo json_encode(['error' => 'Datos incompletos en la solicitud']);
+    $response = ['error' => true, 'message' => 'Datos incompletos en la solicitud'];
 }
+
+echo json_encode($response);
+
+$nuevoContacto->CloseConnect();  // Cerrar la conexión después de su uso.
+unset($nuevoContacto);
