@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../css/main.css" class="css">
     <link rel="stylesheet" href="../css/contacto.css" class="css">
 
-   
+
     <!--Data AOS-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
 
@@ -61,21 +61,23 @@
             <p>¡Gracias por tu interés en ponerte en contacto! Utiliza el formulario a continuación para enviarme un
                 mensaje o simplemente para saludar. Estoy emocionado/a de conectarme contigo.</p>
         </div>
-        <div class="form" method="post" >
-            <div class="mb-3">
-                <input type="email" class="form-control"  id="nombreContacto" placeholder="TU NOMBRE">
-            </div>
-            <div class="mb-3">
-                <input type="email" class="form-control" id="emailContacto" placeholder="TU EMAIL">
-            </div>
-            <div class="mb-3">
-                <input type="email" class="form-control"  id="asuntoContacto" placeholder="ASUNTO">
-            </div>
-            <div class="mb-3">
-                <textarea class="form-control" rows="3" id="mensajeContacto" placeholder="MENSAJE"></textarea>
-            </div>
-            <button type="submit" class="button-form" onclick="enviarContacto()" id="botonContactoEnviar">Enviar mensaje</button>
-        </div>
+        <form class="form">
+            <span class="mb-3">
+                <input type="text"  id="nombreContacto" placeholder="TU NOMBRE">
+            </span>
+            <span class="mb-3">
+                <input type="text" id="emailContacto" placeholder="TU EMAIL">
+            </span>
+            <span class="mb-3">
+                <input type="text" id="asuntoContacto" placeholder="ASUNTO">
+            </span>
+            <span class="mb-3">
+                <textarea rows="3" id="mensajeContacto" placeholder="MENSAJE"></textarea>
+            </span>
+            <button type="submit" class="button-form" onclick="enviarContactoForm()" id="botonContactoEnviar">Enviar
+                mensaje</button>
+
+        </form>
         <div class="map">
             <!--Maps-->
             <iframe
@@ -85,8 +87,6 @@
 
         </div>
     </section>
-
-
 
     <!--Boton de modal donaciones café-->
     <button id="boton" onclick="mostrarModal()">☕</button>
@@ -132,6 +132,9 @@
 
     <!--Data AOS JS-->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <!--Sweet Alert 2-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
 </body>
