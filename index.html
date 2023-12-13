@@ -161,13 +161,13 @@
   <!--Sección my stats comienzo fin-->
 
   <!--Boton de modal donaciones café-->
-  <button id="boton" onclick="mostrarModal()">☕</button>
+  <button id="botonAbrirModal" onclick="mostrarModal()">☕</button>
   <div class="modal fade" id="modal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">Buy an Armadev coffee</h5>
-          <a href="#" class="cerrarModal" onclick="cerrarModal()">&times;</a>
+          <a href="#" id="botonCerrarModal" onclick="cerrarModal()">&times;</a>
         </div>
         <div class="modal-body">
           <div id="opciones" style="display: flex; flex-wrap: wrap; gap: 10px;">

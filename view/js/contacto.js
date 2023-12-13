@@ -8,17 +8,36 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 1000);
     });
 
-
 });
 
-/* Insertar Contacto */
-function enviarContacto() {
+function enviarContactoForm() {
     var nombre = $("#nombreContacto").val();
     var email = $("#emailContacto").val();
     var asunto = $("#asuntoContacto").val();
     var mensaje = $("#mensajeContacto").val();
 
-    if (nombre !== "" && email !== "" && asunto !== "" && mensaje !== "") {
+    permitirInsertContacto = true;
+
+    // Restaurar los estilos de borde a su estado original
+    $("#nombreContacto, #emailContacto, #asuntoContacto").css("border", "");
+
+    // Validar campos
+    if (nombre.trim() === "") {
+        $("#nombreContacto").css("border", "1px solid red");
+        permitirInsertContacto = false;
+    }
+
+    if (email.trim() === "") {
+        $("#emailContacto").css("border", "1px solid red");
+        permitirInsertContacto = false;
+    }
+
+    if (asunto.trim() === "") {
+        $("#asuntoContacto").css("border", "1px solid red");
+        permitirInsertContacto = false;
+    }
+
+    if (permitirInsertContacto) {
         var url = "../../controller/cInsertContact.php";
         var data = {
             'nombre': nombre,
@@ -27,7 +46,6 @@ function enviarContacto() {
             'mensaje': mensaje,
         };
 
-        // Llamada fetch
         fetch(url, {
             method: 'POST',
             body: JSON.stringify(data),
@@ -37,14 +55,52 @@ function enviarContacto() {
         })
         .then(res => res.json())
         .then(result => {
-            if (result.error) {
-                alert("Error: " + result.error);
+            if (!result.error) {
+                // Muestra el modal de éxito
+                Swal.fire({
+                    icon: 'success',
+                    title: '¡Enviado con éxito!',
+                    text: 'Tu mensaje ha sido enviado correctamente.',
+                    showCancelButton: false,
+                    showConfirmButton: true,
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'Aceptar',
+                    reverseButtons: true,
+                })
+
+                $("#nombreContacto").val("");
+                $("#emailContacto").val("");
+                $("#asuntoContacto").val("");
+                $("#mensajeContacto").val("");
+
             } else {
-                alert("Mensaje enviado correctamente");
+                // Muestra un mensaje de error
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Hubo un error al enviar el mensaje. Por favor, intenta nuevamente.',
+                    showCancelButton: false,
+                    showConfirmButton: true,
+                    confirmButtonColor: '#d33',
+                    confirmButtonText: 'Aceptar',
+                    reverseButtons: true,
+                });
             }
         })
-        .catch(error => console.error('Error status:', error));
+        .catch(error => {
+            console.error('Error status:', error);
+        });
     } else {
-        alert("Por favor, complete todos los campos.");
+        // Muestra un mensaje de campos vacíos
+        Swal.fire({
+            icon: 'warning',
+            title: 'Campos vacíos',
+            text: 'Completa todos los campos antes de enviar el mensaje.',
+            showCancelButton: false,
+            showConfirmButton: true,
+            confirmButtonColor: '#d33',
+            confirmButtonText: 'Aceptar',
+            reverseButtons: true,
+        });
     }
 }
