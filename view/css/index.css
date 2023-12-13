@@ -1,3 +1,11 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-style: 'Open Sans', sans-serif;
+    color: #626262;
+    font-size: 13px;
+}
+
 /*imagen header*/
 
 .img-header {
