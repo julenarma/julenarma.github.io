@@ -1,4 +1,4 @@
-body{
+body {
     margin: 0;
     padding: 0;
     font-style: 'Open Sans', sans-serif;
@@ -109,10 +109,63 @@ body{
     /* Ocupa el 100% del ancho en la fila siguiente, pero no intenta expandirse más allá de eso */
 }
 
+/*Texto izquierda formulario*/
+
+.title_contact {
+
+    color: #000;
+    line-height: 26px;
+    font-weight: 600 !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase;
+    font-size: 14px !important;
+    margin-bottom: 5% !important;
+    text-decoration: underline;
+}
+
+.text_contact a{
+    
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.redes-sociales {
+    margin-top: 5% !important;
+}
+
+.redes-sociales a {
+    margin: 0 10px;
+    /* Ajusta el margen entre los íconos según sea necesario */
+    font-size: 28px;
+}
+
+
+.redes-sociales a {
+    color: #0077b5;
+    /* Color de LinkedIn */
+}
+
+.redes-sociales a:nth-child(2) {
+    color: #e4405f;
+    /* Color de Instagram */
+}
+
+.redes-sociales a:nth-child(3) {
+    color: #4078c0;
+    /* Color de GitHub */
+}
+
+.redes-sociales a:hover {
+    filter: brightness(1.5);
+    /* Intensifica el color al pasar el ratón sobre él */
+}
 
 /*Formulario*/
 
-input, textarea {
+input,
+textarea {
     font-family: 'Open Sans', sans-serif;
     border: 1px solid #dfdfdf;
     letter-spacing: 1px;

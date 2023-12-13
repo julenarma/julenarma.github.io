@@ -59,13 +59,6 @@ body{
     /* Ajusta el relleno según sea necesario */
 }
 
-.img-header .header-info hr {
-    height: 2px;
-    background: white;
-    width: 600px;
-    margin: 15px 0;
-
-}
 
 .img-header .header-info p {
 
@@ -90,13 +83,15 @@ body{
     border-radius: 2px;
     font-size: 17px;
     padding: 0px 8px;
-    margin-top: 475px;
-
+    bottom: 10%;
+    position: absolute;
+    
 }
 
 .mini-button:hover {
     background-color: black;
     color: white;
+    cursor: pointer;
     /* Color del botón al hacer hover */
 }
 
@@ -185,7 +180,6 @@ body{
     grid-template-columns: 1.4fr 1fr;
     /* Dos columnas de tamaño igual */
     font-size: 15px;
-
 
 }
 
