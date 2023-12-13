@@ -436,8 +436,10 @@ body {
     font-weight: 600;
     font-size: 11px;
     letter-spacing: 1px;
+    cursor: pointer;
 
 }
+
 .nav2-principal li a.active {
     border-bottom: 1px solid black;
 }
@@ -445,4 +447,22 @@ body {
 .nav2-principal a:hover {
     border-bottom: 1px solid black;
 
+}
+
+/*Section2 white abajo del nav galeria de imágenes*/
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0px;
+    margin-top: 10%;
+    /* Espacio entre las imágenes */
+}
+
+.imagen img{
+   
+   max-width: 80%;
+   height: 70%;
+   object-fit: cover;
+      
 }

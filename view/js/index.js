@@ -1,5 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+
+
+  //------Data aos animacion start----
+
+  AOS.init();
+
+  //------Data aos animacion end----
+
   //Botón index hacia sección 1
 
   $('.mini-button').on('click', function () {
@@ -8,13 +16,21 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 1000);
   });
 
+  $('#filtro').on('click', function (e) {
+    e.preventDefault();
+
+    // Obtener la categoría asociada al enlace clicado
+    var categoria = $(this).data('categoria');
+
+    // Ocultar todas las imágenes
+    $('.imagen').hide();
+
+    // Mostrar las imágenes de la categoría seleccionada
+    $('.imagen[data-categoria="' + categoria + '"]').show();
+
+  });
 
 
-  //------Data aos animacion start----
-
-  AOS.init();
-
-   //------Data aos animacion end----
 
   var animationCompleted = [false, false, false];
   var animated = false;
@@ -78,38 +94,34 @@ document.addEventListener("DOMContentLoaded", function () {
   $('[data-aos]').on('aos:in', function (event) {
     animateCounters();
   });
-  
-
-//--------------Función para mostrar el texto gradualmente-------------------
-function mostrarTextoGradualmente(elementId) {
-  const elemento = document.getElementById(elementId);
-  const palabras = elemento.innerText.split(' ');
-
-  // Se reinicia el contenido del elemento
-  elemento.innerHTML = '';
-
-  palabras.forEach((palabra, index) => {
-    // Se añade cada palabra con un pequeño retraso
-    setTimeout(() => {
-      elemento.innerHTML += palabra + ' ';
-    }, index * 300); // Puedes ajustar la velocidad modificando el valor de '500'
-  });
-
-  // Se muestra el texto con la animación de opacidad
-  elemento.classList.add('hidden-text');
-
-}
-
-// Llamada a la función para cada elemento
-
-mostrarTextoGradualmente('parrafo');
-
-//--------------Función para mostrar el texto gradualmente end-------------------
 
 
+  //--------------Función para mostrar el texto gradualmente-------------------
+  function mostrarTextoGradualmente(elementId) {
+    const elemento = document.getElementById(elementId);
+    const palabras = elemento.innerText.split(' ');
+
+    // Se reinicia el contenido del elemento
+    elemento.innerHTML = '';
+
+    palabras.forEach((palabra, index) => {
+      // Se añade cada palabra con un pequeño retraso
+      setTimeout(() => {
+        elemento.innerHTML += palabra + ' ';
+      }, index * 300); // Puedes ajustar la velocidad modificando el valor de '500'
+    });
+
+    // Se muestra el texto con la animación de opacidad
+    elemento.classList.add('hidden-text');
+
+  }
+
+  // Llamada a la función para cada elemento
+
+  mostrarTextoGradualmente('parrafo');
+
+  //--------------Función para mostrar el texto gradualmente end-------------------
 
 
 
 }); //--------------Dom Content End ----------------
-
-
