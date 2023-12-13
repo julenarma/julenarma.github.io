@@ -12,12 +12,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   //------Data aos animacion start----
 
-  AOS.init({
-    offset: 200,
-    duration: 1000,
-    easing: 'ease-in-out',
-    once: true,
-  });
+  AOS.init();
+
+   //------Data aos animacion end----
 
   var animationCompleted = [false, false, false];
   var animated = false;

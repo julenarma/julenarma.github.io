@@ -75,7 +75,7 @@ body {
 
 .button-contactame:hover {
     background: white;
-    color: black;
+    color: black !important;
     outline: none;
     text-decoration: none;
 }
