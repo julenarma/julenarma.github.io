@@ -363,9 +363,6 @@ body {
     /* Ajusta el espaciado entre cada número e icono según tus necesidades */
 }
 
-
-
-
 /* Estilo para la sección2 en blanco */
 .white-section2 {
     background-color: #ffffff;
@@ -393,7 +390,7 @@ body {
 .white-section2 .section-text {
     width: 30% !important;
     margin-bottom: 0 !important;
-    margin-top: 4% !important;
+    margin-top: 2% !important;
     float: none !important;
     margin-left: auto !important;
     margin-right: auto !important;
@@ -425,7 +422,7 @@ body {
     justify-content: center;
     list-style: none;
     display: flex;
-    padding: 1.7em;
+    padding: 3em;
     color: #000;
     transition: color 0.3s ease;
 }
