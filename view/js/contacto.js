@@ -9,8 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-
-
 });
 
 function enviarContactoForm() {
