@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
     <!-- Mi CSS -->
     <link rel="stylesheet" href="../css/main.css" class="css">
-    <link rel="stylesheet" href="../css/contacto.css" class="css">
+    <link rel="stylesheet" href="../css/portfolio.css" class="css">
+   
 
 
     <!--Data AOS-->
@@ -23,6 +24,7 @@
 
 
 </head>
+
 <body id="pageBody">
     <header>
         <nav id="navbar">
@@ -33,72 +35,26 @@
 
             <!-- Menú de navegación principal -->
             <ul class="nav1-principal">
-                <li><a href="../../index.html">INICIO</a></li>
-                <li><a href="" id="noticia">SOBRE MÍ</a></li>
-                <li><a href="../pages/portfolio.html" id="portfolio">PORTFOLIO</a></li>
+                <li><a href="../../index.html" >INICIO</a></li>
+                <li><a href="" id="sobre mi">SOBRE MÍ</a></li>
+                <li><a href="" class="active" >PORTFOLIO</a></li>
                 <li><a href="">TECNOLOGÍAS</a></li>
-                <li><a href="../pages/contacto.html" class="active">CONTACTO</a></li>
+                <li><a href="../pages/contacto.html">CONTACTO</a></li>
             </ul>
         </nav>
         <div class="img-header">
             <!--Inside the image, the text-->
             <div class="header-info">
-                <h2>¡Hablemos!</h2>
-                <p>Estoy emocionado/a de escucharte. Si tienes alguna pregunta, comentario o simplemente quieres
-                    saludar, no dudes en ponerte en contacto conmigo. ¡Responderé lo más pronto posible!</p>
-                <a class="button-contactame">CONTACTA CONMIGO</a>
+                <h2>Portfolio</h2>
+                <p> En mi portafolio, encontrarás ejemplos de mi trabajo y proyectos en los que he participado. Estoy
+                    comprometido con la excelencia y siempre busco aprender nuevas tecnologías y enfoques para mejorar
+                    mi habilidad en el desarrollo para web, iOS y Android.
+                </p>
             </div>
         </div>
 
     </header>
 
-    <!-- Sección en blanco con título y texto -->
-    <section class="white-section">
-        <div class="text">
-            <p class="title_contact">Métodos de contacto</h2>
-            <p class="text_contact">¡Me entusiasma recibir tus comentarios! Si tienes preguntas, comentarios o simplemente quieres
-                saludar, no dudes en ponerte en contacto conmigo. Responderé con prontitud.</p>
-
-            <p class="text_contact">Además, tienes la opción de utilizar el formulario de contacto a continuación o enviarme un correo
-                electrónico a <a href="mailto:julenarmelex@gmail.com">julenarmelex@gmail.com</a>.</p>
-
-            <p class="text_contact">También puedes encontrarme en diversas plataformas:</p>
-
-            <div class="redes-sociales">
-                <a href="https://www.linkedin.com/in/julen-armaolea-elexgaray-342208195/" target="_blank"><i
-                        class="fab fa-linkedin"></i></a>
-                <a href="https://www.instagram.com/julenarma.10" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://github.com/julenarma" target="_blank"> <i class="fab fa-github"></i></a>
-            </div>
-
-
-        </div>
-        <form class="form" method="post">
-            <span class="mb-3">
-                <input type="text" id="nombreContacto" placeholder="TU NOMBRE">
-            </span>
-            <span class="mb-3">
-                <input type="text" id="emailContacto" placeholder="TU EMAIL">
-            </span>
-            <span class="mb-3">
-                <input type="text" id="asuntoContacto" placeholder="ASUNTO">
-            </span>
-            <span class="mb-3">
-                <textarea rows="3" id="mensajeContacto" placeholder="MENSAJE"></textarea>
-            </span>
-            <button type="button" class="button-form" onclick="enviarContactoForm()" id="botonContactoEnviar">Enviar
-                mensaje</button>
-
-        </form>
-        <div class="map">
-            <!--Maps-->
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46451.08014436758!2d-2.728127478552371!3d43.310229356479866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4e3a1bb97a1587%3A0x404f58273cba070!2sGernika-Lumo%2C%20Bizkaia!5e0!3m2!1seu!2ses!4v1702251013794!5m2!1seu!2ses"
-                width="100%" height="450" frameborder="0" style="border:0" allowfullscreen=""></iframe>
-            <!-- Fin Maps-->
-
-        </div>
-    </section>
 
     <!--Boton de modal donaciones café-->
     <button id="boton" onclick="mostrarModal()">☕</button>
