@@ -160,6 +160,7 @@ body {
 .redes-sociales a:hover {
     filter: brightness(1.5);
     /* Intensifica el color al pasar el ratón sobre él */
+    transition: 0.3s all;
 }
 
 /*Formulario*/

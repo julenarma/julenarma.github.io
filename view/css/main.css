@@ -211,3 +211,99 @@ nav.sticky a:hover {
     cursor: pointer;
 
 }
+
+
+
+/*footer*/
+
+footer{
+    margin-top: 5% !important;
+}
+
+footer h5 {
+
+    font-size: 11px !important;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: black;
+    margin-bottom: 20px;
+}
+
+
+footer p {
+
+
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+
+footer h6 {
+    font-size: 11px !important;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.enlaces-footer a {
+    color: black;
+    text-decoration: none;
+
+    display: inline-block;
+
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-right: 18px;
+    margin-top: 5% !important;
+    font-size: 11px !important;
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.enlaces-footer a:hover {
+    opacity: 0.5;
+    transition: 0.3s all;
+    /* Intensifica el color al pasar el ratón sobre él */
+}
+
+.redes-sociales{
+    margin-top: 1% !important;
+    margin-bottom: 1% !important;
+}
+
+
+
+
+.redes-sociales a {
+    margin: 0 10px;
+    /* Ajusta el margen entre los íconos según sea necesario */
+    font-size: 28px;
+   
+}
+
+
+.redes-sociales a {
+    color: black;
+    /* Color de LinkedIn */
+}
+
+.redes-sociales a:nth-child(2) {
+    color: black;
+    /* Color de Instagram */
+}
+
+.redes-sociales a:nth-child(3) {
+    color: black;
+    /* Color de GitHub */
+}
+
+.redes-sociales a:hover {
+    opacity: 0.5;
+    transition: 0.3s all;
+    /* Intensifica el color al pasar el ratón sobre él */
+}
