@@ -468,16 +468,22 @@ body {
     margin: 0;
     box-sizing: border-box;
     max-width: 25%;
-    cursor: url('https://mouredev.com/wp-content/themes/h-code/assets/images/icon-zoom-white.png'), auto;
-    overflow: hidden;
+  
+
 }
+
+.imagen a {
+  
+    cursor: url('https://mouredev.com/wp-content/themes/h-code/assets/images/icon-zoom-white.png'), auto;
+}
+
 
 .imagen img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
-   
+    
 }
 
 figcaption {
