@@ -1,7 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
 
   //------Data aos animacion start----
-  AOS.init();
+  AOS.init({
+    offset: 200, // Offset (in px) from the original trigger point
+    easing: 'ease-in-out', // Easing function ('ease', 'linear', 'ease-in', 'ease-out', 'ease-in-out', or a cubic bezier curve)
+    duration: 1000,
+    once: true// Duration of the animation in milliseconds
+});
 
 
   //Botón index hacia sección 1
