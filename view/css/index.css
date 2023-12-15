@@ -480,6 +480,7 @@ body {
 
 figcaption {
     position: absolute;
+    
     top: 0;
     /* Ajuste para que el figcaption empiece desde la parte superior */
     left: 0;
@@ -494,6 +495,7 @@ figcaption {
     justify-content: center;
     align-items: center;
     transition: opacity 0.3s ease-in-out;
+    pointer-events: none; /* Evitar que el figcaption interfiera con eventos del ratón */
 }
 
 .imagen:hover figcaption {
