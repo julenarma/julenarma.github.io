@@ -62,22 +62,22 @@ function descargarFactura(nombre, fechaHora, cantidad) {
     <p><strong>Cantidad:</strong> ${cantidad}</p>
     <!-- Puedes agregar más detalles si es necesario -->
   `;
+  console.log('Descargando factura...');
 
-  // Define las opciones para la generación del PDF
-  var options = {
-    margin: 10,
-    filename: 'factura.pdf',
-    image: { type: 'jpeg', quality: 0.98 },
-    html2canvas: { scale: 2 },
-    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-  };
 
-  // Convierte el contenido HTML a un archivo PDF y descarga
-  html2pdf().from(contenidoFactura).set(options).outputPdf(function (pdf) {
+
+// Convierte el contenido HTML a un archivo PDF y guarda con FileSaver.js
+html2pdf().from(contenidoFactura).toPdf().output('arraybuffer').then(function (pdf) {
+  console.log('Generando PDF...');
+  try {
     var blob = new Blob([pdf], { type: 'application/pdf' });
-    var link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-    link.download = options.filename;
-    link.click();
-  });
+    saveAs(blob, 'factura.pdf');
+    console.log('Guardado exitoso');
+  } catch (error) {
+    console.error('Error en el guardado:', error);
+  }
+});
+
+
+
 }
