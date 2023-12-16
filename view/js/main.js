@@ -69,12 +69,6 @@ paypal.Buttons({
 }).render('#paypal-button-container');
 
 
-
-
-
-
-
-
 function seleccionarCantidad(cantidad) {
   actualizarCantidadPersonalizada(cantidad);
   actualizarTotalSoporte(cantidad);
@@ -89,29 +83,31 @@ function getMensaje() {
 }
 
 function actualizarCantidadPersonalizada(cantidad) {
-  document.getElementById('cantidadPersonalizada').value = cantidad + '€';
+  document.getElementById('cantidadPersonalizada').value = cantidad;
 }
 
 function actualizarTotalSoporte(cantidad) {
   document.getElementById('totalSoporte').innerText = cantidad;
-  actualizarTextoBoton(cantidad);
 }
 
-function actualizarTextoBoton(cantidad) {
-  var botonSupport = document.getElementById('supportButton');
-  botonSupport.innerText = 'Support (' + cantidad + '€)';
-}
 
 // Añadir evento input para validar la entrada en el campo de cantidad personalizada
 document.getElementById('cantidadPersonalizada').addEventListener('input', function () {
   var cantidadInput = this.value;
-  if (cantidadInput < 0) {
-    this.value = 0;
-  } else if (cantidadInput > 10) {
-    this.value = 10;
-  }
 
-  actualizarTotalSoporte(this.value);
+  // Reemplaza todo lo que no sea un número con una cadena vacía
+  var cantidadNumerica = cantidadInput.replace(/[^\d]/g, '');
+
+
+  // Limita la cantidad a un valor entre 0.01 y 10
+  cantidadNumerica = Math.min(10, Math.max(0.01, parseFloat(cantidadNumerica)));
+
+  // Formatea la cantidad a dos decimales
+  cantidadNumerica = cantidadNumerica.toFixed(2);
+
+  // Actualiza el campo de cantidad personalizada y el total de soporte
+  actualizarCantidadPersonalizada(cantidadNumerica);
+  actualizarTotalSoporte(cantidadNumerica);
 });
 
 
@@ -120,4 +116,65 @@ document.getElementById('boton').addEventListener('click', function () {
   // También seleccionar la cantidad al abrir el modal
   seleccionarCantidad(getCantidadSeleccionada());
 });
+
+
+
+//al hacer click en donacion paypal boton
+document.getElementById('paypal-button-container').addEventListener('click', () => procesarDonacion());
+
+
+function procesarDonacion() {
+  alert('La función procesarDonacion se está ejecutando correctamente.');
+  console.log('La función procesarDonacion se está ejecutando correctamente.');
+
+  var nombre = document.getElementById('donacionNombre').value;
+  console.log('Nombre:', nombre);
+  var nombre = document.getElementById('donacionNombre').value;
+  var mensaje = document.getElementById('donacionMensaje').value;
+  var cantidad = document.getElementById('totalSoporte').innerText; // Cambiado a innerText
+
+  // Verificar si los valores son válidos
+  if (nombre.trim() === '' || cantidad.trim() === '') {
+    console.error('Nombre o cantidad inválidos');
+    return;
+  }
+
+  // Codificar componentes de la cadena de consulta
+  nombre = encodeURIComponent(nombre);
+  mensaje = encodeURIComponent(mensaje);
+  cantidad = encodeURIComponent(cantidad);
+
+  var url = '../../controller/cInsertDonation.php';
+  var data = {
+    'nombre': nombre,
+    'mensaje': mensaje,
+    'cantidad': cantidad,
+  };
+
+  fetch(url, {
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then(res => res.json())
+    .then(result => {
+      if (!result.error) {
+        // Muestra la página de donación exitosa       
+        window.location.href = '../pages/donacion_exitosa.html';
+      }else {
+        // Muestra un mensaje de error al usuario o redirige a una página de error
+        console.error('Error en la solicitud al servidor:', result.message);
+        // Puedes mostrar un mensaje al usuario o redirigir a una página de error
+         window.location.href = '../pages/donacion_error.html';
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+}
+
+
+
 //------------Donacion cafe end-------

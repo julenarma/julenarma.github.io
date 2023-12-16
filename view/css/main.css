@@ -121,6 +121,18 @@ nav.sticky a:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+input,
+textarea {
+    font-family: 'Open Sans', sans-serif;
+    border: 1px solid #dfdfdf;
+    letter-spacing: 1px;
+    font-size: 12px;
+    padding: 8px 15px;
+    width: 100%;
+    margin: 0 0 20px 0;
+    max-width: 100%;
+    resize: none;
+}
 .btn-close {
 
     top: 10px;
