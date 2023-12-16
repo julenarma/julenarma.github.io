@@ -35,7 +35,7 @@ class donationModel extends donationClass
         $mensaje = $this->getMensaje();
         $cantidad = $this->getCantidad();
         
-        $sql = "CALL spInsertDonation('$nombre','$mensaje','$cantidad',)";
+        $sql = "CALL spInsertDonation('$nombre','$mensaje','$cantidad')";
 
         if ($this->link->query($sql)) {
             $this->CloseConnect();
