@@ -80,10 +80,9 @@ document.getElementById('cantidadPersonalizada').addEventListener('input', funct
 
 
   // Limita la cantidad a un valor entre 0.01 y 10
-  cantidadNumerica = Math.min(10, Math.max(0.01, parseFloat(cantidadNumerica)));
+  cantidadNumerica = Math.min(10, Math.max(1, parseFloat(cantidadNumerica)));
 
-  // Formatea la cantidad a dos decimales
-  cantidadNumerica = cantidadNumerica.toFixed(2);
+
 
   // Actualiza el campo de cantidad personalizada y el total de soporte
   actualizarCantidadPersonalizada(cantidadNumerica);
@@ -96,7 +95,6 @@ document.getElementById('boton').addEventListener('click', function () {
   // También seleccionar la cantidad al abrir el modal
   seleccionarCantidad(getCantidadSeleccionada());
 });
-
 
 
 // Incluir el SDK de PayPal
@@ -115,39 +113,17 @@ paypal.Buttons({
     return actions.order.capture().then(function (details) {
       // Lógica después de un pago exitoso
       cerrarModal(); // Cierra el modal después del pago exitoso
-
-      // Llama a la función para procesar la donación
+      // Llama a la función para procesar la donación y pasa los datos a la página de éxito
       procesarDonacion();
-      window.location.href = '../view/pages/donacion_exitosa.html';
     });
-  },
-  onError: function (err) {
-    // Lógica en caso de error en el pago
-    console.error('Error en el pago:', err);
-    // Redirige a la página de donación con error
-    window.location.href = '../view/pages/donacion_error.html';
   }
 }).render('#paypal-button-container');
 
 
 function procesarDonacion() {
-
-
-  console.log ("hola")
   var nombre = document.getElementById('donacionNombre').value;
   var mensaje = document.getElementById('donacionMensaje').value;
   var cantidad = document.getElementById('totalSoporte').innerText; // Cambiado a innerText
-
-  // Verificar si los valores son válidos
-  if (nombre.trim() === '' || cantidad.trim() === '') {
-    console.error('Nombre o cantidad inválidos');
-    return;
-  }
-
-  // Codificar componentes de la cadena de consulta
-  nombre = encodeURIComponent(nombre);
-  mensaje = encodeURIComponent(mensaje);
-  cantidad = encodeURIComponent(cantidad);
 
   var url = '../../controller/cInsertDonation.php';
   var data = {
@@ -157,25 +133,29 @@ function procesarDonacion() {
   };
 
   fetch(url, {
-      method: 'POST',
-      body: JSON.stringify(data),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
     .then(res => res.json())
     .then(result => {
       if (!result.error) {
-        // No es necesario redirigir aquí, ya que PayPal se encargará de ello
+        // Redirige a la página de donación exitosa y pasa los datos como parámetros de la URL
+        window.location.href = `../view/pages/donacion_exitosa.html?nombre=${nombre}&cantidad=${cantidad}`;
       } else {
         // Muestra un mensaje de error al usuario o redirige a una página de error
         console.error('Error en la solicitud al servidor:', result.message);
+        // Puedes redirigir a la página de error si es necesario
+        window.location.href = '../view/pages/donacion_error.html';
       }
     })
     .catch(error => {
       console.error('Error:', error);
     });
 }
+
 
 
 //------------Donacion cafe end-------
