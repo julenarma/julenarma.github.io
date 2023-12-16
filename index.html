@@ -16,8 +16,15 @@
   <link rel="stylesheet" href="view/css/main.css" class="css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/dist/typed.min.css">
 
-  <!--Data AOS-->
+  <!--Data AOS CSS-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+
+
+  <!--PayPal sistema de pagos SDK-->
+  <script
+    src="https://www.paypal.com/sdk/js?client-id=AVulhpFdfAFF0KtTrLqz5jRZezaP-QykIl_qVeGNJnwb2aIq7uuQOIVo4vNLkJcfqi_8bRXbJrVBLg2I">
+  </script>
+
 
 </head>
 
@@ -154,14 +161,17 @@
   </section>
   <!--Sección my stats comienzo fin-->
 
+
   <!--Boton de modal donaciones café-->
   <button id="boton" onclick="mostrarModal()">☕</button>
+  <!-- Contenedor del botón de PayPal -->
+  
   <div class="modal fade" id="modal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">Buy an Armadev coffee</h5>
-          <a href="#" id="botonCerrarModal" onclick="cerrarModal()">&times;</a>
+          <a href="#" id="botonCerrarModal" class="cerrarModal" onclick="cerrarModal()">&times;</a>
         </div>
         <div class="modal-body">
           <div id="opciones" style="display: flex; flex-wrap: wrap; gap: 10px;">
@@ -176,12 +186,18 @@
           <input type="text" class="form-control" placeholder="Tu nombre" aria-label="Username">
           <textarea class="form-control" id="mensaje" aria-label="With textarea"
             placeholder="Mensaje(Opcional)"></textarea>
-          <button type="button" class="btn btn-primary" onclick="realizarSupport()">Support <span
-              id="totalSoporte">0</span>€</button>
+
+          <!-- Total a pagar -->
+          <p>Total a pagar: <span id="totalSoporte">0</span>€</p>
+
+          <div id="paypal-button-container"></div>
         </div>
       </div>
     </div>
   </div>
+
+
+
   <!-- Sección en blanco con título y texto -->
   <section class="white-section2">
     <h3 class="section-title">Últimos Proyectos</h3>
@@ -358,7 +374,7 @@
 
 
   <!-- Footer -->
-  <footer class=" jumbotron container-fluid py-4 mb-0">
+  <footer class=" jumbotron container-fluid py-4 mb-0 ">
     <!-- Sección con las columnas -->
     <div class="container">
       <div class="row">
@@ -431,7 +447,7 @@
       <p class="text-muted mb-0">
         © 2023 ARMADEV BY JULEN ARMAOLEA BUILDING SOFTWARE WITH ♥ FROM BASQUE COUNTRY TO THE WORLD.
         |
-         <a href="#">POLÍTICA DE PRIVACIDAD</a>
+        <a href="#">POLÍTICA DE PRIVACIDAD</a>
       </p>
       <!-- Logo a la derecha -->
       <img src=".../../view/img/index/armadev_blanco.png" alt="Logo" height="30">
@@ -454,6 +470,9 @@
 
   <!--Data AOS JS-->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+
+
 
 
 </body>

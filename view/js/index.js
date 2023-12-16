@@ -139,3 +139,5 @@ function showCategory(category) {
   $(".imagen:not(:visible)").css("flex", "0 0 0"); // Set flex to zero for hidden images
   $(".imagen:visible").css("flex", "1 0 auto"); // Set flex to default for visible images
 }
+
+
