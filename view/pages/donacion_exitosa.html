@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donación Exitosa</title>
+    <!-- Enlace a Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,34 +15,43 @@
         }
 
         h1 {
-            color: #00cc00;
+            color: black;
+            font-weight: 600;
+            margin-top: 50px;
         }
 
         p {
             color: #333333;
+            margin-top: 50px;
+        }
+
+        #factura {
+            margin-top: 50px;
+        }
+
+        /* Estilo para el botón de descarga */
+        #descargarFactura {
+            margin-top: 10px;
         }
     </style>
 </head>
 
 <body>
-    <h1>¡Donación Exitosa!</h1>
-    <p>Agradecemos tu generosidad. Tu donación ha sido procesada con éxito.</p>
-    <div id="factura">
-        <h2>Detalles de la Factura</h2>
-        <!-- Los detalles de la factura se mostrarán aquí -->
+    <div class="container">
+        <h1 class="mt-3">¡Donación Exitosa!</h1>
+        <p>Agradezco tu generosidad. Tu donación ha sido procesada con éxito.</p>
+        <div id="factura">
+            <!-- Los detalles de la factura se mostrarán aquí -->
+            <button id="descargarFactura" class="btn btn-success">Descargar Factura</button>
+        </div>
+        <a href="../../index.html" class="mt-3 btn btn-link">Volver a la Página de Inicio</a>
     </div>
-    <a href="../../index.html">Volver a la Página de Inicio</a>
-
 
     <!-- Incluye html2pdf.js desde un CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
     <!-- Filesaver para guardar el pdf -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
-
-
-
     <script src="../js/factura_donacion.js"></script>
-
 </body>
 
 </html>

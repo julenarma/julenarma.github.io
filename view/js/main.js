@@ -104,6 +104,7 @@ paypal.Buttons({
     return actions.order.create({
       purchase_units: [{
         amount: {
+          
           value: getCantidadSeleccionada().toString()
         }
       }]
@@ -116,6 +117,13 @@ paypal.Buttons({
       // Llama a la función para procesar la donación y pasa los datos a la página de éxito
       procesarDonacion();
     });
+  },
+  // Configura las credenciales aquí
+  // Puedes obtener estas credenciales desde el panel de desarrolladores de PayPal
+  // No compartas estas credenciales en el código fuente público
+  client: {
+    sandbox: 'AT-FpvT_iWqLPgQBMCU_L-ohOjzVPtVL3QV-gZCb2RI1Wc3SimIF5hiw8bncw9s9HnvVAM92BLnUM973',
+    //production: 'AUP12vPigK8ANBi187po0u3M2mQreUtlRK83g91lUd58WGwLVvnU1MSTcHEC6gAes_nsCVyPZtT3STIG'    Reemplaza con tu Client ID de producción cuando estés listo para lanzar
   }
 }).render('#paypal-button-container');
 
