@@ -6,7 +6,6 @@ function getParameterByName(name) {
   return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
 }
 
-
 // Agrega un script para recuperar los parámetros de la URL y mostrar la factura
 document.addEventListener('DOMContentLoaded', function () {
   // Obtén los valores de la URL

@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-style: 'Open Sans', sans-serif;
+    color: #626262;
+    font-size: 13px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-style: 'Open Sans', sans-serif;
+    color: #626262;
+    font-size: 13px;
+}
+
+.img-header {
+    background: url(../img/index/donations.jpg);
+    background-size: cover;
+    background-blend-mode: soft-light;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: relative;
+    width: 100%;
+    height: 95vh;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-info {
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    color: white !important;
+    text-transform: uppercase;
+    width: 70%;
+    margin: 0 auto;
+
+}
+
+
+.header-info h2 {
+
+    font-size: 28px;
+    font-weight: 600 !important;
+    letter-spacing: 1px !important;
+    line-height: 41px;
+}
+
+.header-info p {
+
+    line-height: 24px;
+    font-size: 15px;
+    margin-top: 5% !important;
+    text-align: center !important;
+    letter-spacing: 2px !important;
+}
+
+
+
+/*Formulario donaciones*/
+
+input,
+textarea {
+    font-family: 'Open Sans', sans-serif;
+    border: 1px solid #dfdfdf;
+    letter-spacing: 1px;
+    font-size: 12px;
+    padding: 8px 15px;
+    width: 100%;
+    margin: 0 0 20px 0;
+    max-width: 100%;
+    resize: none;
+}
+
+
+#opciones {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#opciones div {
+    font-size: 30px;
+}
+
+.opcion {
+    cursor: pointer;
+    border-radius: 50%;
+    color: #2563eb;
+    background-color: white;
+    /* Fondo blanco */
+    border: 1px solid #2563eb;
+    /* Borde de 1px color azul */
+    padding: 2px;
+    width: 40px;
+    /* Ajusta el ancho según tu necesidad */
+    height: 40px;
+    /* Ajusta la altura según tu necesidad */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.opcion:hover {
+    background-color: black;
+    color: white;
+}
