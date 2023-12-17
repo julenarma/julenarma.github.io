@@ -163,43 +163,7 @@
 
 
   
-  <!--Boton de modal donaciones café-->
- 
-  <button id="boton" onclick="mostrarModal()"><i class="fas fa-coffee"></i></button>
-
-
-  <!-- Contenedor del botón de PayPal -->
-
-  <div class="modal fade" id="modal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Buy an Armadev coffee</h5>
-          <a href="#" id="botonCerrarModal" class="cerrarModal" onclick="cerrarModal()">&times;</a>
-        </div>
-        <div class="modal-body">
-          <div id="opciones" style="display: flex; flex-wrap: wrap; gap: 10px;">
-            <div style="font-size: 40px;" class="opcion1" onclick="seleccionarCantidad(1)">☕</div> <br>X<br>
-            <div class="opcion" onclick="seleccionarCantidad(1)">1</div>
-            <div class="opcion" onclick="seleccionarCantidad(3)">3</div>
-            <div class="opcion" onclick="seleccionarCantidad(5)">5</div>
-            <!-- Input más pequeño para la cantidad personalizada -->
-            <input type="text" id="cantidadPersonalizada" aria-label="cantidadPersonalizada" style="width: 50px;">
-          </div>
-          <input type="text" id="donacionNombre" placeholder="Tu nombre" aria-label="Username">
-          <textarea id="donacionMensaje" aria-label="With textarea" placeholder="Mensaje(Opcional)"></textarea>
-
-          <!-- Total a pagar -->
-          <p>Total a pagar: <span id="totalSoporte">0</span>€</p>
-
-          <div id="paypal-button-container"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
+  
   <!-- Sección en blanco con título y texto -->
   <section class="white-section2">
     <h3 class="section-title">Últimos Proyectos</h3>
@@ -374,6 +338,8 @@
   </section>
 
 
+  <!-- Boton de subir arriba -->
+  <button class="go-top"><i class="fas fa-arrow-up fa-2x"></i></button>
 
   <!-- Footer -->
   <footer class=" jumbotron container-fluid py-4 mb-0 ">
@@ -472,8 +438,6 @@
 
   <!--Data AOS JS-->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-
-
 
 
 

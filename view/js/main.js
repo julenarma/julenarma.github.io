@@ -1,3 +1,30 @@
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  $('.go-top ').on('click', function () {
+
+    $("html, body").animate({
+      scrollTop: 0
+    }, 600);
+
+  });
+})
+$(document).scroll(function () {
+  // console.log(window.pageYOffset != 0, window.pageYOffset );
+  if (window.pageYOffset >= 500) {
+
+    //Nos sale
+    $('.go-top').show();
+  } else {
+    //se oculta
+    $('.go-top').hide();
+  }
+
+
+});
+
+
+
 /*Función nav sticky para todos los html independientemente de la ruta*/
 window.onscroll = function () {
   stickyMenu();
@@ -32,6 +59,3 @@ function getRelativeImagePath(relativePath) {
 
   return prefix + relativePath;
 }
-
-
-

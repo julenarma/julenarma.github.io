@@ -111,3 +111,19 @@ textarea {
     background-color: black;
     color: white;
 }
+
+
+/*Seccion de donaciones*/
+
+#donaciones {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card {
+    flex-basis: calc(33.33%);
+    /* Aproximadamente un tercio del ancho, con un pequeño espacio entre las tarjetas */
+    margin-bottom: 20px;
+}
