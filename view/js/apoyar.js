@@ -1,6 +1,12 @@
+/*Jquery*/
 $(document).ready(function () {
+
     cargarDonaciones();
-});
+
+
+})
+
+//------------Donacion cafe start-------
 
 
 function seleccionarCantidad(cantidad) {
@@ -24,7 +30,6 @@ function actualizarTotalSoporte(cantidad) {
     document.getElementById('totalSoporte').innerText = cantidad;
 }
 
-
 // Añadir evento input para validar la entrada en el campo de cantidad personalizada
 document.getElementById('cantidadPersonalizada').addEventListener('input', function () {
     var cantidadInput = this.value;
@@ -32,11 +37,8 @@ document.getElementById('cantidadPersonalizada').addEventListener('input', funct
     // Reemplaza todo lo que no sea un número con una cadena vacía
     var cantidadNumerica = cantidadInput.replace(/[^\d]/g, '');
 
-
     // Limita la cantidad a un valor entre 0.01 y 10
     cantidadNumerica = Math.min(10, Math.max(1, parseFloat(cantidadNumerica)));
-
-
 
     // Actualiza el campo de cantidad personalizada y el total de soporte
     actualizarCantidadPersonalizada(cantidadNumerica);
@@ -45,10 +47,7 @@ document.getElementById('cantidadPersonalizada').addEventListener('input', funct
 
 
 
-
-
 // Incluir el SDK de PayPal
-
 paypal.Buttons({
     createOrder: function (data, actions) {
         return actions.order.create({
@@ -72,14 +71,12 @@ paypal.Buttons({
     // No compartas estas credenciales en el código fuente público
     client: {
         sandbox: 'AT-FpvT_iWqLPgQBMCU_L-ohOjzVPtVL3QV-gZCb2RI1Wc3SimIF5hiw8bncw9s9HnvVAM92BLnUM973',
-        //production: 'AUP12vPigK8ANBi187po0u3M2mQreUtlRK83g91lUd58WGwLVvnU1MSTcHEC6gAes_nsCVyPZtT3STIG'    Reemplaza con tu Client ID de producción cuando estés listo para lanzar
+        // production: 'AUP12vPigK8ANBi187po0u3M2mQreUtlRK83g91lUd58WGwLVvnU1MSTcHEC6gAes_nsCVyPZtT3STIG'    Reemplaza con tu Client ID de producción cuando estés listo para lanzar
     }
 }).render('#paypal-button-container');
 
 
 function procesarDonacion() {
-
-    console.log("holaaaa")
 
     var nombre = document.getElementById('donacionNombre').value;
     var mensaje = document.getElementById('donacionMensaje').value;
@@ -116,63 +113,56 @@ function procesarDonacion() {
         });
 }
 
-
-
 //------------Donacion cafe end-------
 
-
-//Cargar donaciones
-
-
 function cargarDonaciones() {
-
     var url = '../../controller/cDonations.php';
 
     fetch(url, {
-
             method: "GET",
             headers: {
                 'Content-Type': 'application/json'
             }
-
         })
-        .then(res => res.json()).then(result => {
-
-
+        .then(res => res.json())
+        .then(result => {
             var myHtml = "";
             var donaciones = result.list;
 
-            for (let i = 0; i < donaciones.length; i++) {
 
-                myHtml += `
-                <div class="col-md-4 mb-4">
-                  <div class="card mb-4 box-shadow">
-                    <div class="card-body">
-                      <h5 class="card-title">${donaciones[i].nombre}</h5>
-                      <p class="card-text">${donaciones[i].mensaje}</p>
-                      <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                          <button type="button" class="btn btn-sm btn-outline-secondary">Café</button>
-                          <button type="button" class="btn btn-sm btn-outline-secondary">€${donaciones[i].cantidad}</button>
-                        </div>
-                        <small class="text-muted">${formatFecha(donaciones[i].fecha)}</small>
-                      </div>
-                    </div>
-                  </div>
-                </div>`;
+        
+            for (let i = 0; i < donaciones.length; i++) {
+                myHtml += `<div class='item' style="text-align: center; margin: 20px; display: flex; flex-direction: column; align-items: center;">
+        <img src="../../view/img/index/default.png" style="width: 200px; height: 150px; border-radius: 10px; margin-bottom: 10px;">
+        <h3 style="margin-top: 10px;">${donaciones[i].nombre}</h3>
+        <p>${donaciones[i].mensaje}</p>
+    </div>`;
             }
 
-            //Metemos los cards en las noticias
-            $("#donaciones").html(myHtml);
+            document.getElementById('donaciones').innerHTML = myHtml;
+
+            //Carousel(Con la librería OwlCarousel), Autoplay Carousel
+            var owl = $('.owl-carousel');
+            owl.owlCarousel({
+                items: 3, // Número de elementos a mostrar en el carrusel
+                loop: true, // Repetir el carrusel infinitamente
+                margin: 10, // Espaciado entre elementos
+                autoplay: true, // Reproducción automática del carrusel
+                autoplayTimeout: 2000, // Tiempo de espera entre transiciones (en milisegundos)
+                autoplayHoverPause: true, // Pausar la reproducción automática al pasar el ratón sobre el carrusel
+                responsive: { // Configuración responsiva para diferentes tamaños de pantalla
+                    0: {
+                        items: 1 // Para pantallas más pequeñas, muestra solo 1 elemento a la vez
+                    },
+                    600: {
+                        items: 2 // Para pantallas medianas, muestra 2 elementos a la vez
+                    },
+                    1000: {
+                        items: 3 // Para pantallas más grandes, muestra 3 elementos a la vez
+                    }
+                }
+            });
         })
         .catch(error => console.error('Error status:', error));
 
 }
-
-//funcion para formatear la fecha y hora
-function formatFecha(fechaString) {
-    const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' };
-    const fecha = new Date(fechaString);
-    return fecha.toLocaleDateString('es-ES', options);
-  }
-  

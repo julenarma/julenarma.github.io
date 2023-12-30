@@ -20,9 +20,7 @@ $(document).scroll(function () {
     $('.go-top').hide();
   }
 
-
 });
-
 
 
 /*Función nav sticky para todos los html independientemente de la ruta*/

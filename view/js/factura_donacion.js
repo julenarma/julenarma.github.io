@@ -58,7 +58,6 @@ document.addEventListener('DOMContentLoaded', function () {
     localStorage.setItem('fechaHoraDonacion', fechaHoraActual);
   }
 
-
   // Agrega un evento de clic al botón para manejar la descarga
   var botonDescarga = document.getElementById('descargarFactura');
   botonDescarga.addEventListener('click', function () {

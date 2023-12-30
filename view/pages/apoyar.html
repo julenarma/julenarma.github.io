@@ -19,16 +19,25 @@
     <!--Data AOS CSS-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
 
-
-
     <!--Animate CSS para abrir la modal con transición desde el botón-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-
 
     <!--PayPal sistema de pagos SDK-->
     <script
         src="https://www.paypal.com/sdk/js?client-id=AT-FpvT_iWqLPgQBMCU_L-ohOjzVPtVL3QV-gZCb2RI1Wc3SimIF5hiw8bncw9s9HnvVAM92BLnUM973">
     </script>
+
+    <!-- Librería Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+        integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+        crossorigin="anonymous" />
+
+
+
 
 </head>
 
@@ -37,7 +46,6 @@
 
 <body id="pageBody">
     <header>
-
         <nav id="navbar">
             <!-- Logotipo en la parte superior izquierda -->
             <div class="log-box">
@@ -78,31 +86,40 @@
 
     <!-- Contenedor del botón de PayPal -->
 
-    <h5 class="modal-title">Buy an Armadev coffee</h5>
+   
 
-    <div class="donacion-body ">
-        <div id="opciones" style="display: flex; flex-wrap: wrap; gap: 10px;">
-            <div style="font-size: 40px;" class="opcion1" onclick="seleccionarCantidad(1)">☕</div> <br>X<br>
+    <div class="donacion jumbotron" style="margin: 0 auto; text-align: center; ">
+        <h2 class="modal-title">Buy an Armadev coffee</h2>
+        <div id="opciones">
+            <div  onclick="seleccionarCantidad(1)">☕</div> 
             <div class="opcion" onclick="seleccionarCantidad(1)">1</div>
             <div class="opcion" onclick="seleccionarCantidad(3)">3</div>
             <div class="opcion" onclick="seleccionarCantidad(5)">5</div>
             <!-- Input más pequeño para la cantidad personalizada -->
-            <input type="text" id="cantidadPersonalizada" aria-label="cantidadPersonalizada" style="width: 50px;">
+            <input type="text" id="cantidadPersonalizada" aria-label="cantidadPersonalizada" >
         </div>
         <input type="text" id="donacionNombre" placeholder="Tu nombre" aria-label="Username">
         <textarea id="donacionMensaje" aria-label="With textarea" placeholder="Mensaje(Opcional)"></textarea>
-
+    
         <!-- Total a pagar -->
         <p>Total a pagar: <span id="totalSoporte">0</span>€</p>
-
-        <div id="paypal-button-container"></div>
+    
+        <!-- Contenedor del botón de PayPal -->
+        <div id="paypal-button-container" style="max-width: 300px; margin: 0 auto; display: flex; justify-content: center;"></div>
     </div>
+    
 
-    <div id="donaciones"></div>
+
+    <div class="carrusel">
+        <h2 class="carrrusel-title">Donaciones</h2>
+        <div class="owl-carousel owl-theme " id="donaciones">
+
+
+        </div>
+    </div>
 
     <!-- Boton de subir arriba -->
     <button class="go-top"><i class="fas fa-arrow-up fa-2x"></i></button>
-    
     <!-- Footer -->
     <footer class=" jumbotron container-fluid py-4 mb-0 ">
         <!-- Sección con las columnas -->
@@ -112,13 +129,12 @@
                 <div class="col-md-3 ">
                     <h5>Sobre mí</h5>
                     <p>Mi nombre es Brais Moure, full-stack developer. </p>
-
                     <p>MoureDev es el reflejo de mi ilusión por crecer como profesional dentro de la industria del
                         desarrollo del
-                        software. Como freelance, me he especializado en desarrollo de aplicaciones iOS, Android y web.
+                        software. Como freelance, me he especializado en desarrollo de aplicaciones iOS, Android y
+                        web.
                     </p>
                 </div>
-
                 <!-- Columna 2 -->
                 <div class="col-md-3 ">
                     <h5>Ultimos proyectos</h5>
@@ -127,7 +143,6 @@
                     <h6>Sagarra jo</h6>
                     <h6>ZAP</h6>
                 </div>
-
                 <!-- Columna 3 -->
                 <div class="col-md-3">
                     <h5>Portfolio</h5>
@@ -144,10 +159,8 @@
                     <h6>Politica de privacidad</h6>
                 </div>
             </div>
-
             <!-- Línea divisoria -->
             <hr class="my-4">
-
             <!-- Enlaces y redes sociales -->
             <div class="d-flex justify-content-between">
                 <!-- Enlaces -->
@@ -158,7 +171,6 @@
                     <a href="#">Tecnologías</a>
                     <a href="#">Contacto</a>
                 </div>
-
                 <!-- Redes sociales -->
                 <div class="redes-sociales">
                     <a href="https://www.linkedin.com/in/julen-armaolea-elexgaray-342208195/" target="_blank"><i
@@ -169,9 +181,6 @@
                 </div>
             </div>
         </div>
-
-
-
     </footer>
     <!-- Sección en color negro con el texto adicional y el logo -->
     <div class="container-fluid bg-dark text-white py-3">
@@ -199,15 +208,16 @@
     <!-- Typed JS -->
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <!--Mi Javascript-->
-
     <script src="../js/main.js"></script>
     <script src="../js/apoyar.js"></script>
-
     <!--Data AOS JS-->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
-
-
+    <!-- Librería Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous"></script>
 
 </body>
 

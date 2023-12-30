@@ -60,8 +60,28 @@ body {
 }
 
 
-
 /*Formulario donaciones*/
+
+/* Estilo para el título */
+.donacion h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    line-height: 45px;
+    font-size: 24px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    width: 50% !important;
+    margin-bottom: 0 !important;
+    margin-bottom: 3% !important;
+    float: none !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center;
+    color: black;
+
+}
+
+
 
 
 input,
@@ -71,22 +91,36 @@ textarea {
     letter-spacing: 1px;
     font-size: 12px;
     padding: 8px 15px;
-    width: 100%;
+    width: 50%;
     margin: 0 0 20px 0;
-    max-width: 100%;
     resize: none;
 }
 
 
+
 #opciones {
+    
+    font-family: 'Open Sans', sans-serif;
     display: flex;
+    justify-content: center;
     gap: 10px;
-    align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
+    width: 50%;
+    margin: 0 auto;
+   
+
 }
 
 #opciones div {
     font-size: 30px;
+}
+
+#cantidadPersonalizada{
+
+
+    width: 50px;
+    margin-left: 10px;
+    
 }
 
 .opcion {
@@ -95,7 +129,7 @@ textarea {
     color: #2563eb;
     background-color: white;
     /* Fondo blanco */
-    border: 1px solid #2563eb;
+    border: 2px solid #2563eb;
     /* Borde de 1px color azul */
     padding: 2px;
     width: 40px;
@@ -110,20 +144,33 @@ textarea {
 .opcion:hover {
     background-color: black;
     color: white;
+    transition: all 0.3s;
 }
 
 
 /*Seccion de donaciones*/
 
-#donaciones {
 
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+.carrrusel-title{
+
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    line-height: 45px;
+    font-size: 24px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    width: 50% !important;
+    margin-bottom: 0 !important;
+    margin-bottom: 3% !important;
+    float: none !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center;
+    color: black;
+    margin-top: 3% !important;
 }
-
-.card {
-    flex-basis: calc(33.33%);
-    /* Aproximadamente un tercio del ancho, con un pequeño espacio entre las tarjetas */
-    margin-bottom: 20px;
+.linea {
+    border-bottom: solid 7px rgb(235, 52, 52);
+    margin: 1em auto;
+    width: 100px;
 }
