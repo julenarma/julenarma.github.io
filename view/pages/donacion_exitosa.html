@@ -31,7 +31,26 @@
 
         /* Estilo para el botón de descarga */
         #descargarFactura {
-            margin-top: 10px;
+            background-color: black;
+            /* Color del botón */
+            /* Color del texto del botón */
+            text-decoration: none;
+            border: 2px solid #000;
+            color: white;
+            font-size: 11px;
+            margin-top: 10px !important;
+            padding: 10px 20px !important;
+            letter-spacing: 1px !important;
+            text-transform: uppercase;
+            font-weight: 600;
+            outline: none;
+        }
+
+        #descargarFactura:hover {
+            background-color: white;
+            color: black;
+            transition: all 0.3s;
+            /* Color del botón al hacer hover */
         }
     </style>
 </head>
@@ -42,7 +61,7 @@
         <p>Agradezco tu generosidad. Tu donación ha sido procesada con éxito.</p>
         <div id="factura">
             <!-- Los detalles de la factura se mostrarán aquí -->
-            <button id="descargarFactura" class="btn btn-success">Descargar Factura</button>
+            <button id="descargarFactura">Descargar Factura</button>
         </div>
         <a href="../../index.html" class="mt-3 btn btn-link">Volver a la Página de Inicio</a>
     </div>

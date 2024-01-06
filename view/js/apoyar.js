@@ -1,13 +1,9 @@
 /*Jquery*/
 $(document).ready(function () {
-
     cargarDonaciones();
-
-
 })
 
 //------------Donacion cafe start-------
-
 
 function seleccionarCantidad(cantidad) {
     actualizarCantidadPersonalizada(cantidad);
@@ -15,7 +11,7 @@ function seleccionarCantidad(cantidad) {
 }
 
 function getCantidadSeleccionada() {
-    return parseInt(document.getElementById('cantidadPersonalizada').value) || 0;
+    return parseFloat(document.getElementById('cantidadPersonalizada').value) || 0;
 }
 
 function getMensaje() {
@@ -23,11 +19,20 @@ function getMensaje() {
 }
 
 function actualizarCantidadPersonalizada(cantidad) {
-    document.getElementById('cantidadPersonalizada').value = cantidad;
+    document.getElementById('cantidadPersonalizada').value = cantidad === 0 ? '' : cantidad;
 }
 
 function actualizarTotalSoporte(cantidad) {
-    document.getElementById('totalSoporte').innerText = cantidad;
+    var totalSoporteElement = document.getElementById('totalSoporte');
+
+    // Verifica si la cantidad está entre 0 y 10
+    if (cantidad >= 0 && cantidad <= 10) {
+        // Muestra la cantidad en el total
+        totalSoporteElement.innerText = cantidad.toFixed(0);
+    } else {
+        // Si no está en el rango, muestra 0€
+        totalSoporteElement.innerText = '0';
+    }
 }
 
 // Añadir evento input para validar la entrada en el campo de cantidad personalizada
@@ -35,17 +40,27 @@ document.getElementById('cantidadPersonalizada').addEventListener('input', funct
     var cantidadInput = this.value;
 
     // Reemplaza todo lo que no sea un número con una cadena vacía
-    var cantidadNumerica = cantidadInput.replace(/[^\d]/g, '');
+    var cantidadNumerica = cantidadInput.replace(/[^\d.]/g, '');
 
-    // Limita la cantidad a un valor entre 0.01 y 10
-    cantidadNumerica = Math.min(10, Math.max(1, parseFloat(cantidadNumerica)));
+    // Si la entrada está vacía, establece la cantidad en 0
+    if (cantidadNumerica === '') {
+        cantidadNumerica = 0;
+    }
+
+    // Convierte la cantidad a un número flotante
+    // Convierte la cantidad a un número flotante
+    cantidadNumerica = parseFloat(cantidadNumerica);
+
+    // Verifica si la cantidad está en el rango de 0 a 10
+    if (!isNaN(cantidadNumerica)) {
+        cantidadNumerica = Math.min(10, Math.max(0, cantidadNumerica));
+    }
+
 
     // Actualiza el campo de cantidad personalizada y el total de soporte
     actualizarCantidadPersonalizada(cantidadNumerica);
     actualizarTotalSoporte(cantidadNumerica);
 });
-
-
 
 // Incluir el SDK de PayPal
 paypal.Buttons({
@@ -53,7 +68,6 @@ paypal.Buttons({
         return actions.order.create({
             purchase_units: [{
                 amount: {
-
                     value: getCantidadSeleccionada().toString()
                 }
             }]
@@ -75,7 +89,6 @@ paypal.Buttons({
     }
 }).render('#paypal-button-container');
 
-
 function procesarDonacion() {
 
     var nombre = document.getElementById('donacionNombre').value;
@@ -88,7 +101,6 @@ function procesarDonacion() {
         'mensaje': mensaje,
         'cantidad': cantidad,
     };
-
     fetch(url, {
             method: 'POST',
             body: JSON.stringify(data),
@@ -129,14 +141,12 @@ function cargarDonaciones() {
             var myHtml = "";
             var donaciones = result.list;
 
-
-        
             for (let i = 0; i < donaciones.length; i++) {
                 myHtml += `<div class='item' style="text-align: center; margin: 20px; display: flex; flex-direction: column; align-items: center;">
-        <img src="../../view/img/index/default.png" style="width: 200px; height: 150px; border-radius: 10px; margin-bottom: 10px;">
-        <h3 style="margin-top: 10px;">${donaciones[i].nombre}</h3>
-        <p>${donaciones[i].mensaje}</p>
-    </div>`;
+                <h3 style="margin-top: 10px; color: #000; line-height: 26px; font-weight: 600 !important; letter-spacing: 1px !important; text-transform: uppercase; font-size: 14px !important; margin-bottom: 5% !important; ">${donaciones[i].nombre}</h3>
+                <p>Mensaje: "${donaciones[i].mensaje}"</p>
+                <p>Cantidad Donada: ${donaciones[i].cantidad}€</p>
+            </div>`;
             }
 
             document.getElementById('donaciones').innerHTML = myHtml;

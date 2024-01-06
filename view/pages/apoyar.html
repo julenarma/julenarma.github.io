@@ -50,6 +50,7 @@
             <!-- Logotipo en la parte superior izquierda -->
             <div class="log-box">
                 <img id="scrollImage" src="../img/index/armadev_blanco.png" height="30px" alt="">
+                <span class="btn-menu" id="toggleMenu"><i class="fas fa-bars"></i></span>
             </div>
 
             <!-- Menú de navegación principal -->
@@ -57,9 +58,9 @@
                 <li><a href="../../index.html">INICIO</a></li>
                 <li><a href="" id="sobre mi">SOBRE MÍ</a></li>
                 <li><a href="view/pages/portfolio.html" id="portfolio">PORTFOLIO</a></li>
-                <li><a href="">TECNOLOGÍAS</a></li>
+                
                 <li><a href="view/pages/apoyar.html" class="active">APOYAR</a></li>
-                <li><a href="view/pages/contacto.html">CONTACTO</a></li>
+                <li><a href="../pages/contacto.html">CONTACTO</a></li>
             </ul>
         </nav>
         <div class="img-header">
@@ -73,50 +74,47 @@
                     compartiendo o considerando una donación. Cada gesto cuenta y ayuda a mejorar este proyecto.</p>
 
             </div>
-            <div class="header-button">
-                <a class="mini-button" id="button1">
-                    <i class="fas fa-chevron-down"></i>
-                </a>
-            </div>
+           
         </div>
-
     </header>
 
-
-
     <!-- Contenedor del botón de PayPal -->
-
-   
-
-    <div class="donacion jumbotron" style="margin: 0 auto; text-align: center; ">
-        <h2 class="modal-title">Buy an Armadev coffee</h2>
-        <div id="opciones">
-            <div  onclick="seleccionarCantidad(1)">☕</div> 
-            <div class="opcion" onclick="seleccionarCantidad(1)">1</div>
-            <div class="opcion" onclick="seleccionarCantidad(3)">3</div>
-            <div class="opcion" onclick="seleccionarCantidad(5)">5</div>
-            <!-- Input más pequeño para la cantidad personalizada -->
-            <input type="text" id="cantidadPersonalizada" aria-label="cantidadPersonalizada" >
+    <div class="donacion ">
+        <div class="text-donacion">
+            <h2 class="modal-title">Buy an Armadev coffee</h2>
+            <p>Si encuentras valor en lo que hago y deseas apoyar mi trabajo, por favor, considera hacer una donación.
+                Completar el formulario a continuación te permitirá ser parte activa de este viaje tecnológico. Todas
+                las transacciones son seguras y la información se maneja con total confidencialidad.</p>
         </div>
-        <input type="text" id="donacionNombre" placeholder="Tu nombre" aria-label="Username">
-        <textarea id="donacionMensaje" aria-label="With textarea" placeholder="Mensaje(Opcional)"></textarea>
-    
-        <!-- Total a pagar -->
-        <p>Total a pagar: <span id="totalSoporte">0</span>€</p>
-    
-        <!-- Contenedor del botón de PayPal -->
-        <div id="paypal-button-container" style="max-width: 300px; margin: 0 auto; display: flex; justify-content: center;"></div>
-    </div>
-    
+        <div class="donacion-form">
+            <div id="opciones">
+                <div onclick="seleccionarCantidad(1)">☕</div>
+                <div class="opcion" onclick="seleccionarCantidad(1)">1</div>
+                <div class="opcion" onclick="seleccionarCantidad(3)">3</div>
+                <div class="opcion" onclick="seleccionarCantidad(5)">5</div>
+                <!-- Input más pequeño para la cantidad personalizada -->
+                <input type="text" id="cantidadPersonalizada" aria-label="cantidadPersonalizada">
+            </div>
+            <input type="text" id="donacionNombre" placeholder="Tu nombre" aria-label="Username">
+            <textarea id="donacionMensaje" aria-label="With textarea" placeholder="Mensaje (Opcional)"></textarea>
 
+            <!-- Total a pagar -->
+            <p>Total a pagar: <span id="totalSoporte">0</span>€</p>
 
-    <div class="carrusel">
-        <h2 class="carrrusel-title">Donaciones</h2>
-        <div class="owl-carousel owl-theme " id="donaciones">
-
-
+            <!-- Contenedor del botón de PayPal -->
+            <div id="paypal-button-container"
+                style="max-width: 500px; margin: 0 auto; display: flex; justify-content: center; flex-direction: row;">
+            </div>
         </div>
     </div>
+
+
+    <div class="carrusel jumbotron">
+        <h2 class="carrusel-title">Donaciones</h2>
+        <div class="owl-carousel owl-theme" id="donaciones">
+        </div>
+    </div>
+
 
     <!-- Boton de subir arriba -->
     <button class="go-top"><i class="fas fa-arrow-up fa-2x"></i></button>
