@@ -180,7 +180,6 @@ body {
 
 }
 
-
 .item4,
 .item5 {
     /* Ambos items ocupan la mitad del ancho en la misma línea */
@@ -220,7 +219,6 @@ body {
     border-radius: 100px;
     background: linear-gradient(90deg, #087ec4 0%, #087ec4 68%, #ccc 68%, #ccc 100%);
     height: 5px;
-
 
 }
 
@@ -393,7 +391,6 @@ body {
     top: 5% !important;
     text-transform: uppercase;
     justify-content: center;
-
 
 }
 

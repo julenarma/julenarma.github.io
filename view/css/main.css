@@ -34,7 +34,7 @@ nav {
     margin-left: auto;
     /* Mueve el menú hacia la derecha */
     color: white;
-    
+
 }
 
 .nav1-principal li {
@@ -96,7 +96,7 @@ nav.sticky a:hover {
     display: none;
     position: fixed;
     bottom: 20px;
-    left: 95%;
+    left: 94%;
     z-index: 2000;
     border: none;
     outline: none;
@@ -187,7 +187,6 @@ footer h6 {
 
 
 
-
 .redes-sociales a {
     margin: 0 10px;
     /* Ajusta el margen entre los íconos según sea necesario */
@@ -235,7 +234,7 @@ footer h6 {
     }
 
     .nav1-principal {
-    position: absolute;
+        position: absolute;
         top: 65px;
         left: -100%;
         width: 100%;
@@ -244,7 +243,8 @@ footer h6 {
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        transition: left 0.3s ease; /* Added transition property for smooth animation */
+        transition: left 0.3s ease;
+        /* Added transition property for smooth animation */
     }
 
 
@@ -274,6 +274,10 @@ footer h6 {
         border-bottom: none;
     }
 
- 
+    .go-top {
+        left: 84%;
+    }
+
+
 
 }

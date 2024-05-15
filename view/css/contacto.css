@@ -86,7 +86,7 @@ body {
 .white-section {
     background-color: #ffffff;
     /* Color de fondo blanco */
-    height: 150vh;
+    height: auto;
     display: flex;
     flex-wrap: wrap;
     /* Espaciado entre los elementos */

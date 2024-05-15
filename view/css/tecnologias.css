@@ -146,6 +146,7 @@ body {
     justify-content: center;
     list-style: none;
     display: flex;
+    flex-wrap: wrap; /* Añadido para permitir que los elementos se envuelvan automáticamente */
     padding: 3em;
     color: #000;
     transition: color 0.3s ease;
@@ -153,6 +154,7 @@ body {
 
 .nav-tecnologias li {
     margin: 0 20px;
+   
 }
 
 .nav-tecnologias li a {
@@ -161,8 +163,10 @@ body {
     padding-bottom: 1em;
     font-weight: 600;
     font-size: 11px;
+    flex-wrap: wrap;
     letter-spacing: 1px;
     cursor: pointer;
+    white-space: nowrap;
 
 }
 
@@ -240,3 +244,11 @@ figcaption h3 {
     text-transform: uppercase;
 }
 
+@media screen and (max-width: 768px) {
+    .nav-tecnologias li {
+      margin-top: 15px; /* Aumenta el margen superior en dispositivos móviles */
+    }
+
+
+    
+}
