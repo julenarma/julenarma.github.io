@@ -99,8 +99,6 @@ body {
 
 }
 
-
-
 /* Estilo tecnologias */
 .tecnologias {
     background-color: #ffffff;
@@ -190,7 +188,7 @@ body {
 .imagen {
     position: relative;
     width: calc(33.33% ); /* Ajuste para mostrar 3 imágenes por fila */
-    height: 200px;
+    height: 300px;
     box-sizing: border-box;
     max-width: calc(33.33% ); /* Ajuste para mostrar 3 imágenes por fila */
 }
