@@ -122,7 +122,6 @@ function animateCounters() {
 }
 
 
-
 function showCategory(category) {
   $(".imagen").hide(); // Hide all images
 

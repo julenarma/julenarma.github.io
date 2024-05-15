@@ -10,7 +10,7 @@ body {
 
 .img-header {
     position: relative;
-    width: 100%;
+    width: 100% !important;
     height: 100vh;
     overflow: hidden;
 }
@@ -20,7 +20,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%; /* Ancho del video al 100% de la pantalla */
+    width: 100% !important; /* Ancho del video al 100% de la pantalla */
     height: 100%;
     object-fit: cover;
 }
@@ -86,7 +86,7 @@ body {
     /* Color de fondo blanco */
     position: relative;
     width: 100%;
-    height: 130vh;
+    height: auto;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -164,6 +164,7 @@ body {
     grid-template-columns: 1.4fr 1fr;
     /* Dos columnas de tamaño igual */
     font-size: 15px;
+    margin-top: 5% !important;
 
 }
 
@@ -311,7 +312,7 @@ body {
 }
 
 .my-stats-image {
-    background: url(../img/index/portfolio_imagen);
+    background: url(../img/index/programando_index.jpg);
     background-attachment: fixed;
     background-size: cover;
     background-blend-mode: soft-light;
@@ -353,7 +354,7 @@ body {
     /* Color de fondo blanco */
     position: relative;
     width: 100%;
-    height: 150vh;
+    height: auto;
     align-items: center;
     display: flex;
     flex-direction: column;
