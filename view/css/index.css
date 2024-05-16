@@ -149,6 +149,7 @@ body {
 .interested {
     margin-bottom: 2% !important;
     font-size: 14px;
+   
 }
 
 .button-contactame:hover {
@@ -333,9 +334,10 @@ body {
     transition: transform 0.5s ease;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content:center;
     /* Cambia a 'column' si prefieres la disposición vertical */
     color: white;
+    width: 100%; 
 }
 
 .number-container span {
@@ -500,4 +502,3 @@ figcaption h3 {
     font-size: 13px;
     text-transform: uppercase;
 }
-

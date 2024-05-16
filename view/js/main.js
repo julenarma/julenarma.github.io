@@ -17,17 +17,19 @@ $(document).scroll(function () {
   });
 });
 
+window.onscroll = function () {
+  stickyMenu();
+};
+
 
 var image = document.getElementById('scrollImage');
 var navbar = document.getElementById('navbar');
 var navText = document.querySelector('.nav1-principal');
 var toggleMenu = document.getElementById('toggleMenu');
+var goTopButton = document.querySelector('.go-top');
 var sticky = navbar.offsetTop;
 var on_off = true;
 
-window.onscroll = function () {
-  stickyMenu();
-};
 
 
 /*Responsive Menu*/
@@ -40,6 +42,7 @@ toggleMenu.addEventListener('click', function () {
     navbar.classList.add('sticky');
     image.src = getRelativeImagePath('view/img/index/armadev_azul.png');
     toggleMenu.style.color = 'black';
+    goTopButton.style.visibility = 'hidden'; // Muestra el botón "Go top" al cerrar el menú
     disableScroll();
 
   } else {
@@ -48,6 +51,7 @@ toggleMenu.addEventListener('click', function () {
     navbar.classList.remove('sticky');
     image.src = getRelativeImagePath('view/img/index/armadev_blanco.png');
     toggleMenu.style.color = 'white';
+    goTopButton.style.visibility = 'visible'; // Muestra el botón "Go top" al cerrar el menú
     on_off = true; // lo activamos para que funcione ya que está cerrado
     enableScroll()
   }

@@ -238,7 +238,7 @@ footer h6 {
         top: 65px;
         left: -100%;
         width: 100%;
-        height: calc(100vh - 66px);
+        height: calc(100vh - 65px);
         background: white;
         justify-content: center;
         align-items: center;
