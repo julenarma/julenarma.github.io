@@ -210,17 +210,19 @@ body {
     object-fit: cover;
 }
 
-.title-about-me h3 {
-    font-size: 20px;
+.text-about-me h3 {
+    font-size: 24px;
     color: black;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1.5px;
     padding: 20px;
 
+
 }
 
-.title-about-me p, .text-about-me {
+.title-about-me p,
+.text-about-me p {
     padding: 20px;
 
 }
@@ -253,17 +255,18 @@ body {
 .number-container {
     font-size: 48px !important;
     position: absolute;
+    /* Mantenido como absolute */
     top: 50%;
-    left: 50%;
+    left: 45%;
     transform: translate(-50%, -50%);
     transition: transform 0.5s ease;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    /* Cambia a 'column' si prefieres la disposición vertical */
     color: white;
     width: 100%;
 }
+
 
 .number-container span {
     display: flex;
@@ -272,6 +275,8 @@ body {
     margin: 0 30px;
     /* Ajusta el espaciado entre cada número e icono según tus necesidades */
 }
+
+/*Sección my stats fin*/
 
 /* Estilo para la sección2 en blanco */
 .white-section2 {
@@ -289,7 +294,7 @@ body {
 }
 
 .white-section2 .section-title {
-    font-size: 20px;
+    font-size: 24px;
     color: black;
     font-weight: 700;
     text-transform: uppercase;
@@ -382,7 +387,6 @@ body {
 }
 
 .imagen a {
-
     cursor: url('https://mouredev.com/wp-content/themes/h-code/assets/images/icon-zoom-white.png'), auto;
 }
 
@@ -434,11 +438,59 @@ figcaption h3 {
 
 /*TOCA REVISAR */
 @media screen and (max-width: 768px) {
+
+
+    .blue-box {
+        padding: 20px;
+        margin-top: 10% !important;
+    }
+
+    .header-info #parrafo {
+        text-align: left;
+        width: 100% !important;
+        padding: 20px;
+        margin-top: -10% !important;
+    }
+
+    .mini-button {
+        background-color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        color: black;
+        border-radius: 2px;
+        font-size: 17px;
+        padding: 0px 8px;
+        position: absolute;
+    }
+    .white-section p { 
+        font-size: 14px;
+        
+        width: 100% !important;
+        padding: 30px;
+      
+    }
+    /* Estilo para el título */
+    .white-section h2 {
+        font-size: 2.5em;
+        width: 100% !important;
+        padding: 20px;
+        text-align: center;
+    }
+
+    /* Estilo para el texto */
+    .white-section p {
+        line-height: 26px;
+        font-size: 14px;
+        width: 100% !important;
+        margin-top: 4% !important;
+        text-align: left;
+        padding: 20px;
+    }
+
     .grid-container {
         display: flex;
         flex-direction: column;
-        font-size: 15px;
-        margin-top: 5% !important;
+        
     }
 
     .item1,
@@ -450,6 +502,7 @@ figcaption h3 {
         /* Restablece el ancho de la columna en dispositivos móviles */
     }
 
+    /*Arreglar lo de la seguridad informática*/
     .blue-box1 {
         padding-top: 10% !important;
         padding-bottom: 10% !important;
@@ -457,22 +510,18 @@ figcaption h3 {
     }
 
 
-    .title-about-me h3 {
-      
-        /* Reduce el tamaño del título para dispositivos móviles */
-        text-align: center;
-
+    .text-about-me h3 {
+       text-align: center;
     }
 
-    .title-about-me p {
-        padding: 10px; /* Reduce el padding del párrafo para dispositivos móviles */
+    .white-section2 .section-title{
         text-align: center;
+        padding: 20px;
+    } 
+    .white-section2 .section-text {
+        width: 100% !important;
+        padding: 20px;
+        text-align: left;
     }
 
-
-
-    .text1-about-me{
-        padding: 10px; /* Reduce el padding del párrafo para dispositivos móviles */
-        text-align: center;
-    }
 }
