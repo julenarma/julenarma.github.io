@@ -244,7 +244,7 @@ body {
     background-color: rgba(0, 0, 0, 0.6);
     position: relative;
     width: 100%;
-    height: 75vh;
+    height: 65vh;
     background-position: center;
     margin-top: 5em;
     /* Ajusta esto según tus necesidades */
@@ -259,9 +259,11 @@ body {
     transform: translate(-50%, -50%);
     transition: transform 0.5s ease;
     display: flex;
-    flex-direction: row; /* Mantenido flex-direction: row */
+    flex-direction: row;
+    /* Mantenido flex-direction: row */
     justify-content: center;
-    align-items: center; /* Añadido para centrar verticalmente */
+    align-items: center;
+    /* Añadido para centrar verticalmente */
     color: white;
     width: 100%;
 }
@@ -270,22 +272,29 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* Añadido para centrar horizontalmente */
-    margin: 0 20px; /* Ajusta el espaciado entre cada ícono y número */
+    justify-content: center;
+    /* Añadido para centrar horizontalmente */
+    margin: 0 20px;
+    /* Ajusta el espaciado entre cada ícono y número */
 }
 
 .number-container #projects,
 .number-container #clock,
 .number-container #briefcase,
 .number-container #certificate {
-    font-size: 36px; /* Ajusta el tamaño de la fuente de los números */
-    margin-top: 10px; /* Ajusta el espaciado entre el ícono y el texto */
+    font-size: 36px;
+    /* Ajusta el tamaño de la fuente de los números */
+    margin-top: 10px;
+    /* Ajusta el espaciado entre el ícono y el texto */
 }
 
 .interested {
-    font-size: 14px; /* Ajusta el tamaño de la fuente del texto */
-    margin-top: 5px; /* Ajusta el espaciado entre el número y el texto */
-    text-align: center; /* Centra el texto horizontalmente */
+    font-size: 14px;
+    /* Ajusta el tamaño de la fuente del texto */
+    margin-top: 5px;
+    /* Ajusta el espaciado entre el número y el texto */
+    text-align: center;
+    /* Centra el texto horizontalmente */
 }
 
 /*Sección my stats fin*/
@@ -474,13 +483,15 @@ figcaption h3 {
         padding: 0px 8px;
         position: absolute;
     }
-    .white-section p { 
+
+    .white-section p {
         font-size: 14px;
-        
+
         width: 100% !important;
         padding: 30px;
-      
+
     }
+
     /* Estilo para el título */
     .white-section h2 {
         font-size: 2.5em;
@@ -502,7 +513,7 @@ figcaption h3 {
     .grid-container {
         display: flex;
         flex-direction: column;
-        
+
     }
 
     .item1,
@@ -521,15 +532,48 @@ figcaption h3 {
 
     }
 
-
     .text-about-me h3 {
-       text-align: center;
+        text-align: center;
     }
 
-    .white-section2 .section-title{
+    .my-stats-image {
+        background: url(../img/index/projects.jpg);
+        background-attachment: fixed;
+        background-size: cover;
+        background-blend-mode: soft-light;
+        background-color: rgba(0, 0, 0, 0.6);
+        position: relative;
+        width: 100%;
+        min-height: 200vh; /* Altura mínima de 300px */
+        background-position: center;
+        margin-top: 5em;
+        /* Ajusta esto según tus necesidades */
+    }
+   
+    .number-container {
+        font-size: 48px !important;
+        transform: translate(-50%, -50%);
+        transition: transform 0.5s ease;
+        display: flex;
+        flex-direction: column;
+        /* Mantenido flex-direction: row */
+        justify-content: center;
+        align-items: center;
+        /* Añadido para centrar verticalmente */
+        color: white;
+        width: 100%;
+    }
+
+    .number-container span {
+        margin-top: 10% !important;
+    }
+
+
+    .white-section2 .section-title {
         text-align: center;
         padding: 20px;
-    } 
+    }
+
     .white-section2 .section-text {
         width: 100% !important;
         padding: 20px;

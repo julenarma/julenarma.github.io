@@ -20,21 +20,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   mostrarTextoGradualmente('parrafo');
 
-  // Verifica al desplazarse y anima los contadores, 
-  $(window).on("scroll resize", function () {
-    animateCounters();
-  });
-  // Asegura que la animación de los contadores se ejecute después de la carga inicial
-  $(window).on('load', function () {
-    animated = false;
-    animateCounters();
-  });
-
-  // Utiliza el evento 'aos:in' para iniciar la animación de cada contador específico
-  $('[data-aos]').on('aos:in', function (event) {
-    animateCounters();
-  });
-
   // Show images from the "todos" category by default
   showCategory("todos");
 
@@ -72,7 +57,6 @@ function mostrarTextoGradualmente(elementId) {
 }
 
 
-//My stats animation
 var animationCompleted = [false, false, false, false];
 var animated = false;
 
@@ -87,22 +71,20 @@ function isElementInViewport(el, offset) {
 }
 
 function animateCounters() {
-  console.log()
   if (!animated && isElementInViewport($(".my-stats")[0], 0)) {
     $(".my-stats span").each(function (index) {
       var $this = $(this);
       var targetValue;
 
       if (index === 0) {
-        targetValue = "+20"; // Agrega el símbolo "+" delante de los valores
+        targetValue = "+20";
       } else if (index === 1) {
-        targetValue = "+5000"; // Agrega el símbolo "+" delante de los valores
+        targetValue = "+5000";
       } else if (index === 2) {
-        targetValue = "+2"; // Agrega el símbolo "+" delante de los valores
+        targetValue = "+2";
       } else if (index === 3) {
-        targetValue = "+5"; // Agrega el símbolo "+" delante de los valores
+        targetValue = "+5";
       }
-
 
       if (!animationCompleted[index]) {
         $({
@@ -118,18 +100,32 @@ function animateCounters() {
           },
           complete: function () {
             animationCompleted[index] = true;
-            // Verifica si todas las animaciones se han completado
             if (animationCompleted.every(complete => complete)) {
-              animated = true; // Solo establece animated en true si todas las animaciones están completas
+              animated = true;
             }
           },
         });
+      } else {
+        // Si la animación ya está completa, establece el valor final directamente
+        $this.find("div").text(targetValue);
       }
     });
+
+    // Después de iniciar la animación, marca la animación como iniciada
+    animated = true;
   }
 }
 
-$(window).on("scroll", function () {
+$(window).on("scroll resize", function () {
+  animateCounters();
+});
+
+$(window).on('load', function () {
+  animated = false;
+  animateCounters();
+});
+
+$('[data-aos]').on('aos:in', function (event) {
   animateCounters();
 });
 
