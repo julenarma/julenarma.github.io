@@ -544,10 +544,9 @@ figcaption h3 {
         background-color: rgba(0, 0, 0, 0.6);
         position: relative;
         width: 100%;
-        min-height: 200vh; /* Altura mínima de 300px */
+        min-height: 120vh; /* Altura mínima de 300px */
         background-position: center;
-        margin-top: 5em;
-        /* Ajusta esto según tus necesidades */
+       
     }
    
     .number-container {

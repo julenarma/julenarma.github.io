@@ -56,7 +56,6 @@ function mostrarTextoGradualmente(elementId) {
   elemento.classList.add('hidden-text');
 }
 
-
 var animationCompleted = [false, false, false, false];
 var animated = false;
 
@@ -64,55 +63,64 @@ function isElementInViewport(el, offset) {
   var rect = el.getBoundingClientRect();
   return (
     rect.top >= -offset &&
-    rect.left >= 0 &&
     rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
     rect.right <= (window.innerWidth || document.documentElement.clientWidth)
   );
 }
 
+function startAnimation() {
+  $(".my-stats span").each(function (index) {
+    var $this = $(this);
+    var targetValue;
+
+    if (index === 0) {
+      targetValue = "+20";
+    } else if (index === 1) {
+      targetValue = "+5000";
+    } else if (index === 2) {
+      targetValue = "+2";
+    } else if (index === 3) {
+      targetValue = "+5";
+    }
+
+    if (!animationCompleted[index]) {
+      $({
+        value: 0
+      }).animate({
+        value: parseFloat(targetValue.replace("+", ""))
+      }, {
+        duration: 2000,
+        easing: "swing",
+        step: function () {
+          var displayValue = "+" + Math.ceil(this.value);
+          $this.find("div").text(displayValue);
+        },
+        complete: function () {
+          animationCompleted[index] = true;
+          if (animationCompleted.every(complete => complete)) {
+            animated = true;
+          }
+        },
+      });
+    } else {
+      // Si la animación ya está completa, establece el valor final directamente
+      $this.find("div").text(targetValue);
+    }
+  });
+
+  // Después de iniciar la animación, marca la animación como iniciada
+  animated = true;
+}
+
 function animateCounters() {
-  if (!animated && isElementInViewport($(".my-stats")[0], 0)) {
-    $(".my-stats span").each(function (index) {
-      var $this = $(this);
-      var targetValue;
+  var $myStats = $(".my-stats");
 
-      if (index === 0) {
-        targetValue = "+20";
-      } else if (index === 1) {
-        targetValue = "+5000";
-      } else if (index === 2) {
-        targetValue = "+2";
-      } else if (index === 3) {
-        targetValue = "+5";
-      }
-
-      if (!animationCompleted[index]) {
-        $({
-          value: 0
-        }).animate({
-          value: parseFloat(targetValue.replace("+", ""))
-        }, {
-          duration: 2000,
-          easing: "swing",
-          step: function () {
-            var displayValue = "+" + Math.ceil(this.value);
-            $this.find("div").text(displayValue);
-          },
-          complete: function () {
-            animationCompleted[index] = true;
-            if (animationCompleted.every(complete => complete)) {
-              animated = true;
-            }
-          },
-        });
-      } else {
-        // Si la animación ya está completa, establece el valor final directamente
-        $this.find("div").text(targetValue);
-      }
-    });
-
-    // Después de iniciar la animación, marca la animación como iniciada
-    animated = true;
+  // Verifica si la animación aún no ha sido completada y si el usuario está en un dispositivo móvil o si el elemento está en el viewport
+  if (!animated && (window.innerWidth <= 768 || isElementInViewport($myStats[0], 0))) {
+    // Verifica si todas las animaciones ya han sido completadas
+    if (!animationCompleted.every(complete => complete)) {
+      startAnimation();
+    }
   }
 }
 
@@ -120,6 +128,7 @@ $(window).on("scroll resize", function () {
   animateCounters();
 });
 
+// No necesitamos llamar a animateCounters en el evento load
 $(window).on('load', function () {
   animated = false;
   animateCounters();
@@ -128,6 +137,8 @@ $(window).on('load', function () {
 $('[data-aos]').on('aos:in', function (event) {
   animateCounters();
 });
+
+
 
 function showCategory(category) {
   $(".imagen").hide(); // Hide all images
