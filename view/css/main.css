@@ -12,7 +12,7 @@ nav {
     z-index: 1000;
     transition: background-color 0.5s ease;
     display: flex;
-    max-height: 65px;
+    height: 65px;
 
 }
 
@@ -29,7 +29,7 @@ nav {
 .nav1-principal {
     list-style: none;
     display: flex;
-    padding: 1.7em;
+    padding: 1.7em !important;
     justify-content: flex-end;
     margin-left: auto;
     /* Mueve el menú hacia la derecha */
