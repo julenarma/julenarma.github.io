@@ -131,40 +131,39 @@ body {
     font-weight: 600;
 }
 
-.redes-sociales {
+.redes {
     margin-top: 5% !important;
 }
 
-.redes-sociales a {
+.redes a {
     margin: 0 10px;
     /* Ajusta el margen entre los íconos según sea necesario */
     font-size: 28px;
 }
 
 
-.redes-sociales a {
+.redes a {
     color: #0077b5;
     /* Color de LinkedIn */
 }
 
-.redes-sociales a:nth-child(2) {
+.redes a:nth-child(2) {
     color: #e4405f;
     /* Color de Instagram */
 }
 
-.redes-sociales a:nth-child(3) {
+.redes a:nth-child(3) {
     color: #4078c0;
     /* Color de GitHub */
 }
 
-.redes-sociales a:hover {
+.redes a:hover {
     filter: brightness(1.5);
     /* Intensifica el color al pasar el ratón sobre él */
     transition: 0.3s all;
 }
 
 /*Formulario*/
-
 input,
 textarea {
     font-family: 'Open Sans', sans-serif;
