@@ -4,9 +4,12 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;
-    color: #333;
+    
 }
-
+header{
+    background-color: black;
+   
+}
 nav {
     position: relative;
     width: 100%;
@@ -15,20 +18,21 @@ nav {
     z-index: 1000;
     transition: background-color 0.5s ease;
     display: flex;
-    max-height: 65px;
+    height: 65px;
     align-items: center;
+
 }
 
 .log-box {
     padding: 1.5em;
     width: 20%;
-    align-items: center;
 }
 
 .btn-menu {
 
     display: none;
 }
+
 
 .nav1-principal {
     list-style: none;
@@ -38,6 +42,7 @@ nav {
     margin-left: auto;
     /* Mueve el menú hacia la derecha */
     color: white;
+    
 
 }
 
@@ -68,32 +73,7 @@ nav {
 
 
 
-nav.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: white;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    color: black;
 
-}
-
-nav.sticky a {
-    color: black;
-    padding-bottom: 1em;
-
-}
-
-nav.sticky a.active {
-    border-bottom: 2px solid black;
-}
-
-
-nav.sticky a:hover {
-
-    border-bottom: 2px solid black;
-
-}
 
 .container {
     max-width: 800px;
@@ -101,11 +81,7 @@ nav.sticky a:hover {
     padding: 20px;
 }
 
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px 0;
-}
+
 
 h1 {
     text-align: center;
@@ -123,7 +99,7 @@ p {
 }
 
 footer {
-    background-color: #333;
+    background-color: black;
     color: #fff;
     padding: 20px 0;
     text-align: center;
