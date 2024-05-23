@@ -1,20 +1,16 @@
 $(document).scroll(function () {
-  // console.log(window.pageYOffset != 0, window.pageYOffset );
   if (window.pageYOffset >= 500) {
-
-    //Nos sale
     $('.go-top').show();
   } else {
-    //se oculta
     $('.go-top').hide();
   }
-  $('.go-top ').on('click', function () {
+});
 
-    $("html, body").animate({
-      scrollTop: 0
-    }, 600);
-
-  });
+// Adjuntar el controlador de clic fuera del controlador de desplazamiento
+$('.go-top').on('click', function () {
+  $("html, body").animate({
+    scrollTop: 0
+  }, 600);
 });
 
 window.onscroll = function () {

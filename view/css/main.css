@@ -247,19 +247,16 @@ footer h6 {
         /* Added transition property for smooth animation */
     }
 
-
     /*Cada botón, una escalera más arriba del enlace, aquí pondremos los margenes entre los botones*/
     .nav1-principal li {
 
         margin: 8px 0px;
-
     }
 
     .nav1-principal li a {
 
         font-size: 20px;
         color: black;
-
     }
 
     .nav1-principal li a.active {
@@ -277,7 +274,5 @@ footer h6 {
     .go-top {
         left: 84%;
     }
-
-
 
 }
