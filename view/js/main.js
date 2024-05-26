@@ -67,14 +67,15 @@ function stickyMenu() {
     navbar.classList.add('sticky');
     navText.style.color = 'black';
     image.src = getRelativeImagePath('view/img/index/armadev_azul.png');
-    // Assuming .btn-menu is your toggle menu icon
-    toggleMenu.style.color = 'black';
+    image.style.width = '121.84px';
+    image.style.height = '30px';
   } else {
     navbar.classList.remove('sticky');
     navText.style.color = 'white';
     image.src = getRelativeImagePath('view/img/index/armadev_blanco.png');
-    // Assuming .btn-menu is your toggle menu icon
-    toggleMenu.style.color = 'white';
+    image.style.width = '121.84px';
+    image.style.height = '30px';
+
   }
 }
 

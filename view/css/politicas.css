@@ -4,27 +4,23 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;
-    
+
 }
-header{
-    background-color: black;
-   
-}
+
+
 nav {
-    position: relative;
+    position: absolute;
     width: 100%;
     top: 0;
-    background-color: transparent;
+    background-color: black;
     z-index: 1000;
     transition: background-color 0.5s ease;
     display: flex;
     height: 65px;
-    align-items: center;
-
 }
 
 .log-box {
-    padding: 1.5em;
+    padding: 22.1px;
     width: 20%;
 }
 
@@ -33,16 +29,15 @@ nav {
     display: none;
 }
 
-
 .nav1-principal {
     list-style: none;
     display: flex;
-    padding: 1.7em;
+    padding: 22.1px !important;
     justify-content: flex-end;
+    align-items: center;
     margin-left: auto;
     /* Mueve el menú hacia la derecha */
     color: white;
-    
 
 }
 
@@ -72,15 +67,72 @@ nav {
 }
 
 
+nav.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: black;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    color: black;
+
+}
+
+nav.sticky a {
+    color: white;
+    padding-bottom: 1em;
+
+}
+
+nav.sticky a.active {
+    border-bottom: 2px solid black;
+}
 
 
+nav.sticky a:hover {
+
+    border-bottom: 2px solid black;
+
+}
+
+/*Go top*/
+.go-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 94%;
+    z-index: 2000;
+    border: none;
+    outline: none;
+    background-color: lightgrey;
+    color: black;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 35px;
+    height: 50px;
+    width: 50px;
+}
+
+.go-top:hover {
+    background-color: white;
+
+}
+
+.go-top:focus {
+
+    border: none;
+    outline: none;
+}
+
+
+.container-title {
+    margin-top: 100px;
+}
 
 .container {
     max-width: 800px;
     margin: auto;
     padding: 20px;
 }
-
 
 
 h1 {
@@ -99,10 +151,16 @@ p {
 }
 
 footer {
-    background-color: black;
+    background-color: #333;
     color: #fff;
     padding: 20px 0;
     text-align: center;
+}
+
+footer p {
+    color: #fff;
+    text-decoration: none;
+
 }
 
 footer a {
@@ -111,5 +169,7 @@ footer a {
 }
 
 footer a:hover {
-    text-decoration: underline;
+    outline: none;
+    text-decoration: none;
+    opacity: 0.5;
 }
