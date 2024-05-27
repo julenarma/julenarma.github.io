@@ -1,0 +1,281 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    background-color: transparent;
+    z-index: 1000;
+    transition: background-color 0.5s ease;
+    display: flex;
+    max-height: 65px;
+
+}
+
+.log-box {
+    padding: 1.5em;
+    width: 20%;
+}
+
+.btn-menu {
+
+    display: none;
+}
+
+.nav1-principal {
+    list-style: none;
+    display: flex;
+    padding: 1.7em;
+    justify-content: flex-end;
+    margin-left: auto;
+    /* Mueve el menú hacia la derecha */
+    color: white;
+
+}
+
+.nav1-principal li {
+    margin: 0 20px;
+}
+
+.nav1-principal li a {
+    color: white;
+    text-decoration: none;
+    padding-bottom: 1em;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 1px;
+
+
+}
+
+.nav1-principal a:hover {
+    border-bottom: 2px solid white;
+
+
+}
+
+.nav1-principal li a.active {
+    border-bottom: 2px solid white;
+}
+
+
+
+nav.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    color: black;
+
+}
+
+nav.sticky a {
+    color: black;
+    padding-bottom: 1em;
+
+}
+
+nav.sticky a.active {
+    border-bottom: 2px solid black;
+}
+
+
+nav.sticky a:hover {
+
+    border-bottom: 2px solid black;
+
+}
+
+/*Go top*/
+.go-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 94%;
+    z-index: 2000;
+    border: none;
+    outline: none;
+    background-color: lightgrey;
+    color: black;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 35px;
+    height: 50px;
+    width: 50px;
+}
+
+.go-top:hover {
+    background-color: white;
+
+}
+
+.go-top:focus {
+
+    border: none;
+    outline: none;
+}
+
+
+
+/*footer*/
+
+footer {
+    margin-top: 5% !important;
+
+}
+
+footer h5 {
+
+    font-size: 11px !important;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: black;
+    margin-bottom: 20px;
+}
+
+
+footer p {
+
+
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+
+footer h6 {
+    font-size: 11px !important;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.enlaces-footer a {
+    color: black;
+    text-decoration: none;
+
+    display: inline-block;
+
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-right: 18px;
+    margin-top: 5% !important;
+    font-size: 11px !important;
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.enlaces-footer a:hover {
+    opacity: 0.5;
+    transition: 0.3s all;
+    /* Intensifica el color al pasar el ratón sobre él */
+}
+
+.redes-sociales {
+    margin-top: 1% !important;
+    margin-bottom: 1% !important;
+}
+
+
+
+.redes-sociales a {
+    margin: 0 10px;
+    /* Ajusta el margen entre los íconos según sea necesario */
+    font-size: 28px;
+
+}
+
+
+.redes-sociales a {
+    color: black;
+    /* Color de LinkedIn */
+}
+
+.redes-sociales a:nth-child(2) {
+    color: black;
+    /* Color de Instagram */
+}
+
+.redes-sociales a:nth-child(3) {
+    color: black;
+    /* Color de GitHub */
+}
+
+.redes-sociales a:hover {
+    opacity: 0.5;
+    transition: 0.3s all;
+    /* Intensifica el color al pasar el ratón sobre él */
+}
+
+.politica-privacidad:hover{
+    opacity: 0.5;
+    transition: 0.3s all;
+}
+
+@media only screen and (max-width: 768px) {
+
+    /*Navegation Menu*/
+
+    .btn-menu {
+
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 30px;
+        cursor: pointer;
+        color: white;
+    }
+
+    .nav1-principal {
+        position: absolute;
+        top: 65px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 65px);
+        background: white;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        transition: left 0.3s ease;
+        /* Added transition property for smooth animation */
+    }
+
+    /*Cada botón, una escalera más arriba del enlace, aquí pondremos los margenes entre los botones*/
+    .nav1-principal li {
+
+        margin: 8px 0px;
+    }
+
+    .nav1-principal li a {
+
+        font-size: 20px;
+        color: black;
+    }
+
+    .nav1-principal li a.active {
+        background: none;
+        color: #087ec4 !important;
+        border-bottom: none;
+    }
+
+    .nav1-principal li a:hover {
+        background: none;
+        color: #087ec4 !important;
+        border-bottom: none;
+    }
+
+    .go-top {
+        left: 84%;
+    }
+
+}
