@@ -66,7 +66,6 @@ nav {
     border-bottom: 2px solid white;
 }
 
-
 nav.sticky {
     position: fixed;
     top: 0;
@@ -172,4 +171,65 @@ footer a:hover {
     outline: none;
     text-decoration: none;
     opacity: 0.5;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+
+    /*Navegation Menu*/
+
+    .btn-menu {
+
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 30px;
+        cursor: pointer;
+        color: white;
+    }
+
+    .nav1-principal {
+        position: absolute;
+        top: 49px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 65px);
+        background: white;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        transition: left 0.3s ease;
+        /* Added transition property for smooth animation */
+    }
+
+    /*Cada botón, una escalera más arriba del enlace, aquí pondremos los margenes entre los botones*/
+    .nav1-principal li {
+
+        margin: 8px 0px;
+    }
+
+    .nav1-principal li a {
+
+        font-size: 20px;
+        color: black;
+    }
+
+    .nav1-principal li a.active {
+        background: none;
+        color: #087ec4 !important;
+        border-bottom: none;
+    }
+
+    .nav1-principal li a:hover {
+        background: none;
+        color: #087ec4 !important;
+        border-bottom: none;
+    }
+
+    .go-top {
+        left: 84%;
+    }
+
 }
