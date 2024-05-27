@@ -16,8 +16,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 1000);
   });
 
-  // Llamada a la función para cada elemento
+  //video automatico index pal movil
+  var video = document.getElementById('myVideo');
+  video.play();
 
+  // Llamada a la función para cada elemento
   mostrarTextoGradualmente('parrafo');
 
   // Show images from the "todos" category by default
