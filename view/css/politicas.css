@@ -192,9 +192,9 @@ footer a:hover {
 
     .nav1-principal {
         position: absolute;
-        top: 49px;
-        left: -100%;
-        width: 100%;
+        top: 50px;
+        left: -120%;
+        width: 93%;
         height: calc(100vh - 65px);
         background: white;
         justify-content: center;
@@ -203,6 +203,7 @@ footer a:hover {
         transition: left 0.3s ease;
         /* Added transition property for smooth animation */
     }
+
 
     /*Cada botón, una escalera más arriba del enlace, aquí pondremos los margenes entre los botones*/
     .nav1-principal li {

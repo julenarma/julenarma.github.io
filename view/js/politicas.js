@@ -42,7 +42,7 @@ $(document).scroll(function () {
   
     } else {
       //Si es false que se desplace
-      navText.style.left = '-100%';
+      navText.style.left = '-120%';
       navbar.classList.remove('sticky');
       toggleMenu.style.color = 'white';
       goTopButton.style.visibility = 'visible'; // Muestra el botón "Go top" al cerrar el menú

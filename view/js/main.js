@@ -79,6 +79,7 @@ function stickyMenu() {
   }
 }
 
+
 function getRelativeImagePath(relativePath) {
   // Get the current page's URL
   var currentUrl = window.location.href;
