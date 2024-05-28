@@ -111,19 +111,22 @@ textarea {
 }
 
 #cantidadPersonalizada {
-    width: 50px;
-    margin-left: 10px;
+    width: 60px;
+    height: 50px;
+    margin-left: 20px;
+    font-size: 13px;
+  
 }
 
 .opcion {
     cursor: pointer;
     border-radius: 50%;
-    color: #2563eb;
+    color: black;
     background-color: white;
-    border: 2px solid #2563eb;
+    border: 2px solid black;
     padding: 2px;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -159,4 +162,22 @@ textarea {
     border-bottom: solid 7px rgb(235, 52, 52);
     margin: 1em auto;
     width: 100px;
+}
+
+
+@media (max-width: 768px) {
+    .donacion {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .text-donacion, .donacion-form {
+        width: 100%;
+        margin-top: 20px !important;
+    }
+
+    #opciones {
+        flex-direction: row;
+        gap: 20px;
+    }
 }
