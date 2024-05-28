@@ -97,24 +97,27 @@ function startAnimation() {
         },
         complete: function () {
           animationCompleted[index] = true;
-          $this.find("div").text(targetValue);
           if (animationCompleted.every(complete => complete)) {
             animated = true;
           }
         },
       });
     } else {
+      // Si la animación ya está completa, establece el valor final directamente
       $this.find("div").text(targetValue);
     }
   });
 
+  // Después de iniciar la animación, marca la animación como iniciada
   animated = true;
 }
 
 function animateCounters() {
   var $myStats = $(".my-stats");
 
-  if (!animated && isElementInViewport($myStats[0], 0)) {
+  // Verifica si la animación aún no ha sido completada y si el usuario está en un dispositivo móvil o si el elemento está en el viewport
+  if (!animated && (window.innerWidth <= 768 || isElementInViewport($myStats[0], 0))) {
+    // Verifica si todas las animaciones ya han sido completadas
     if (!animationCompleted.every(complete => complete)) {
       startAnimation();
     }
@@ -122,6 +125,12 @@ function animateCounters() {
 }
 
 $(window).on("scroll resize", function () {
+  animateCounters();
+});
+
+// No necesitamos llamar a animateCounters en el evento load
+$(window).on('load', function () {
+  animated = false;
   animateCounters();
 });
 
