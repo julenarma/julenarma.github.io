@@ -9,10 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 
-  var video = document.getElementById('myVideo');
-  video.play(); // Reproducir el video automáticamente al cargar la página
-
-  
+ 
   //Botón index hacia sección 1
   $('.mini-button').on('click', function () {
     $('html, body').animate({
