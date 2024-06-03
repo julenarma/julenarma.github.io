@@ -455,7 +455,9 @@ figcaption h3 {
 
 /*TOCA REVISAR */
 @media screen and (max-width: 768px) {
-
+    #myVideo {
+        display: none; /* Ocultar el video en dispositivos móviles */
+    }
 
     .blue-box {
         padding: 20px;
