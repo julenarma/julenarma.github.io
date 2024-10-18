@@ -458,8 +458,8 @@ figcaption h3 {
   
 
     .img-header video {
-        /* Puedes ajustar propiedades específicas aquí si es necesario */
-        object-position: center; 
+        object-fit: cover; /* Asegúrate de que el video cubra el contenedor */
+        object-position: 40% center; /* Mueve el video un poco a la izquierda */
     }
     .blue-box {
         padding: 20px;
