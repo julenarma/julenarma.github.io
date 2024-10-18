@@ -459,7 +459,7 @@ figcaption h3 {
 
     .img-header video {
         /* Puedes ajustar propiedades específicas aquí si es necesario */
-        object-position: center; 
+        object-position: left; 
     }
     .blue-box {
         padding: 20px;
