@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", function () {
     once: true // Duration of the animation in milliseconds
   });
 
-
  
   //Botón index hacia sección 1
   $('.mini-button').on('click', function () {
@@ -34,9 +33,8 @@ document.addEventListener("DOMContentLoaded", function () {
     $(this).addClass("active");
   });
 
-
+  
 }); //--------------Dom Content End ----------------
-
 
 //--------------Función para mostrar el texto gradualmente-------------------
 function mostrarTextoGradualmente(elementId) {

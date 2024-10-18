@@ -1,8 +1,6 @@
-/*Jquery*/
-$(document).ready(function () {
-    cargarDonaciones();
-})
-
+// Cargar donaciones al cargar la página
+// Cargar donaciones al cargar la página
+document.addEventListener('DOMContentLoaded', cargarDonaciones);
 //------------Donacion cafe start-------
 
 function seleccionarCantidad(cantidad) {
@@ -26,7 +24,7 @@ function actualizarTotalSoporte(cantidad) {
     var totalSoporteElement = document.getElementById('totalSoporte');
 
     // Verifica si la cantidad está entre 0 y 10
-    if (cantidad >= 0 && cantidad <= 10) {
+    if (cantidad >= 0 && cantidad <= 100) {
         // Muestra la cantidad en el total
         totalSoporteElement.innerText = cantidad.toFixed(0);
     } else {
@@ -48,12 +46,11 @@ document.getElementById('cantidadPersonalizada').addEventListener('input', funct
     }
 
     // Convierte la cantidad a un número flotante
-    // Convierte la cantidad a un número flotante
     cantidadNumerica = parseFloat(cantidadNumerica);
 
-    // Verifica si la cantidad está en el rango de 0 a 10
+    // Verifica si la cantidad está en el rango de 0 a 10z
     if (!isNaN(cantidadNumerica)) {
-        cantidadNumerica = Math.min(10, Math.max(0, cantidadNumerica));
+        cantidadNumerica = Math.min(100, Math.max(0, cantidadNumerica));
     }
 
 
