@@ -456,6 +456,11 @@ figcaption h3 {
 /*TOCA REVISAR */
 @media screen and (max-width: 768px) {
   
+
+    .img-header video {
+        /* Puedes ajustar propiedades específicas aquí si es necesario */
+        object-position: center; 
+    }
     .blue-box {
         padding: 20px;
         margin-top: 10% !important;
