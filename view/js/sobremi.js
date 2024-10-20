@@ -42,20 +42,150 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    // Inicializa el gráfico de habilidades
+
+    // -------------------------GRAFICO LINEAL EDUCACIÓN-------------------------
+
+    const ctxEducationLine = document.getElementById('educationChart').getContext('2d');
+
+    const educationData = {
+        labels: ['E.S.O.', 'Bachillerato', 'Desarrollo Web', 'Desarrollo Multiplataforma', 'Curso Especialización Ciberseguridad'],
+        datasets: [{
+            label: 'Nivel Educativo',
+            data: [1, 2, 3, 4, 5], // Niveles educativos
+            borderColor: 'rgba(41, 128, 185, 1)',
+            backgroundColor: 'rgba(41, 128, 185, 0.2)',
+            fill: true,
+            tension: 0.3
+        }]
+    };
+
+    const educationChart = new Chart(ctxEducationLine, {
+        type: 'line',
+        data: educationData,
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    title: {
+                        display: true,
+                        text: 'Nivel Educativo'
+                    },
+                    ticks: {
+                        callback: function (value) {
+                            const levels = ['E.S.O.', 'Bachillerato', 'Desarrollo Web', 'Desarrollo Multiplataforma', 'Curso Especialización Ciberseguridad'];
+                            return levels[value - 1];
+                        }
+                    }
+                },
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Índice'
+                    },
+                    ticks: {
+                        callback: function (value, index) {
+                            return index + 1; // Muestra 1, 2, 3, 4, 5
+                        }
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    display: true
+                }
+            }
+        }
+    });
+    // -------------------------GRAFICO EXPERIENCIA-------------------------
+
+    // Función para calcular la experiencia en años
+    function calculateExperience(startDate, endDate) {
+        const now = endDate ? new Date(endDate) : new Date(); // Usa la fecha de fin si existe
+        const start = new Date(startDate);
+        const diff = now - start; // Diferencia en milisegundos
+        const years = diff / (1000 * 60 * 60 * 24 * 365); // Convertir a años
+        return years.toFixed(1); // Redondear a un decimal
+    }
+
+    // Fechas de inicio y fin de experiencia laboral
+    const experiences = [
+        {
+            company: 'EITB',
+            startDate: '2021-03-01',
+            endDate: '2021-06-30' // Fecha de fin
+        },
+        {
+            company: 'Accenture',
+            startDate: '2022-03-01',
+            endDate: '2022-06-30' // Fecha de fin
+        },
+        {
+            company: 'WatchGuard Technologies',
+            startDate: '2023-03-31',
+            endDate: null // Actual
+        },
+    ];
+
+    // Calcular años de experiencia para cada empresa
+    const experienceData = experiences.map(exp => calculateExperience(exp.startDate, exp.endDate));
+
+    // Inicializa el gráfico de experiencia laboral
+    const ctxExperienceBar = document.getElementById('experienceChart').getContext('2d');
+
+    const experienceChartData = {
+        labels: experiences.map(exp => exp.company),
+        datasets: [{
+            label: 'Años de Experiencia',
+            data: experienceData, // Usar los datos calculados
+            backgroundColor: 'rgba(41, 128, 185, 0.7)',
+        }]
+    };
+
+    new Chart(ctxExperienceBar, {
+        type: 'bar',
+        data: experienceChartData,
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Años'
+                    }
+                },
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Empresas'
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    display: true
+                }
+            }
+        }
+    });
+
+
+
+
+    // -------------------------GRAFICO HABILIDADES-------------------------
     const ctx = document.getElementById('skillsChart').getContext('2d');
 
     const skillsData = {
         labels: [
-            'HTML', 'CSS', 'JavaScript', 'PHP', 'Python', 
-            'C#', 'Laravel', 'Vue.js', 'Flutter', 
-            'MySQL', 'SQLite', 'Git', 'GitHub', 
-            'Visual Studio', 'Firebase', 'Atlassian', 
+            'HTML', 'CSS', 'JavaScript', 'PHP', 'Python',
+            'C#', 'Laravel', 'Vue.js', 'Flutter',
+            'MySQL', 'SQLite', 'Git', 'GitHub',
+            'Visual Studio', 'Firebase', 'Atlassian',
             'MITRE ATT&CK', 'EDR/MDR/XDR', 'Threat Hunting'
         ],
         datasets: [{
             label: 'Habilidades',
-            data: [10, 9, 8, 7, 6, 6, 7, 6, 5, 7, 6, 8, 7, 8, 7, 6, 5, 5], // Datos
+            data: [10, 10, 9, 10, 8, 7, 6, 8, 6, 9, 8, 10, 10, 10, 9, 10, 9, 9, 9], // Datos
             backgroundColor: 'rgba(41, 128, 185, 0.5)', // Color de fondo del área
             borderColor: 'rgba(41, 128, 185, 1)', // Color de la línea
             borderWidth: 3, // Grosor de la línea
@@ -67,7 +197,7 @@ document.addEventListener("DOMContentLoaded", function () {
             fill: true, // Rellenar el área debajo de la línea
         }]
     };
-    
+
     new Chart(ctx, {
         type: 'radar',
         data: skillsData,
@@ -119,7 +249,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     borderWidth: 2,
                     padding: 10,
                     callbacks: {
-                        label: function(tooltipItem) {
+                        label: function (tooltipItem) {
                             return `${tooltipItem.label}: ${tooltipItem.raw}`; // Mostrar etiqueta y valor
                         }
                     }
@@ -142,5 +272,11 @@ document.addEventListener("DOMContentLoaded", function () {
             },
         }
     });
+
+
+
+    // -------------------------GRAFICO EDUCACIÓN-------------------------
+
+
 
 });

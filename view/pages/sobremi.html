@@ -57,10 +57,11 @@
       <div class="header-info">
         <h2>Sobre Mí</h2>
         <p>
-            Soy Julen Armaolea Elexgaray, un apasionado profesional en ciberseguridad y desarrollo de software. Aquí encontrarás información sobre mi trayectoria, mis experiencias y las habilidades que me definen.
+          Soy Julen Armaolea Elexgaray, un apasionado profesional en ciberseguridad y desarrollo de software. Aquí
+          encontrarás información sobre mi trayectoria, mis experiencias y las habilidades que me definen.
         </p>
         <a class="button-sobremi">Ver mi trayectoria</a>
-    </div>
+      </div>
   </header>
 
   <section id="about" class="about-section" data-aos="fade-up">
@@ -82,8 +83,11 @@
 
       <h3 class="accordion">
         <span class="accordion-icon"><i class="fas fa-plus"></i></span> Educación y Formación
-    </h3>
+      </h3>
       <div class="panel">
+        <div style="position: relative; overflow: visible; height: 500px">
+          <canvas id="educationChart"></canvas>
+        </div>
         <ul class="education-list">
           <li><strong>EDUCACIÓN SECUNDARIA OBLIGATORIA (E.S.O.)</strong> - San Fidel Ikastola (09/2012 – 06/2016)
             <a href="http://www.sfidelikastola.com/" target="_blank">Web</a>
@@ -103,11 +107,14 @@
           </li>
         </ul>
       </div>
-
+      
       <h3 class="accordion">
         <span class="accordion-icon"><i class="fas fa-plus"></i></span> Experiencia Laboral
-    </h3>
+      </h3>
       <div class="panel">
+        <div style="position: relative; overflow: visible;height: 500px;">
+          <canvas id="experienceChart"></canvas>
+        </div>
         <ul class="experience-list">
           <li><strong>ANALISTA DE CIBERSEGURIDAD L1 MDR SOC</strong> - WatchGuard Technologies (04/07/2023 – Actual)
             <ul>
@@ -138,19 +145,18 @@
 
       <h3 class="accordion">
         <span class="accordion-icon"><i class="fas fa-plus"></i></span> Habilidades Técnicas
-    </h3>
+      </h3>
       <div class="panel">
-       
-        <!-- Gráfico Interactivo -->
-        <div style="position: relative; overflow: visible;">
-         
-          <canvas id="skillsChart" ></canvas>
+        <div style="position: relative; overflow: visible; height: 500px;">
+          <canvas id="skillsChart"></canvas>
+        </div>
       </div>
-      </div>
+
+
 
       <h3 class="accordion">
         <span class="accordion-icon"><i class="fas fa-plus"></i></span> Idiomas
-    </h3>
+      </h3>
       <div class="panel">
         <ul class="languages-list">
           <li><strong>Español:</strong> Nativo</li>
@@ -161,21 +167,19 @@
 
       <h3 class="accordion">
         <span class="accordion-icon"><i class="fas fa-plus"></i></span> Intereses
-    </h3>
+      </h3>
       <div class="panel">
         <ul class="interest-list">
-          <li> Disfruto de la lectura de libros de ficción y trabajo de forma voluntaria para ayudar a desarrollar y
-            mantener
-            un sitio web para un grupo sin fines de lucro. Me interesa el deporte, especialmente el fútbol, tanto a
-            nivel
-            amateur como profesional.</li>
+          <li>Disfruto de la lectura de libros de ficción y trabajo de forma voluntaria para ayudar a desarrollar y
+            mantener un sitio web para un grupo sin fines de lucro. Me interesa el deporte, especialmente el fútbol,
+            tanto a
+            nivel amateur como profesional.</li>
         </ul>
-
       </div>
 
       <h3 class="accordion">
         <span class="accordion-icon"><i class="fas fa-plus"></i></span> Permisos
-    </h3>
+      </h3>
       <div class="panel">
         <ul class="licenses-list">
           <li><strong>Permiso de conducción:</strong> B</li>
@@ -184,7 +188,6 @@
 
     </div>
   </section>
-
 
 
 
@@ -277,6 +280,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/js/all.min.js"></script>
   <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- D3.js -->
+
 
   <!--Mi Javascript-->
   <script src="../js/main.js"></script>
