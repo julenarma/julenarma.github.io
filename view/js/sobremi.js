@@ -18,13 +18,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Acordeón cv
     document.querySelectorAll('.accordion').forEach(item => {
         item.addEventListener('click', () => {
-            // Cerrar otras panels
-            document.querySelectorAll('.panel').forEach(panel => {
-                if (panel !== item.nextElementSibling) {
-                    panel.style.maxHeight = null;
-                }
-            });
-
+            // Alternar clase active
+            item.classList.toggle('active');
+    
             // Expandir o colapsar el panel actual
             const panel = item.nextElementSibling;
             if (panel.style.maxHeight) {
@@ -34,4 +30,5 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
+    
 });

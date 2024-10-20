@@ -65,7 +65,6 @@ nav {
 }
 
 
-
 nav.sticky {
     position: fixed;
     top: 0;
@@ -277,39 +276,39 @@ a:hover {
     /* Mejora la legibilidad */
 }
 
-.panel {
-    max-height: 0;
-    /* Oculta el contenido por defecto */
-    overflow: hidden;
-    /* Oculta el desbordamiento */
-    transition: max-height 0.2s ease-out;
-    /* Transición suave */
-}
 
 .accordion {
-    cursor: pointer;
-    /* Cambia el cursor al pasar el ratón */
-    padding: 10px;
-    /* Espaciado */
-    background-color: #2980b9;
-    /* Color de fondo */
-    color: white;
-    /* Color del texto */
-    border: none;
-    /* Sin borde */
-    text-align: left;
-    /* Alinear el texto a la izquierda */
-    outline: none;
-    /* Sin borde de enfoque */
-    font-size: 1.2em;
-    /* Tamaño de fuente */
-    margin: 5px 0;
-    /* Margen superior e inferior */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+    padding: 10px; /* Espaciado */
+    background-color: #2980b9; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    text-align: left; /* Alinear el texto a la izquierda */
+    outline: none; /* Sin borde de enfoque */
+    font-size: 1.2em; /* Tamaño de fuente */
+    margin: 5px 0; /* Margen superior e inferior */
+    display: flex; /* Usar flexbox para alinear icono y texto */
+    align-items: center; /* Centrar verticalmente */
+    transition: background-color 0.3s; /* Transición suave para el fondo */
+}
+
+.accordion-icon {
+    margin-right: 10px; /* Espacio entre el icono y el texto */
+    transition: transform 0.2s; /* Transición suave para la rotación del icono */
+}
+
+.accordion.active .accordion-icon {
+    transform: rotate(45deg); /* Rota el icono al abrir el acordeón */
+}
+
+.panel {
+    max-height: 0; /* Oculta el contenido por defecto */
+    overflow: hidden; /* Oculta el desbordamiento */
+    transition: max-height 0.2s ease-out; /* Transición suave */
 }
 
 .accordion:hover {
-    background-color: #1e6a92;
-    /* Color de fondo al pasar el ratón */
+    background-color: #1e6a92; /* Color de fondo al pasar el ratón */
 }
 
 
