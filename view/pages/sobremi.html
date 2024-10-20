@@ -63,8 +63,6 @@
     </div>
   </header>
 
-
-
   <section id="about" class="about-section" data-aos="fade-up">
     <div class="container">
       <h2 class="section-title">Sobre Mí</h2>
@@ -142,13 +140,12 @@
         <span class="accordion-icon"><i class="fas fa-plus"></i></span> Habilidades Técnicas
     </h3>
       <div class="panel">
-        <ul class="skills-list">
-          <li>HTML, CSS, JavaScript, PHP, Python, C#</li>
-          <li>Laravel, Vue.js, Flutter</li>
-          <li>MySQL, SQLite</li>
-          <li>Git, GitHub, Visual Studio, Firebase, Atlassian (JIRA/Confluence)</li>
-          <li>MITRE ATT&CK, EDR/MDR/XDR, Threat Hunting</li>
-        </ul>
+       
+        <!-- Gráfico Interactivo -->
+        <div style="position: relative; overflow: visible;">
+         
+          <canvas id="skillsChart" ></canvas>
+      </div>
       </div>
 
       <h3 class="accordion">
@@ -278,6 +275,9 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <!-- Enlace a Font Awesome JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/js/all.min.js"></script>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
   <!--Mi Javascript-->
   <script src="../js/main.js"></script>
   <script src="../js/sobremi.js"></script>

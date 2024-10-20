@@ -290,6 +290,7 @@ a:hover {
     display: flex; /* Usar flexbox para alinear icono y texto */
     align-items: center; /* Centrar verticalmente */
     transition: background-color 0.3s; /* Transición suave para el fondo */
+    
 }
 
 .accordion-icon {
@@ -314,7 +315,13 @@ a:hover {
 
 
 /*SOBRE MI SECTION END*/
-
+#skillsChart {
+    width: 100%; /* Ajuste al contenedor */
+    height: 500px !important; /* Altura ajustada */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra */
+    background: #2c3e50; /* Fondo del contenedor */
+}
 
 /*Go top*/
 .go-top {
