@@ -18,17 +18,27 @@ document.addEventListener("DOMContentLoaded", function () {
     // Acordeón cv
     document.querySelectorAll('.accordion').forEach(item => {
         item.addEventListener('click', () => {
-            // Alternar clase active
+            const panel = item.nextElementSibling; // Panel correspondiente
+    
+            // Cerrar otros paneles
+            document.querySelectorAll('.panel').forEach(otherPanel => {
+                if (otherPanel !== panel) {
+                    otherPanel.style.maxHeight = null; // Cerrar el panel
+                    otherPanel.previousElementSibling.classList.remove('active'); // Quitar clase active
+                }
+            });
+    
+            // Alternar clase active en el acordeón actual
             item.classList.toggle('active');
     
             // Expandir o colapsar el panel actual
-            const panel = item.nextElementSibling;
             if (panel.style.maxHeight) {
-                panel.style.maxHeight = null;
+                panel.style.maxHeight = null; // Cerrar el panel
             } else {
-                panel.style.maxHeight = panel.scrollHeight + "px";
+                panel.style.maxHeight = panel.scrollHeight + "px"; // Abrir el panel
             }
         });
     });
-    
+
+
 });
