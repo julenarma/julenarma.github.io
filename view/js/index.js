@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
   //Botón index hacia sección 1
   $('.mini-button').on('click', function () {
     $('html, body').animate({
-      scrollTop: $(".white-section").offset().top
+      scrollTop: $(".white-section").offset().top-100
     }, 1000);
   });
 

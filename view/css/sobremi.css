@@ -3,8 +3,303 @@ body {
     padding: 0;
     font-style: 'Open Sans', sans-serif;
     color: #626262;
+    font-size: 13px;
+}
+
+nav {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    background-color: transparent;
+    z-index: 1000;
+    transition: background-color 0.5s ease;
+    display: flex;
+    height: 65px;
+
+}
+
+.log-box {
+    padding: 1.5em;
+    width: 20%;
+}
+
+.btn-menu {
+
+    display: none;
+}
+
+.nav1-principal {
+    list-style: none;
+    display: flex;
+    padding: 1.7em !important;
+    justify-content: flex-end;
+    margin-left: auto;
+    /* Mueve el menú hacia la derecha */
+    color: white;
+
+}
+
+.nav1-principal li {
+    margin: 0 20px;
+}
+
+.nav1-principal li a {
+    color: white;
+    text-decoration: none;
+    padding-bottom: 1em;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 1px;
+
+
+}
+
+.nav1-principal a:hover {
+    border-bottom: 2px solid white;
+
+
+}
+
+.nav1-principal li a.active {
+    border-bottom: 2px solid white;
+}
+
+
+
+nav.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    color: white;
+
+}
+
+nav.sticky a {
+    color: black;
+    padding-bottom: 1em;
+
+}
+
+nav.sticky a.active {
+    border-bottom: 2px solid black;
+}
+
+
+nav.sticky a:hover {
+
+    border-bottom: 2px solid black;
+
+}
+
+/*video header*/
+
+.img-header {
+    position: relative;
+    width: 100% !important;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.img-header video {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    /* Ancho del video al 100% de la pantalla */
+    height: 100%;
+    object-fit: cover;
+}
+
+.img-header .header-info,
+.header-button {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    align-items: center;
+    z-index: 100;
+}
+
+.header-info h2 {
+    color: white;
+    font-size: 28px !important;
+    font-weight: 600 !important;
+    letter-spacing: 1px !important;
+    line-height: 41px !important;
+    text-transform: uppercase;
+}
+
+.header-info p {
+    text-transform: uppercase;
+    color: white;
+    width: 70%;
+    margin: 0 auto;
+    line-height: 24px;
+    font-size: 15px;
+    margin-top: 2% !important;
+    text-align: center !important;
+    letter-spacing: 2px !important;
+}
+
+
+/*Botón contáctame contacto*/
+.button-sobremi {
+
+    background: none;
+    border: solid 2px white;
+    color: white !important;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    outline: none;
+    padding: 10px 22px !important;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    letter-spacing: 1px;
+    margin-top: 6% !important;
+    font-weight: 600;
+    letter-spacing: 3px;
+    outline: none;
+    text-decoration: none;
+}
+
+
+.button-sobremi:hover {
+    background: white;
+    color: black !important;
+    outline: none;
+    text-decoration: none;
+}
+
+/*SOBRE MI SECTION*/
+
+.section-title{
     
 }
+.about-content {
+    display: flex;
+    align-items: center; /* Centra verticalmente la imagen y el texto */
+    text-align: left; /* Alinea el texto a la izquierda */
+    margin-bottom: 20px;
+}
+
+.profile-container {
+    display: flex;
+    align-items: center; /* Alinea la imagen y el texto */
+}
+
+.profile-photo {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    margin-right: 20px; /* Espacio a la derecha de la imagen */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.profile-photo:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+.bio {
+    max-width: 600px; /* Limitar el ancho del texto */
+}
+
+h3 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: #2c3e50; /* Color para los subtítulos */
+}
+
+ul {
+    list-style-type: none; /* Sin viñetas */
+    padding-left: 0; /* Sin sangría */
+}
+
+ul li {
+    margin-bottom: 10px; /* Espacio entre ítems */
+}
+
+ul li strong {
+    color: #2980b9; /* Color para los nombres de los títulos */
+}
+
+a {
+    color: #2980b9; /* Color para los enlaces */
+    text-decoration: none; /* Sin subrayado */
+}
+
+a:hover {
+    text-decoration: underline; /* Subrayado al pasar el ratón */
+}
+
+.about-content p {
+    line-height: 1.6; /* Mejora la legibilidad */
+}
+.panel {
+    max-height: 0; /* Oculta el contenido por defecto */
+    overflow: hidden; /* Oculta el desbordamiento */
+    transition: max-height 0.2s ease-out; /* Transición suave */
+}
+
+.accordion {
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+    padding: 10px; /* Espaciado */
+    background-color: #2980b9; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    text-align: left; /* Alinear el texto a la izquierda */
+    outline: none; /* Sin borde de enfoque */
+    font-size: 1.2em; /* Tamaño de fuente */
+    margin: 5px 0; /* Margen superior e inferior */
+}
+
+.accordion:hover {
+    background-color: #1e6a92; /* Color de fondo al pasar el ratón */
+}
+
+
+
+/*SOBRE MI SECTION END*/
+
+
+/*Go top*/
+.go-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 94%;
+    z-index: 2000;
+    border: none;
+    outline: none;
+    background-color: lightgrey;
+    color: black;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 35px;
+    height: 50px;
+    width: 50px;
+}
+
+.go-top:hover {
+    background-color: white;
+
+}
+
+.go-top:focus {
+
+    border: none;
+    outline: none;
+}
+
 
 /*imagen header*/
 .img-header .header-info,
@@ -20,6 +315,7 @@ body {
     align-items: center;
     z-index: 100;
 }
+
 .img-header .header-info h2 {
     color: white;
     font-size: 45px;
@@ -58,5 +354,5 @@ body {
     background: black !important;
     color: white;
     text-decoration: none;
-    
+
 }
