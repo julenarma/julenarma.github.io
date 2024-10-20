@@ -180,9 +180,7 @@ nav.sticky a:hover {
 
 /*SOBRE MI SECTION*/
 
-.section-title{
-    
-}
+
 .about-content {
     display: flex;
     align-items: center; /* Centra verticalmente la imagen y el texto */
