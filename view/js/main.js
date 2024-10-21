@@ -18,7 +18,6 @@ $('.go-top').on('click', function () {
 
 window.onscroll = function () {
   stickyMenu();
-  
 };
 
 

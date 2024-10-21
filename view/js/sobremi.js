@@ -12,12 +12,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Botón mi trayectoria hacia mi cv
-    // Botón mi trayectoria hacia mi cv
+
     $('.button-sobremi').on('click', function () {
         $('html, body').animate({
             scrollTop: $('.about-section').offset().top - 100 // Ajusta el valor según la altura de tu encabezado
         }, 1000);
     });
+
 
     // Acordeón cv
     document.querySelectorAll('.accordion').forEach(item => {
@@ -112,8 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Fechas de inicio y fin de experiencia laboral
-    const experiences = [
-        {
+    const experiences = [{
             company: 'EITB',
             startDate: '2021-03-01',
             endDate: '2021-06-30' // Fecha de fin
