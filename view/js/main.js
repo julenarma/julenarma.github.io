@@ -8,13 +8,17 @@ $(document).scroll(function () {
 
 // Adjuntar el controlador de clic fuera del controlador de desplazamiento
 $('.go-top').on('click', function () {
-  $("html, body").animate({
+  $('html, body').animate({
     scrollTop: 0
-  }, 600);
+  }, 600, function() {
+    // Asegura que estés en la parte superior después de la animación
+    window.scrollTo(0, 0);
+  });
 });
 
 window.onscroll = function () {
   stickyMenu();
+  
 };
 
 
@@ -25,6 +29,7 @@ var toggleMenu = document.getElementById('toggleMenu');
 var goTopButton = document.querySelector('.go-top');
 var sticky = navbar.offsetTop;
 var on_off = true;
+
 
 
 
@@ -91,3 +96,19 @@ function getRelativeImagePath(relativePath) {
 
   return prefix + relativePath;
 }
+
+// Función idiomas
+document.querySelectorAll('.language-option').forEach(link => {
+  link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const selectedLang = e.target.getAttribute('data-lang');
+      document.querySelector('.dropbtn').textContent = `IDIOMA: ${selectedLang === 'es' ? 'Español' : selectedLang === 'en' ? 'Inglés' : 'Francés'}`;
+      
+      // Actualiza la clase active
+      document.querySelector('.dropdown-content .active').classList.remove('active');
+      e.target.classList.add('active');
+      
+      // Guardar en localStorage si es necesario
+      localStorage.setItem('selectedLanguage', selectedLang);
+  });
+});

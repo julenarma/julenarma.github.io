@@ -91,6 +91,53 @@ nav.sticky a:hover {
 
 }
 
+/*Dropdown idiomas*/
+/* Estilos para el dropdown
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown .dropbtn {
+    text-decoration: none !important; 
+}
+.dropdown .dropbtn:hover {
+    text-decoration: none !important;
+}
+.dropdown-content {
+    display: none; 
+    position: absolute; 
+    background-color: #333; 
+    margin-top: 10px; 
+    z-index: 1; 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 4px; 
+}
+
+
+.dropdown:hover .dropdown-content {
+    display: block; 
+}
+
+.dropdown-content a {
+    color: #fff 
+    padding: 12px 16px; 
+    text-decoration: none; 
+    display: flex; 
+    align-items: center; 
+}
+.dropdown-content a:hover {
+    background-color: #575757;
+    color: #fff; 
+}
+.flag-icon {
+    margin-right: 8px; 
+}
+*/
+
+
+
 /*Go top*/
 .go-top {
     display: none;
@@ -111,7 +158,6 @@ nav.sticky a:hover {
 
 .go-top:hover {
     background-color: white;
-
 }
 
 .go-top:focus {
@@ -216,14 +262,14 @@ footer h6 {
 
 footer p a {
     color: #626262;
-    outline: none;   
+    outline: none;
 }
 
 footer p a:hover {
     color: #626262;
-   text-decoration: none; 
-   opacity: 0.5;
-   transition: 0.3s all;
+    text-decoration: none;
+    opacity: 0.5;
+    transition: 0.3s all;
 }
 
 .politica-privacidad:hover {
