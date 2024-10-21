@@ -95,7 +95,7 @@ body {
 
 /*SOBRE MI SECTION*/
 
-.about-section{
+.about-section {
     margin-top: 5%;
 }
 
@@ -127,10 +127,12 @@ body {
 }
 
 .profile-photo {
-    width: 160px; /* Cambia el ancho */
-    height: 160px; /* Igualar el alto */
+    width: 160px;
+    /* Cambia el ancho */
+    height: 160px;
+    /* Igualar el alto */
     border-radius: 50%;
-    margin-right: 30px; 
+    margin-right: 30px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -145,7 +147,8 @@ body {
     text-align: center;
     line-height: 1.6;
 }
- h3 {
+
+h3 {
     margin-top: 30px;
     margin-bottom: 10px;
     color: #2c3e50;
@@ -156,20 +159,20 @@ ul {
     padding-left: 0;
 }
 
- ul li {
+ul li {
     margin-bottom: 10px;
 }
 
- ul li strong {
+ul li strong {
     color: #2980b9;
 }
 
- a {
+a {
     color: #2980b9;
     text-decoration: none;
 }
 
- a:hover {
+a:hover {
     text-decoration: underline;
 }
 
@@ -220,8 +223,10 @@ ul {
     background: #2c3e50;
     display: flex;
 }
+
 /*GRAFICO ARAÑA HABILIADES */
-#experienceChart, #educationChart {
+#experienceChart,
+#educationChart {
     height: 500px !important;
     display: flex;
     width: 100%;
@@ -301,5 +306,9 @@ ul {
 
 @media screen and (max-width: 768px) {
 
+    #experienceContainer,
+    #educationContainer {
+        display: none !important;
+    }
 
 }
