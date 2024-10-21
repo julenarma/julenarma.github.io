@@ -1,4 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
+
+
+    var toggleMenu = document.getElementById('toggleMenu');
+    console.log(toggleMenu);
     //------Data AOS animación start----
     AOS.init({
         offset: 200, // Offset (in px) from the original trigger point

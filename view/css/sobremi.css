@@ -6,92 +6,6 @@ body {
     font-size: 13px;
 }
 
-nav {
-    position: absolute;
-    width: 100%;
-    top: 0;
-    background-color: transparent;
-    z-index: 1000;
-    transition: background-color 0.5s ease;
-    display: flex;
-    height: 65px;
-
-}
-
-.log-box {
-    padding: 1.5em;
-    width: 20%;
-}
-
-.btn-menu {
-
-    display: none;
-}
-
-.nav1-principal {
-    list-style: none;
-    display: flex;
-    padding: 1.7em !important;
-    justify-content: flex-end;
-    margin-left: auto;
-    /* Mueve el menú hacia la derecha */
-    color: white;
-
-}
-
-.nav1-principal li {
-    margin: 0 20px;
-}
-
-.nav1-principal li a {
-    color: white;
-    text-decoration: none;
-    padding-bottom: 1em;
-    font-weight: 600;
-    font-size: 11px;
-    letter-spacing: 1px;
-
-
-}
-
-.nav1-principal a:hover {
-    border-bottom: 2px solid white;
-
-
-}
-
-.nav1-principal li a.active {
-    border-bottom: 2px solid white;
-}
-
-
-nav.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: white;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    color: white;
-
-}
-
-nav.sticky a {
-    color: black;
-    padding-bottom: 1em;
-
-}
-
-nav.sticky a.active {
-    border-bottom: 2px solid black;
-}
-
-
-nav.sticky a:hover {
-
-    border-bottom: 2px solid black;
-
-}
-
 /*video header*/
 
 .img-header {
@@ -225,8 +139,7 @@ nav.sticky a:hover {
     text-align: center;
     line-height: 1.6;
 }
-
-h3 {
+ h3 {
     margin-top: 30px;
     margin-bottom: 10px;
     color: #2c3e50;
@@ -237,29 +150,26 @@ ul {
     padding-left: 0;
 }
 
-ul li {
+ ul li {
     margin-bottom: 10px;
 }
 
-ul li strong {
+ ul li strong {
     color: #2980b9;
 }
 
-a {
+ a {
     color: #2980b9;
     text-decoration: none;
 }
 
-a:hover {
+ a:hover {
     text-decoration: underline;
 }
 
 .about-content p {
     line-height: 1.6;
 }
-
-
-
 
 .accordion {
     cursor: pointer;
@@ -377,5 +287,14 @@ a:hover {
     background: black !important;
     color: white;
     text-decoration: none;
+}
 
+
+
+
+@media screen and (max-width: 768px) {
+
+
+
+    
 }

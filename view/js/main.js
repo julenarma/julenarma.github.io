@@ -29,7 +29,6 @@ var on_off = true;
 
 
 /*Responsive Menu*/
-
 toggleMenu.addEventListener('click', function () {
   if (on_off) {
     //Si es true que no se desplace
