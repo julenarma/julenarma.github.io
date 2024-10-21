@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     $('.button-sobremi').on('click', function () {
         $('html, body').animate({
-            scrollTop: $('.about-section').offset().top - 100 // Ajusta el valor según la altura de tu encabezado
+            scrollTop: $('.about-section').offset().top -200  // Ajusta el valor según la altura de tu encabezado
         }, 1000);
     });
 
