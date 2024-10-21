@@ -170,8 +170,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-
-
     // -------------------------GRAFICO HABILIDADES-------------------------
     const ctx = document.getElementById('skillsChart').getContext('2d');
 
