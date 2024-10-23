@@ -123,8 +123,8 @@ body {
     text-decoration: underline;
 }
 
-.text_contact a{
-    
+.text_contact a {
+
     color: #000;
     text-decoration: none;
     cursor: pointer;
@@ -203,3 +203,21 @@ textarea {
 }
 
 
+
+/*Modo oscuro Contacto*/
+
+/*Modo oscuro seccioncon fondo blanco*/
+
+/* Estilos para secciones con fondo blanco */
+body.dark-mode .white-section {
+    background-color: #1f1f1f;
+    /* Fondo oscuro */
+    color: #fff;
+    /* Texto blanco */
+}
+
+/* Boton modo oscuro formulario */
+body.dark-mode .button-form:hover {
+
+    background-color: #1f1f1f;
+}

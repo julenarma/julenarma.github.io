@@ -18,7 +18,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 }
 
 .header-info {
@@ -30,7 +30,7 @@ body {
     text-transform: uppercase;
     width: 70%;
     margin: 0 auto;
-    justify-content: center; 
+    justify-content: center;
 
 }
 
@@ -115,7 +115,7 @@ textarea {
     height: 50px;
     margin-left: 20px;
     font-size: 13px;
-  
+
 }
 
 .opcion {
@@ -164,6 +164,21 @@ textarea {
     width: 100px;
 }
 
+/*Modo oscuro (Botones numeros form)*/
+
+
+/* Estilos para el modo oscuro */
+body.dark-mode .opcion {
+    color: white; /* Color del texto en modo oscuro */
+    background-color: black; /* Fondo en modo oscuro */
+    border: 2px solid white; /* Borde en modo oscuro */
+}
+
+body.dark-mode .opcion:hover {
+    background-color: #1f1f1f; /* Fondo al pasar el ratón en modo oscuro */
+    color: black; /* Color del texto al pasar el ratón en modo oscuro */
+}
+
 
 @media (max-width: 768px) {
     .donacion {
@@ -171,7 +186,8 @@ textarea {
         padding: 20px;
     }
 
-    .text-donacion, .donacion-form {
+    .text-donacion,
+    .donacion-form {
         width: 100%;
         margin-top: 20px !important;
     }

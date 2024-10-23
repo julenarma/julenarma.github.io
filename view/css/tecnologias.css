@@ -6,7 +6,6 @@ body {
     font-size: 13px;
 }
 
-
 .img-header {
     position: relative;
     width: 100%;
@@ -87,7 +86,6 @@ body {
     font-size: 11px;
     letter-spacing: 1px;
     cursor: pointer;
-
 }
 
 .nav2-principal li a.active {
@@ -96,11 +94,10 @@ body {
 
 .nav2-principal a:hover {
     border-bottom: 1px solid black;
-
 }
 
 /* Estilo tecnologias */
-.tecnologias {
+.white-section {
     background-color: #ffffff;
     /* Color de fondo blanco */
     position: relative;
@@ -111,10 +108,9 @@ body {
     flex-direction: column;
     margin-top: 10% !important;
     text-align: center;
-
 }
 
-.tecnologias .section-title {
+.white-section .section-title {
     font-size: 20px;
     color: black;
     font-weight: 700;
@@ -122,7 +118,7 @@ body {
     letter-spacing: 2px;
 }
 
-.tecnologias .section-text {
+.white-section .section-text {
     width: 50% !important;
     margin-bottom: 0 !important;
     margin-top: 2% !important;
@@ -180,7 +176,6 @@ body {
 
 }
 
-/*Abajo del nav tecnoloías galeria de imágenes*/
 .galeria {
     display: flex;
     flex-wrap: wrap;
@@ -193,13 +188,11 @@ body {
 .imagen {
     position: relative;
     width: calc(33.333%);
-    height: 300px;
-    /* Ajusta la altura según tus necesidades */
+    height: 300px; /* Ajusta la altura según tus necesidades */
     margin: 0;
     box-sizing: border-box;
     max-width: calc(33.333%);
     overflow: hidden;
-
 }
 
 .imagen a {
@@ -212,12 +205,10 @@ body {
     object-fit: cover;
     object-position: center;
     transition: transform 0.3s ease;
-    /* Transición para suavizar el efecto de zoom */
 }
 
 .imagen:hover img {
     transform: scale(1.1);
-    /* Hacer zoom en la imagen al hacer hover */
 }
 
 figcaption {
@@ -226,7 +217,7 @@ figcaption {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.7); /* Fondo oscuro */
     color: #fff;
     text-align: center;
     opacity: 0;
@@ -234,21 +225,55 @@ figcaption {
     justify-content: center;
     align-items: center;
     transition: opacity 0.3s ease-in-out;
-    pointer-events: none;
+    pointer-events: none; /* No interactuable por defecto */
 }
 
 .imagen:hover figcaption {
-    opacity: 1;
+    opacity: 1; /* Aparecer en hover */
+    background: rgba(0, 0, 0, 0.8); /* Ajusta la opacidad si es necesario */
 }
 
 figcaption h3 {
     letter-spacing: 4px;
     font-weight: 400;
-    color: #e3e3e3;
+    color: #e3e3e3; /* Color claro en modo claro */
     font-size: 13px;
     text-transform: uppercase;
 }
 
+/* Modo oscuro */
+
+body.dark-mode .white-section {
+    background-color: #1f1f1f; /* Fondo oscuro */
+    color: #fff; /* Texto blanco */
+}
+
+body.dark-mode .nav-tecnologias a:hover,
+body.dark-mode .nav-tecnologias li a.active {
+    border-bottom: 1px solid white; /* Subrayado blanco */
+}
+
+
+body.dark-mode .imagen {
+    filter: invert(1); /* Invierte los colores de la imagen */
+}
+
+body.dark-mode figcaption {
+    background: rgba(0, 0, 0, 0.9); /* Fondo negro más oscuro en modo oscuro */
+}
+
+body.dark-mode figcaption h3 {
+    color: #fff; /* Color blanco para el texto en modo oscuro */
+    letter-spacing: 4px;
+    font-weight: 400;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+/* Opción para hacer que la imagen no se invierta en modo oscuro */
+body.dark-mode .imagen img {
+    filter: none; /* Mantener la imagen sin inversión */
+}
 
 @media screen and (max-width: 768px) {
     .nav-tecnologias li {

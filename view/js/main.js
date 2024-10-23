@@ -6,56 +6,84 @@ $(document).scroll(function () {
   }
 });
 
-// Adjuntar el controlador de clic fuera del controlador de desplazamiento
+// Manejo del clic en el botón "Go Top"
 $('.go-top').on('click', function () {
   $('html, body').animate({
     scrollTop: 0
-  }, 600, function() {
-    // Asegura que estés en la parte superior después de la animación
+  }, 600, function () {
     window.scrollTo(0, 0);
   });
 });
 
-window.onscroll = function () {
-  stickyMenu();
-};
 
-
+// Variables
 var image = document.getElementById('scrollImage');
 var navbar = document.getElementById('navbar');
 var navText = document.querySelector('.nav1-principal');
 var toggleMenu = document.getElementById('toggleMenu');
 var goTopButton = document.querySelector('.go-top');
+var body = document.getElementById('pageBody');
+var darkModeToggle = document.getElementById('dark-mode-toggle');
 var sticky = navbar.offsetTop;
 var on_off = true;
 
+// Función para manejar el menú sticky
+function stickyMenu() {
+  if (window.pageYOffset > sticky) {
+    navbar.classList.add('sticky');
+
+    // Cambiar estilos según el modo oscuro
+    if (body.classList.contains('dark-mode')) {
+      navbar.style.backgroundColor = 'black'; // Fondo oscuro
+      toggleMenu.style.color = 'white'; // Color del menú en modo oscuro
+      image.src = getRelativeImagePath('view/img/index/armadev_blanco.png');
+      darkModeToggle.style.color = 'white';
+      navText.querySelectorAll('a').forEach(link => {
+        link.style.color = 'white'; // Letras blancas en modo oscuro
+      });
+    } else {
+      navbar.style.backgroundColor = 'white'; // Fondo blanco
+      toggleMenu.style.color = 'black'; // Color del menú en modo claro
+      image.src = getRelativeImagePath('view/img/index/armadev_azul.png');
+      darkModeToggle.style.color = 'black';
+      navText.querySelectorAll('a').forEach(link => {
+        link.style.color = 'black'; // Letras negras en modo normal
+      });
+    }
+  } else {
+    navbar.classList.remove('sticky');
+    navbar.style.backgroundColor = 'transparent'; // Mantener transparente en la parte superior
+    toggleMenu.style.color = 'white';
+    image.src = getRelativeImagePath('view/img/index/armadev_blanco.png');
+    darkModeToggle.style.color = 'white';
+    navText.querySelectorAll('a').forEach(link => {
+      link.style.color = 'white'; // Letras blancas cuando es transparente
+    });
+  }
+}
 
 
-
-/*Responsive Menu*/
+// Manejo del menú responsive
 toggleMenu.addEventListener('click', function () {
   if (on_off) {
-    //Si es true que no se desplace
     navText.style.left = '0';
-    on_off = false; // lo desactivamos porque ya está activado
+    on_off = false;
     navbar.classList.add('sticky');
     image.src = getRelativeImagePath('view/img/index/armadev_azul.png');
     toggleMenu.style.color = 'black';
-    goTopButton.style.visibility = 'hidden'; // Muestra el botón "Go top" al cerrar el menú
+    goTopButton.style.visibility = 'hidden';
     disableScroll();
-
   } else {
-    //Si es false que se desplace
     navText.style.left = '-100%';
     navbar.classList.remove('sticky');
     image.src = getRelativeImagePath('view/img/index/armadev_blanco.png');
     toggleMenu.style.color = 'white';
-    goTopButton.style.visibility = 'visible'; // Muestra el botón "Go top" al cerrar el menú
-    on_off = true; // lo activamos para que funcione ya que está cerrado
-    enableScroll()
+    goTopButton.style.visibility = 'visible';
+    on_off = true;
+    enableScroll();
   }
+});
 
-})
 // Funciones para desactivar y activar el scroll
 function disableScroll() {
   document.body.style.overflow = 'hidden';
@@ -65,49 +93,37 @@ function enableScroll() {
   document.body.style.overflow = 'auto';
 }
 
-function stickyMenu() {
-  if (window.pageYOffset > sticky) {
-    navbar.classList.add('sticky');
-    toggleMenu.style.color = 'black';
-    image.src = getRelativeImagePath('view/img/index/armadev_azul.png');
-    image.style.width = '121.84px';
-    image.style.height = '30px';
+// Evento de scroll
+window.onscroll = function () {
+  stickyMenu();
+};
+
+// Inicializar el estado del navbar al cargar
+stickyMenu();
+
+// Cambiar el modo oscuro
+darkModeToggle.addEventListener('click', function () {
+  body.classList.toggle('dark-mode');
+
+  // Cambiar el icono y el color del botón
+  if (body.classList.contains('dark-mode')) {
+    darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>'; // Icono de sol
+    darkModeToggle.style.color = 'yellow';
+
   } else {
-    navbar.classList.remove('sticky');
-    toggleMenu.style.color = 'white';
-    image.src = getRelativeImagePath('view/img/index/armadev_blanco.png');
-    image.style.width = '121.84px';
-    image.style.height = '30px';
+    darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>'; // Icono de luna
+    darkModeToggle.style.color = 'white';
 
   }
-}
 
+  // Actualizar el estilo del navbar
+  stickyMenu();
+});
 
+// Obtener la ruta de la imagen relativa
 function getRelativeImagePath(relativePath) {
-  // Get the current page's URL
   var currentUrl = window.location.href;
-
-  // Determine the depth of the current page within the directory structure
   var depth = (currentUrl.match(/\//g) || []).length;
-
-  // Construct the relative path based on the depth
   var prefix = Array(depth).fill('..').join('/') + '/';
-
   return prefix + relativePath;
 }
-
-// Función idiomas
-document.querySelectorAll('.language-option').forEach(link => {
-  link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const selectedLang = e.target.getAttribute('data-lang');
-      document.querySelector('.dropbtn').textContent = `IDIOMA: ${selectedLang === 'es' ? 'Español' : selectedLang === 'en' ? 'Inglés' : 'Francés'}`;
-      
-      // Actualiza la clase active
-      document.querySelector('.dropdown-content .active').classList.remove('active');
-      e.target.classList.add('active');
-      
-      // Guardar en localStorage si es necesario
-      localStorage.setItem('selectedLanguage', selectedLang);
-  });
-});

@@ -403,7 +403,7 @@ body {
     margin: 0;
     box-sizing: border-box;
     max-width: calc(25%);
-    overflow: hidden; 
+    overflow: hidden;
 
 }
 
@@ -416,11 +416,13 @@ body {
     height: 100%;
     object-fit: cover;
     object-position: center;
-    transition: transform 0.3s ease; /* Transición para suavizar el efecto de zoom */
+    transition: transform 0.3s ease;
+    /* Transición para suavizar el efecto de zoom */
 }
 
 .imagen:hover img {
-    transform: scale(1.1); /* Hacer zoom en la imagen al hacer hover */
+    transform: scale(1.1);
+    /* Hacer zoom en la imagen al hacer hover */
 }
 
 figcaption {
@@ -453,19 +455,58 @@ figcaption h3 {
 }
 
 
+
+/*Modo oscuro index.html*/
+
+
+/* Subrayados de los enlaces en modo oscuro */
+body.dark-mode .nav2-principal a:hover,
+body.dark-mode .nav2-principal li a.active {
+    border-bottom: 1px solid white;
+    /* Subrayado blanco */
+}
+
+body.dark-mode .mini-button {
+
+    background-color: #1f1f1f;
+}
+
+/*Foto JA final */
+body.dark-mode .ja_final {
+    /*Eso hace que invierta el color del que tiene(en este caso al blanco)*/
+    filter: invert(1);
+}
+
+/* Estilos para secciones con fondo blanco */
+body.dark-mode .white-section,
+body.dark-mode .white-section2 {
+    background-color: #1f1f1f;
+    /* Fondo oscuro */
+    color: #fff;
+    /* Texto blanco */
+}
+
+/* Estilos para imágenes y figcaption */
+body.dark-mode .imagen figcaption h3 {
+    color: #fff;
+    /* Títulos en blanco */
+}
+
 /*TOCA REVISAR */
 @media screen and (max-width: 768px) {
-  
 
     .img-header video {
-        object-fit: cover; /* Asegúrate de que el video cubra el contenedor */
-        object-position: 40% center; /* Mueve el video un poco a la izquierda */
+        object-fit: cover;
+        /* Asegúrate de que el video cubra el contenedor */
+        object-position: 40% center;
+        /* Mueve el video un poco a la izquierda */
     }
+
     .blue-box {
         padding: 20px;
         margin-top: 10% !important;
     }
-   
+
     .header-info #parrafo {
         text-align: left;
         width: 100% !important;
@@ -610,7 +651,7 @@ figcaption h3 {
         margin: 0;
         box-sizing: border-box;
         max-width: calc(100%);
-   
+
 
     }
 
@@ -619,8 +660,8 @@ figcaption h3 {
         height: 100%;
         object-fit: cover;
         object-position: center;
-    
+
     }
-    
+
 
 }

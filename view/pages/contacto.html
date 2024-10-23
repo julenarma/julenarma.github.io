@@ -14,9 +14,10 @@
   <!-- Mi CSS -->
   <link rel="stylesheet" href="../css/main.css" class="css">
   <link rel="stylesheet" href="../css/contacto.css" class="css">
-
   <!--Data AOS-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <!--Leaflet mapa modo oscuro CSS-->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
 </head>
 
@@ -36,6 +37,9 @@
         <li><a href="../pages/tecnologias.html">TECNOLOGÍAS</a></li>
         <li><a href="../pages/apoyar.html">APOYAR</a></li>
         <li><a href="../pages/contacto.html" class="active">CONTACTO</a></li>
+        <li> <button id="dark-mode-toggle"
+            style="cursor: pointer; background: none; border: none; color: white; outline: none;">
+            <i class="fas fa-moon"></i> <!-- Icono para el modo oscuro --> </button></li>
       </ul>
     </nav>
     <div class="img-header">
@@ -186,17 +190,17 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <!-- Enlace a Font Awesome JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/js/all.min.js"></script>
-  <!--Mi Javascript-->
-  <script src="../../view/js/main.js"></script>
-  <script src="../../view/js/contacto.js"></script>
 
   <!--Data AOS JS-->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-
   <!--Sweet Alert 2-->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!--Leaflet mapa modo oscuro JS-->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
-
+  <!--Mi Javascript-->
+  <script src="../../view/js/main.js"></script>
+  <script src="../../view/js/contacto.js"></script>
 </body>
 
 </html>
