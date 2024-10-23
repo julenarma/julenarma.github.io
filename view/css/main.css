@@ -101,6 +101,7 @@ nav.sticky a:hover {
     background: none;
     border: none;
     color: white;
+    /* Color inicial */
     outline: none;
     font-size: 20px;
     /* Alineado con el tamaño de los enlaces */
@@ -114,6 +115,13 @@ nav.sticky a:hover {
     /* Asegurar que no haya padding extra */
     line-height: 65px;
     /* Asegura que el icono esté alineado verticalmente */
+    transition: color 0.3s ease;
+    /* Suaviza el cambio de color */
+}
+
+#dark-mode-toggle:hover {
+    color: #fff;
+    /* Cambia el color al pasar el mouse */
 }
 
 /* Go top */
@@ -240,9 +248,6 @@ body.dark-mode {
     /* Texto blanco */
 }
 
-
-
-
 /* Estilo de los enlaces en el navbar */
 body.dark-mode .nav1-principal a {
     color: #fff;
@@ -334,6 +339,7 @@ body.dark-mode textarea:hover {
         font-size: 30px;
         cursor: pointer;
         color: white;
+        /* Color del icono del menú */
     }
 
     .nav1-principal {
@@ -342,7 +348,8 @@ body.dark-mode textarea:hover {
         left: -100%;
         width: 100%;
         height: calc(100vh - 65px);
-        background: white;
+        background: #1f1f1f;
+        /* Fondo oscuro para modo oscuro */
         justify-content: center;
         align-items: center;
         flex-direction: column;
@@ -357,22 +364,65 @@ body.dark-mode textarea:hover {
 
     .nav1-principal li a {
         font-size: 20px;
-        color: black;
+        color: white;
+        /* Color de texto en modo oscuro */
     }
 
     .nav1-principal li a.active {
         background: none;
         color: #087ec4 !important;
+        /* Color activo en modo oscuro */
         border-bottom: none;
     }
 
     .nav1-principal li a:hover {
         background: none;
         color: #087ec4 !important;
+        /* Color en hover en modo oscuro */
         border-bottom: none;
     }
+
+    /* Menu modo oscuro moviles*/
 
     .go-top {
         left: 84%;
     }
+
+
+
+    .dark-mode .nav1-principal {
+        background: #1f1f1f;
+        /* Fondo oscuro */
+        color: white;
+        /* Color de texto */
+    }
+
+    .dark-mode .nav1-principal li a {
+        color: white;
+        /* Color de los enlaces */
+    }
+
+    .dark-mode .nav1-principal li a.active {
+        background: none;
+        color: #087ec4 !important;
+        /* Color activo en modo oscuro */
+        border-bottom: none;
+    }
+
+    .dark-mode .nav1-principal li a:hover {
+        background: none;
+        color: #087ec4 !important;
+        border-bottom: none;
+    }
+
+    .dark-mode .nav1-principal li a.active {
+        color: #087ec4 !important;
+        /* Color activo */
+    }
+
+    .dark-mode .btn-menu {
+        color: white;
+        /* Color del botón del menú */
+    }
+
 }
