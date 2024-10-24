@@ -262,11 +262,6 @@ body.dark-mode * {
     /* Texto blanco para todos los elementos */
 }
 
-/* Cambiar el color del icono del modo oscuro */
-body.dark-mode #dark-mode-toggle {
-    color: yellow;
-    /* Color del icono en modo oscuro */
-}
 
 /* Subrayados de los enlaces en modo oscuro */
 body.dark-mode .nav1-principal a:hover,
@@ -388,41 +383,6 @@ body.dark-mode textarea:hover {
         left: 84%;
     }
 
-
-
-    .dark-mode .nav1-principal {
-        background: #1f1f1f;
-        /* Fondo oscuro */
-        color: white;
-        /* Color de texto */
-    }
-
-    .dark-mode .nav1-principal li a {
-        color: white;
-        /* Color de los enlaces */
-    }
-
-    .dark-mode .nav1-principal li a.active {
-        background: none;
-        color: #087ec4 !important;
-        /* Color activo en modo oscuro */
-        border-bottom: none;
-    }
-
-    .dark-mode .nav1-principal li a:hover {
-        background: none;
-        color: #087ec4 !important;
-        border-bottom: none;
-    }
-
-    .dark-mode .nav1-principal li a.active {
-        color: #087ec4 !important;
-        /* Color activo */
-    }
-
-    .dark-mode .btn-menu {
-        color: white;
-        /* Color del botón del menú */
-    }
+  
 
 }

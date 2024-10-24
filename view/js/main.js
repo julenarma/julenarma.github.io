@@ -63,7 +63,6 @@ function stickyMenu() {
 }
 
 
-
 // Manejo del menú responsive
 toggleMenu.addEventListener('click', function () {
   if (on_off) {
@@ -85,7 +84,6 @@ toggleMenu.addEventListener('click', function () {
   }
 });
 
-
 // Funciones para desactivar y activar el scroll
 function disableScroll() {
   document.body.style.overflow = 'hidden';
@@ -100,31 +98,38 @@ window.onscroll = function () {
   stickyMenu();
 };
 
+// Inicializar el estado del navbar al cargar
+stickyMenu();
 
 
-// Guardamos en local storage modo oscuro 
-document.addEventListener('DOMContentLoaded', function () {
-  if (localStorage.getItem('darkMode') === 'true') {
-      body.classList.add('dark-mode');
-      darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>'; // Icono de sol
-  }
-});
 
+
+// Cambiar el modo oscuro
 // Cambiar el modo oscuro
 darkModeToggle.addEventListener('click', function () {
   body.classList.toggle('dark-mode');
+
   // Cambiar el icono y el color del botón
   if (body.classList.contains('dark-mode')) {
-      darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>'; // Icono de sol
-      localStorage.setItem('darkMode', 'true'); // Guardar en localStorage
+    darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>'; // Icono de sol
+    localStorage.setItem('dark-mode', 'enabled'); // Guardar en localStorage
   } else {
-      darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>'; // Icono de luna
-      localStorage.setItem('darkMode', 'false'); // Guardar en localStorage
+    darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>'; // Icono de luna
+    localStorage.setItem('dark-mode', 'disabled'); // Guardar en localStorage
   }
 
   // Actualizar el estilo del navbar
   stickyMenu();
 });
+
+// Cargar estado del modo oscuro desde localStorage
+if (localStorage.getItem('dark-mode') === 'enabled') {
+  body.classList.add('dark-mode');
+  darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>'; // Icono de sol
+}
+
+
+
 
 // Obtener la ruta de la imagen relativa
 function getRelativeImagePath(relativePath) {
