@@ -64,8 +64,23 @@ function stickyMenu() {
   }
 }
 
+// Evento de scroll
+window.onscroll = function () {
+  stickyMenu();
+};
 
+// Abrir menu responsive
 toggleMenu.addEventListener('click', function () {
+  handleToggleMenu();
+});
+
+// Cambiar el modo oscuro
+darkModeToggle.addEventListener('click', function () {
+  handleDarkModeToggle();
+});
+
+
+function handleToggleMenu() {
   // Mostrar u ocultar el menú
   if (on_off) {
     navText.style.left = '0'; // Mostrar menú
@@ -115,19 +130,12 @@ toggleMenu.addEventListener('click', function () {
       darkModeToggle.style.color = 'black'; // Color del botón en modo claro
     }
   }
-});
-
-// Evento de scroll
-window.onscroll = function () {
-  stickyMenu();
-};
-
-// Inicializar el estado del navbar al cargar
-stickyMenu();
+}
 
 
-// Cambiar el modo oscuro
-darkModeToggle.addEventListener('click', function () {
+function handleDarkModeToggle() {
+
+  
   body.classList.toggle('dark-mode');
 
   // Cambiar el icono y el color del botón
@@ -140,7 +148,15 @@ darkModeToggle.addEventListener('click', function () {
   }
   // Actualizar el estilo del navbar
   stickyMenu();
-});
+
+   // Habilitar o deshabilitar scroll basado en el estado del menú
+   if (on_off) {
+    document.body.style.overflow = 'hidden'; // Deshabilitar scroll si el menú está abierto
+  } else {
+    document.body.style.overflow = 'auto'; // Habilitar scroll si el menú está cerrado
+  }
+}
+
 
 // Cargar estado del modo oscuro desde localStorage
 if (localStorage.getItem('dark-mode') === 'enabled') {
