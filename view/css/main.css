@@ -343,7 +343,7 @@ body.dark-mode textarea:hover {
         left: -100%;
         width: 100%;
         height: calc(100vh - 65px);
-        background: #1f1f1f;
+        background: #f8f8f8;
         /* Fondo oscuro para modo oscuro */
         justify-content: center;
         align-items: center;
@@ -386,12 +386,28 @@ body.dark-mode textarea:hover {
     /* Menu modo oscuro moviles*/
     /* Estilos del menú en modo oscuro */
 
+
+    body.dark-mode .nav1-principal  {
+        position: absolute;
+        top: 65px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 65px);
+        background: #1f1f1f;
+        /* Fondo oscuro para modo oscuro */
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        transition: left 0.3s ease;
+        /* Transición para suavizar la animación */
+    }
     body.dark-mode .nav1-principal li a {
         color: #fff;
         /* Enlaces blancos */
         text-decoration: none;
         /* Sin subrayado */
     }
+   
 
     /* Estilos del menú en modo oscuro */
     body.dark-mode .nav1-principal li a.active {

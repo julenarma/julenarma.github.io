@@ -49,6 +49,7 @@ function stickyMenu() {
       navText.querySelectorAll('a').forEach(link => {
         link.style.color = 'black'; // Letras negras en modo normal
       });
+
     }
   } else {
     navbar.classList.remove('sticky');
@@ -59,6 +60,7 @@ function stickyMenu() {
     navText.querySelectorAll('a').forEach(link => {
       link.style.color = 'white'; // Letras blancas cuando es transparente
     });
+
   }
 }
 
@@ -105,6 +107,13 @@ toggleMenu.addEventListener('click', function () {
         link.style.color = 'black'; // Letras negras en modo claro
       }
     });
+
+    // Actualizar estilo del botón de modo oscuro
+    if (body.classList.contains('dark-mode')) {
+      darkModeToggle.style.color = 'white'; // Color del botón en modo oscuro
+    } else {
+      darkModeToggle.style.color = 'black'; // Color del botón en modo claro
+    }
   }
 });
 
