@@ -254,27 +254,6 @@ body.dark-mode .nav-tecnologias li a.active {
 }
 
 
-body.dark-mode .imagen {
-    filter: invert(1); /* Invierte los colores de la imagen */
-}
-
-body.dark-mode figcaption {
-    background: rgba(0, 0, 0, 0.9); /* Fondo negro más oscuro en modo oscuro */
-}
-
-body.dark-mode figcaption h3 {
-    color: #fff; /* Color blanco para el texto en modo oscuro */
-    letter-spacing: 4px;
-    font-weight: 400;
-    font-size: 13px;
-    text-transform: uppercase;
-}
-
-/* Opción para hacer que la imagen no se invierta en modo oscuro */
-body.dark-mode .imagen img {
-    filter: none; /* Mantener la imagen sin inversión */
-}
-
 @media screen and (max-width: 768px) {
     .nav-tecnologias li {
         margin-top: 15px;

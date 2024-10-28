@@ -63,35 +63,50 @@ function stickyMenu() {
 }
 
 
-// Manejo del menú responsive
 toggleMenu.addEventListener('click', function () {
+  // Mostrar u ocultar el menú
   if (on_off) {
-    navText.style.left = '0';
-    on_off = false;
-    navbar.classList.add('sticky');
-    image.src = getRelativeImagePath('view/img/index/armadev_azul.png');
-    toggleMenu.style.color = 'black';
-    goTopButton.style.visibility = 'hidden';
-    disableScroll();
+    navText.style.left = '0'; // Mostrar menú
+    document.body.classList.add('menu-open'); // Agrega una clase para el menú abierto
+    goTopButton.style.visibility = 'hidden'; // Ocultar botón "Ir arriba"
+
+    // Deshabilitar el scroll
+    document.body.style.overflow = 'hidden';
+
+    // Actualizar el fondo del navbar
+    if (body.classList.contains('dark-mode')) {
+      navbar.style.backgroundColor = 'black'; // Fondo oscuro
+      toggleMenu.style.color = 'white'; // Color del menú en modo oscuro
+    } else {
+      navbar.style.backgroundColor = 'white'; // Fondo claro
+      toggleMenu.style.color = 'black'; // Color del menú en modo claro
+      image.src = getRelativeImagePath('view/img/index/armadev_azul.png')
+    }
   } else {
-    navText.style.left = '-100%';
-    navbar.classList.remove('sticky');
-    image.src = getRelativeImagePath('view/img/index/armadev_blanco.png');
-    toggleMenu.style.color = 'white';
-    goTopButton.style.visibility = 'visible';
-    on_off = true;
-    enableScroll();
+    navText.style.left = '-100%'; // Cerrar menú
+    document.body.style.overflow = 'auto'; // Habilitar el scroll
+
+    // Hacer el navbar transparente solo si no es sticky
+    if (window.pageYOffset === 0) {
+      navbar.style.backgroundColor = 'transparent'; // Cambiar el fondo a transparente
+      toggleMenu.style.color = 'white'; // Color del menú en modo claro
+      image.src = getRelativeImagePath('view/img/index/armadev_blanco.png')
+    }
+  }
+
+  on_off = !on_off; // Cambiar el estado del menú
+
+  // Actualizar estilos de enlaces al cerrar el menú
+  if (!on_off) {
+    navText.querySelectorAll('a').forEach(link => {
+      if (body.classList.contains('dark-mode')) {
+        link.style.color = 'white'; // Letras blancas en modo oscuro
+      } else {
+        link.style.color = 'black'; // Letras negras en modo claro
+      }
+    });
   }
 });
-
-// Funciones para desactivar y activar el scroll
-function disableScroll() {
-  document.body.style.overflow = 'hidden';
-}
-
-function enableScroll() {
-  document.body.style.overflow = 'auto';
-}
 
 // Evento de scroll
 window.onscroll = function () {
@@ -102,9 +117,6 @@ window.onscroll = function () {
 stickyMenu();
 
 
-
-
-// Cambiar el modo oscuro
 // Cambiar el modo oscuro
 darkModeToggle.addEventListener('click', function () {
   body.classList.toggle('dark-mode');
@@ -117,7 +129,6 @@ darkModeToggle.addEventListener('click', function () {
     darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>'; // Icono de luna
     localStorage.setItem('dark-mode', 'disabled'); // Guardar en localStorage
   }
-
   // Actualizar el estilo del navbar
   stickyMenu();
 });
@@ -127,8 +138,6 @@ if (localStorage.getItem('dark-mode') === 'enabled') {
   body.classList.add('dark-mode');
   darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>'; // Icono de sol
 }
-
-
 
 
 // Obtener la ruta de la imagen relativa

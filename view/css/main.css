@@ -383,6 +383,29 @@ body.dark-mode textarea:hover {
         left: 84%;
     }
 
-  
+    /* Menu modo oscuro moviles*/
+    /* Estilos del menú en modo oscuro */
 
+    body.dark-mode .nav1-principal li a {
+        color: #fff;
+        /* Enlaces blancos */
+        text-decoration: none;
+        /* Sin subrayado */
+    }
+
+    /* Estilos del menú en modo oscuro */
+    body.dark-mode .nav1-principal li a.active {
+        color: #087ec4 !important;
+        /* Color activo en modo oscuro */
+        border-bottom: none;
+        /* Sin subrayado */
+    }
+
+    /* También asegúrate de que no haya subrayado en hover */
+    body.dark-mode .nav1-principal li a:hover {
+        color: #087ec4 !important;
+        /* Color en hover */
+        border-bottom: none;
+        /* Sin subrayado al pasar el ratón */
+    }
 }
