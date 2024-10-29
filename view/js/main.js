@@ -134,29 +134,75 @@ function handleToggleMenu() {
 
 
 function handleDarkModeToggle() {
-
-  
+  // Alternar el modo oscuro
   body.classList.toggle('dark-mode');
 
-  // Cambiar el icono y el color del botón
+  // Verificar si el modo oscuro está habilitado
   if (body.classList.contains('dark-mode')) {
+    darkModeToggle.style.color = 'white'; // Color del botón en modo oscuro
     darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>'; // Icono de sol
     localStorage.setItem('dark-mode', 'enabled'); // Guardar en localStorage
   } else {
+    darkModeToggle.style.color = 'black'; // Color del botón en modo oscuro
     darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>'; // Icono de luna
     localStorage.setItem('dark-mode', 'disabled'); // Guardar en localStorage
   }
-  // Actualizar el estilo del navbar
-  stickyMenu();
 
-   // Habilitar o deshabilitar scroll basado en el estado del menú
-   if (on_off) {
-    document.body.style.overflow = 'hidden'; // Deshabilitar scroll si el menú está abierto
+  // Actualizar el fondo del navbar
+  if (on_off) {
+    // Si el menú está abierto
+    if (body.classList.contains('dark-mode')) {
+      navbar.style.backgroundColor = 'black'; // Fondo oscuro
+      toggleMenu.style.color = 'white'; // Color del menú en modo oscuro
+      image.src = getRelativeImagePath('view/img/index/armadev_blanco.png');
+
+    } else {
+      navbar.style.backgroundColor = 'white'; // Fondo claro
+      toggleMenu.style.color = 'black'; // Color del menú en modo claro
+      image.src = getRelativeImagePath('view/img/index/armadev_azul.png');
+
+    }
   } else {
-    document.body.style.overflow = 'auto'; // Habilitar scroll si el menú está cerrado
+
+    document.body.style.overflow = 'auto'; // Habilitar el scroll
+    // Si el menú está cerrado
+    if (window.pageYOffset === 0) {
+      navbar.style.backgroundColor = 'transparent'; // Cambiar el fondo a transparente
+      navText.querySelectorAll('a').forEach(link => {
+
+        link.style.color = 'white'; // Letras blancas en modo oscuro
+      });
+
+
+      image.src = getRelativeImagePath('view/img/index/armadev_blanco.png');
+    } else {
+      // Aplicar el fondo correspondiente al navbar si no está en la parte superior
+      if (body.classList.contains('dark-mode')) {
+        navbar.style.backgroundColor = 'black'; // Fondo oscuro
+        image.src = getRelativeImagePath('view/img/index/armadev_blanco.png');
+        // Asegurarse de que el color del texto sea correcto cuando el menú está cerrado
+        navText.querySelectorAll('a').forEach(link => {
+
+          link.style.color = 'white'; // Letras blancas en modo oscuro
+        });
+
+      } else {
+        // Asegurarse de que el color del texto sea correcto cuando el menú está cerrado
+        navText.querySelectorAll('a').forEach(link => {
+
+          link.style.color = 'black'; // Letras blancas en modo oscuro
+        });
+
+        navbar.style.backgroundColor = 'white'; // Fondo claro
+        toggleMenu.style.color = 'black'; // Color del menú en modo claro
+        image.src = getRelativeImagePath('view/img/index/armadev_azul.png');
+      }
+    }
+
+
+
   }
 }
-
 
 // Cargar estado del modo oscuro desde localStorage
 if (localStorage.getItem('dark-mode') === 'enabled') {
