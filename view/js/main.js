@@ -74,11 +74,12 @@ toggleMenu.addEventListener('click', function () {
   handleToggleMenu();
 });
 
+
 // Cambiar el modo oscuro
 darkModeToggle.addEventListener('click', function () {
   handleDarkModeToggle();
-});
 
+});
 
 function handleToggleMenu() {
   // Mostrar u ocultar el menú
@@ -139,11 +140,11 @@ function handleDarkModeToggle() {
 
   // Verificar si el modo oscuro está habilitado
   if (body.classList.contains('dark-mode')) {
-    darkModeToggle.style.color = 'white'; // Color del botón en modo oscuro
+   
     darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>'; // Icono de sol
     localStorage.setItem('dark-mode', 'enabled'); // Guardar en localStorage
   } else {
-    darkModeToggle.style.color = 'black'; // Color del botón en modo oscuro
+    
     darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>'; // Icono de luna
     localStorage.setItem('dark-mode', 'disabled'); // Guardar en localStorage
   }
@@ -203,7 +204,6 @@ function handleDarkModeToggle() {
 
   }
 }
-
 // Cargar estado del modo oscuro desde localStorage
 if (localStorage.getItem('dark-mode') === 'enabled') {
   body.classList.add('dark-mode');
